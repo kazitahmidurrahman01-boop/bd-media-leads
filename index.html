@@ -431,6 +431,198 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); font-size: 14px;
             display: none; z-index: 3000; font-weight: 600;
         }
+
+        /* MOBILE RESPONSIVE OPTIMIZATION */
+        @media (max-width: 860px) {
+            body {
+                padding: 10px;
+                padding-bottom: 130px;
+            }
+            header {
+                padding: 18px 14px;
+                border-radius: 16px;
+                gap: 14px;
+            }
+            header h1 {
+                font-size: 19px;
+                line-height: 1.3;
+            }
+            header p {
+                font-size: 12px;
+            }
+            .sync-badge {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+            .header-stats {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .stat-badge {
+                min-width: unset;
+                padding: 8px;
+            }
+            .stat-badge .num {
+                font-size: 18px;
+            }
+            .stat-badge .lbl {
+                font-size: 11px;
+            }
+            .pitch-section {
+                padding: 14px;
+                border-radius: 16px;
+            }
+            .pitch-section-title {
+                font-size: 15px;
+            }
+            .pitch-section-desc {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+            .pitch-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .pitch-card {
+                padding: 14px;
+            }
+            .pitch-card-title {
+                font-size: 14px;
+            }
+            .pitch-box {
+                max-height: 160px;
+                font-size: 12px;
+            }
+            .btn-copy-main {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .filter-buttons {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+                padding-bottom: 6px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .filter-btn {
+                padding: 7px 12px;
+                font-size: 12px;
+                flex-shrink: 0;
+            }
+            .table-card {
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                overflow: visible;
+            }
+            .table-wrapper {
+                overflow: visible;
+                max-height: unset;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+                width: 100%;
+            }
+            thead {
+                display: none;
+            }
+            tbody tr {
+                background: #ffffff;
+                border: 1px solid #cbd5e1;
+                border-radius: 16px;
+                padding: 16px;
+                margin-bottom: 16px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+            tbody td {
+                padding: 8px 0;
+                border-bottom: 1px solid #f1f5f9;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+            tbody td:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-top: 8px;
+            }
+            tbody td::before {
+                content: attr(data-label);
+                font-size: 11px;
+                font-weight: 700;
+                color: #64748b;
+                margin-bottom: 3px;
+                text-transform: uppercase;
+            }
+            .media-name {
+                font-size: 16px;
+                color: #1e3a8a;
+            }
+            .action-btns {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                margin-top: 4px;
+            }
+            .action-btns .btn {
+                justify-content: center;
+                padding: 9px;
+                font-size: 13px;
+                border-radius: 8px;
+            }
+            .save-control-cell {
+                width: 100%;
+                flex-direction: column;
+                gap: 8px;
+                align-items: stretch !important;
+            }
+            .status-select, .sender-input, .btn-row-save {
+                width: 100% !important;
+                height: 42px;
+                font-size: 14px;
+                text-align: center;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+            .sticky-bar {
+                padding: 10px 14px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .sticky-left {
+                width: 100%;
+                font-size: 12px;
+                justify-content: center;
+                text-align: center;
+            }
+            .sticky-name-input {
+                width: 100%;
+                justify-content: center;
+            }
+            .sticky-name-input input {
+                width: 100%;
+            }
+            .sticky-btns {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .sticky-btn {
+                justify-content: center;
+                padding: 10px;
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1048,22 +1240,22 @@ Kazi Tahmidur Rahman | Founder & CEO, ঘরখুঁজি`);
                 const waLink = `https://wa.me/${cleanPhone}?text=${waText}`;
 
                 tr.innerHTML = `
-                    <td style="text-align: center; font-weight: 600; color: var(--text-muted);">${item.sl}</td>
-                    <td>
+                    <td data-label="#" style="text-align: center; font-weight: 600; color: var(--text-muted);">${item.sl}</td>
+                    <td data-label="মিডিয়ার নাম ও ফোকাস">
                         <div class="media-name">${item.name}</div>
                         <div style="font-size: 11px; color: var(--text-muted);">${item.desk}</div>
                     </td>
-                    <td><span class="badge badge-cat">${item.cat}</span></td>
-                    <td>
+                    <td data-label="ক্যাটাগরি"><span class="badge badge-cat">${item.cat}</span></td>
+                    <td data-label="ইমেইল এড্রেস">
                         <div><strong style="color: #1e3a8a;">${item.email1}</strong> <span class="copy-pill" onclick="copyText('${item.email1}')">📋 কপি</span></div>
                         <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">${item.email2}</div>
                     </td>
-                    <td>
+                    <td data-label="ফোন / হোয়াটসঅ্যাপ">
                         <div>${item.display_phone}</div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: 500;">✓ কল ও হোয়াটসঅ্যাপ</div>
                     </td>
-                    <td style="max-width: 220px; font-size: 12px; color: #475569;">${item.notes}</td>
-                    <td style="text-align: center;">
+                    <td data-label="নোট ও টিপস" style="max-width: 220px; font-size: 12px; color: #475569;">${item.notes}</td>
+                    <td data-label="সরাসরি যোগাযোগ" style="text-align: center;">
                         <div class="action-btns" style="justify-content: center;">
                             <a href="${mailLink}" class="btn btn-email" title="মেইল পাঠান">✉️ মেইল</a>
                             <a href="${waLink}" target="_blank" class="btn btn-wa" title="WhatsApp এ মেসেজ দিন">💬 চ্যাট</a>
@@ -1071,7 +1263,7 @@ Kazi Tahmidur Rahman | Founder & CEO, ঘরখুঁজি`);
                             <a href="${item.web}" target="_blank" class="btn btn-link" title="সাইট দেখুন">🌐 সাইট</a>
                         </div>
                     </td>
-                    <td style="text-align: center;">
+                    <td data-label="স্ট্যাটাস ও সেভ করুন" style="text-align: center;">
                         <div class="save-control-cell" style="justify-content: center;">
                             <select id="status-sel-${item.sl}" class="status-select status-${status.toLowerCase()}" onchange="onStatusChange(${item.sl}, this.value)">
                                 <option value="Pending" ${status === 'Pending' ? 'selected' : ''}>⏳ Pending</option>
