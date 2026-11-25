@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলাদেশ মিডিয়া লিড ডিরেক্টরি (১০০টি মিডিয়া) - টিম আউটরিচ ড্যাশবোর্ড</title>
+    <title>বাংলাদেশ মিডিয়া লিড ডিরেক্টরি (১০০টি মিডিয়া) - ঘরখুঁজি টিম পিচিং ড্যাশবোর্ড</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -28,13 +28,13 @@
             padding: 24px;
             line-height: 1.5;
         }
-        .container { max-width: 1480px; margin: 0 auto; }
+        .container { max-width: 1520px; margin: 0 auto; }
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
             color: white;
-            padding: 32px;
+            padding: 30px 36px;
             border-radius: 20px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
             display: flex;
             justify-content: space-between;
@@ -42,7 +42,7 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-        header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+        header h1 { font-size: 27px; font-weight: 700; margin-bottom: 6px; }
         header p { opacity: 0.9; font-size: 15px; }
         .sync-badge {
             display: inline-flex;
@@ -58,8 +58,7 @@
             margin-top: 10px;
         }
         .sync-dot {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background-color: #22c55e;
             border-radius: 50%;
             box-shadow: 0 0 10px #22c55e;
@@ -78,26 +77,84 @@
             border-radius: 12px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.18);
-            min-width: 95px;
+            min-width: 90px;
         }
         .stat-badge .num { font-size: 22px; font-weight: 700; }
         .stat-badge .lbl { font-size: 12px; opacity: 0.85; margin-top: 2px; }
 
+        /* PR Copy Action Bar */
+        .pr-banner {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border: 2px solid #cbd5e1;
+            padding: 16px 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .pr-banner-info h3 {
+            font-size: 17px;
+            color: #1e3a8a;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pr-banner-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .pr-btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn-pr {
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-pr-email {
+            background: #ef4444;
+            color: white;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.25);
+        }
+        .btn-pr-email:hover { background: #dc2626; transform: translateY(-1px); }
+        .btn-pr-wa {
+            background: #16a34a;
+            color: white;
+            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+        }
+        .btn-pr-wa:hover { background: #15803d; transform: translateY(-1px); }
+
         /* Controls */
         .controls {
             display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 14px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
             align-items: center;
         }
-        .search-box { flex: 1; min-width: 300px; position: relative; }
+        .search-box { flex: 1; min-width: 280px; position: relative; }
         .search-box input {
             width: 100%;
-            padding: 13px 16px 13px 44px;
+            padding: 12px 16px 12px 42px;
             border: 1px solid var(--border);
             border-radius: 12px;
-            font-size: 15px;
+            font-size: 14px;
             outline: none;
             background: white;
             transition: all 0.2s;
@@ -109,16 +166,16 @@
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
         }
         .search-icon {
-            position: absolute; left: 15px; top: 50%;
+            position: absolute; left: 14px; top: 50%;
             transform: translateY(-50%); color: var(--text-muted);
         }
         .filter-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
         .filter-btn {
-            padding: 9px 16px;
+            padding: 8px 14px;
             border: 1px solid var(--border);
             background: white;
             border-radius: 10px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s;
@@ -150,25 +207,25 @@
         }
         .table-wrapper { overflow-x: auto; max-height: 800px; }
         table {
-            width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;
+            width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;
         }
         th {
             position: sticky; top: 0; background: #f1f5f9; color: #334155;
-            font-weight: 600; padding: 14px 16px; border-bottom: 2px solid var(--border);
+            font-weight: 600; padding: 12px 14px; border-bottom: 2px solid var(--border);
             white-space: nowrap; z-index: 10;
         }
-        td { padding: 13px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+        td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
         tr:hover td { background-color: #f8fafc; }
-        .media-name { font-weight: 600; font-size: 15px; color: var(--text-main); }
+        .media-name { font-weight: 600; font-size: 14px; color: var(--text-main); }
         .badge {
-            display: inline-block; padding: 4px 10px; border-radius: 9999px;
-            font-size: 12px; font-weight: 500; white-space: nowrap;
+            display: inline-block; padding: 3px 8px; border-radius: 9999px;
+            font-size: 11px; font-weight: 500; white-space: nowrap;
         }
         .badge-cat { background: #e0e7ff; color: #3730a3; }
         .action-btns { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
         .btn {
-            display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px;
-            border-radius: 8px; font-size: 12px; font-weight: 600; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 4px; padding: 5px 9px;
+            border-radius: 7px; font-size: 12px; font-weight: 600; text-decoration: none;
             transition: all 0.15s; cursor: pointer; border: none; font-family: inherit;
         }
         .btn-email { background: #fee2e2; color: #b91c1c; }
@@ -181,8 +238,8 @@
         .btn-link:hover { background: #e2e8f0; }
         
         .status-select {
-            padding: 7px 12px; border-radius: 8px; border: 1px solid var(--border);
-            font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer;
+            padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border);
+            font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer;
             outline: none; transition: all 0.2s;
         }
         .status-pending { color: #dc2626; background: #fef2f2; border-color: #fca5a5; }
@@ -190,17 +247,63 @@
         .status-published { color: #15803d; background: #f0fdf4; border-color: #86efac; }
 
         .copy-pill {
-            cursor: pointer; padding: 2px 7px; background: #f1f5f9; border-radius: 6px;
-            font-size: 12px; color: #475569; display: inline-flex; align-items: center;
-            gap: 4px; border: 1px solid #cbd5e1; margin-top: 4px;
+            cursor: pointer; padding: 2px 6px; background: #f1f5f9; border-radius: 5px;
+            font-size: 11px; color: #475569; display: inline-flex; align-items: center;
+            gap: 4px; border: 1px solid #cbd5e1; margin-top: 3px;
         }
         .copy-pill:hover { background: #e2e8f0; color: #0f172a; }
 
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px); display: none; align-items: center;
+            justify-content: center; z-index: 2000; padding: 20px;
+        }
+        .modal-card {
+            background: white; border-radius: 20px; width: 100%; max-width: 850px;
+            max-height: 90vh; overflow-y: auto; padding: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex; flex-direction: column; gap: 18px;
+            animation: modalIn 0.2s ease-out;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .modal-header {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--border); padding-bottom: 14px;
+        }
+        .modal-title { font-size: 20px; font-weight: 700; color: #0f172a; }
+        .modal-close {
+            background: none; border: none; font-size: 24px; cursor: pointer;
+            color: #64748b; padding: 4px 8px; border-radius: 8px;
+        }
+        .modal-close:hover { background: #f1f5f9; color: #0f172a; }
+        .tab-bar { display: flex; gap: 8px; }
+        .tab-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: #f8fafc; cursor: pointer; font-weight: 600; font-size: 14px;
+            font-family: inherit;
+        }
+        .tab-btn.active {
+            background: var(--primary); color: white; border-color: var(--primary);
+        }
+        .copy-box {
+            background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px;
+            padding: 16px; font-size: 14px; white-space: pre-wrap; font-family: inherit;
+            line-height: 1.6; max-height: 380px; overflow-y: auto; color: #1e293b;
+        }
+        .modal-footer {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid var(--border); padding-top: 16px; flex-wrap: wrap; gap: 10px;
+        }
+
         #toast {
             position: fixed; bottom: 24px; right: 24px; background: #0f172a;
-            color: white; padding: 12px 20px; border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); font-size: 14px;
-            display: none; z-index: 1000;
+            color: white; padding: 12px 22px; border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); font-size: 14px;
+            display: none; z-index: 3000; font-weight: 500;
         }
     </style>
 </head>
@@ -209,7 +312,7 @@
         <header>
             <div>
                 <h1>🚀 বাংলাদেশ মিডিয়া লিড ড্যাশবোর্ড (১০০টি মিডিয়া)</h1>
-                <p>বাসা খোঁজা ও বাসা ভাড়ার প্রোপটেক স্টার্টআপ (Ghorkhuji) টিম পিচিং ও সেন্ট্রাল ট্র্যাকার</p>
+                <p>বাসা খোঁজা ও বাসা ভাড়ার প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji) টিম পিচিং ও সেন্ট্রাল ট্র্যাকার</p>
                 <div class="sync-badge">
                     <span class="sync-dot"></span>
                     <span id="syncText">টিম লাইভ সিঙ্ক অ্যাক্টিভ (সবাই একই স্ট্যাটাস দেখবে)</span>
@@ -234,6 +337,22 @@
                 </div>
             </div>
         </header>
+
+        <!-- PR Copy Action Bar -->
+        <div class="pr-banner">
+            <div class="pr-banner-info">
+                <h3>📢 মিডিয়া পিচ ও প্রেস রিলিজ টুলবার (১-ক্লিকে কপি করুন)</h3>
+                <p>টিমের যে কেউ এখান থেকে বাংলা বা ইংরেজি ড্রাফট কপি করে মেইল বা হোয়াটসঅ্যাপে সাংবাদিকদের পাঠাতে পারবেন</p>
+            </div>
+            <div class="pr-btn-group">
+                <button class="btn-pr btn-pr-email" onclick="openModal('email')">
+                    ✉️ ইমেইল প্রেস রিলিজ (কপি করুন)
+                </button>
+                <button class="btn-pr btn-pr-wa" onclick="openModal('wa')">
+                    💬 WhatsApp শর্ট পিচ (কপি করুন)
+                </button>
+            </div>
+        </div>
 
         <div class="controls">
             <div class="search-box">
@@ -275,6 +394,32 @@
         </div>
     </div>
 
+    <!-- Pitch Modal -->
+    <div id="pitchModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">মিডিয়া প্রেস রিলিজ</div>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="tab-bar">
+                <button id="tabBn" class="tab-btn active" onclick="switchTab('bn')">🇧🇩 বাংলা ভার্সন</button>
+                <button id="tabEn" class="tab-btn" onclick="switchTab('en')">🇬🇧 English Version</button>
+            </div>
+            <div id="modalSubjectContainer" style="display: none; background: #e0f2fe; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: #0369a1; font-weight: 600;">
+                <span id="modalSubjectLabel">Subject: </span><span id="modalSubjectText"></span>
+            </div>
+            <div class="copy-box" id="modalBodyText"></div>
+            <div class="modal-footer">
+                <div style="font-size: 13px; color: var(--text-muted);">
+                    💡 <em>টিপ: ড্রাইভ লিংক বা আপনার নাম পরিবর্তনের পর সরাসরি সেন্ড করুন।</em>
+                </div>
+                <button class="btn-pr btn-pr-email" id="modalCopyBtn" onclick="copyModalContent()">
+                    📋 এক ক্লিকে সম্পূর্ণ কপি করুন
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div id="toast">কপি করা হয়েছে!</div>
 
     <script>
@@ -283,7 +428,158 @@
         let teamStatusMap = {};
         let currentCategory = 'সব';
 
-        // Fetch team shared statuses from Cloud
+        // Pre-defined Texts
+        const PITCH_DATA = {
+            email: {
+                title: '✉️ ইমেইল প্রেস রিলিজ ড্রাফট',
+                bn: {
+                    subject: `[প্রেস রিলিজ] বাসা খোঁজা ও শহুরে একাকীত্ব দূর করতে বাংলাদেশি শিক্ষার্থীদের উদ্ভাবন: প্রোপটেক প্ল্যাটফর্ম 'ঘরখুঁজি'`,
+                    body: `শ্রদ্ধেয় সম্পাদক / তথ্যপ্রযুক্তি ও ফিচার ইনচার্জ,
+আসসালামু আলাইকুম।
+
+রাজধানী ঢাকাসহ দেশের প্রধান শহরগুলোতে বাসা ভাড়া নেওয়া মানেই দালালের দৌরাত্ম্য, অযৌক্তিক কমিশন আর বাড়ি বাড়ি ঘুরে ক্লান্তিকর এক অভিজ্ঞতা। এর পাশাপাশি আধুনিক নাগরিক জীবনের আরেক নির্মম বাস্তবতা হলো "শহুরে একাকীত্ব"। গ্রামের মানুষ পাশের বাড়ির মানুষকে আপন জানলেও, ঢাকা শহরে পাশের ফ্ল্যাটের প্রতিবেশীও থাকে অচেনা ও বিচ্ছিন্ন।
+
+বাসা খোঁজার এই চিরচেনা ভোগান্তি দূর করতে এবং প্রতিবেশীদের মাঝে হারিয়ে যাওয়া সামাজিক বন্ধন ফিরিয়ে আনতে একদল উদ্যমী বাংলাদেশি শিক্ষার্থী গড়ে তুলেছে অভিনব প্রোপটেক ও নেইবারহুড প্ল্যাটফর্ম 'ঘরখুঁজি' (Ghorkhuji)।
+
+সম্পূর্ণ ফ্রিতে গুগল প্লে স্টোর ও অ্যাপল অ্যাপ স্টোরে উন্মুক্ত এই অ্যাপটি যাত্রা শুরুর মাত্র এক মাসের মাথায় ইতিমধ্যে আড়াই হাজারের (২৫০০+) বেশি সক্রিয় ব্যবহারকারীর মাইলস্টোন অর্জন করেছে। পূর্বে দেশের প্রথম সারির ১২টি শীর্ষ গণমাধ্যমেও উদ্যোগটি প্রশংসিত হয়েছে।
+
+'ঘরখুঁজি' অ্যাপের মূল আকর্ষণ ও অনন্য ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: বাড়িওয়ালারা সরাসরি নিজেদের বাসার আসল ছবি ও বিবরণ পোস্ট করেন। কোনো দালালের কমিশন বা মধ্যস্থতা ছাড়াই ভাড়াটিয়ারা সরাসরি বাড়িওয়ালার সাথে কথা বলে বাসা চূড়ান্ত করতে পারেন।
+২. রুমমেট খোঁজার স্মার্ট সমাধান: ব্যাচেলর ও শিক্ষার্থীদের জন্য বাসা ভাড়া ভাগাভাগি করার নির্ভরযোগ্য সমাধান। নিজের রুমের ছবি পোস্ট করে সহজেই পছন্দের রুমমেট খুঁজে নেওয়া যায়।
+৩. হাইপার-লোকাল প্রতিবেশী ফিড (১-১০ কিমি): আপনার আশেপাশের ১ থেকে ১০ কিলোমিটারের বাসিন্দাদের নিয়ে গঠিত নিজস্ব লোকাল ফিড। ড্রেন বা রাস্তার কাজ, যানজট, জলাবদ্ধতা, এলাকার ব্রেকিং খবর কিংবা পাড়ার নতুন চায়ের দোকানের আড্ডা—এলাকার খবর থাকবে শুধুই এলাকার মানুষের কাছে।
+৪. নেইবারহুড কানেক্ট ও একাকীত্ব দূরীকরণ: নতুন এলাকায় আসলেও একাকীত্বে ভুগতে হবে না। 'Neighbors People' ফিচারের মাধ্যমে আশেপাশের মানুষদের কানেক্ট রিকোয়েস্ট পাঠানো এবং স্থানীয় কমিউনিটি আড্ডায় যুক্ত হওয়া যায়।
+
+তরুণ প্রজন্মের মেধা ও প্রযুক্তি কাজে লাগিয়ে একটি আধুনিক "ডিজিটাল লিভিং ইকোসিস্টেম" গড়ে তুলতে শিক্ষার্থীদের এই ইতিবাচক উদ্যোগ নিয়ে আপনার স্বনামধন্য গণমাধ্যমে একটি প্রতিবেদন বা ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।
+
+সংবাদের ব্যবহারের জন্য উচ্চ রেজোলিউশনের প্রতিষ্ঠাতা ও অ্যাপের ছবিসহ প্রেস কিট গুগল ড্রাইভ লিংকে সংযুক্ত করা হলো:
+📁 প্রেস কিট ও ছবি: [গুগল ড্রাইভ লিংক দিন]
+📱 গুগল প্লে স্টোর ও অ্যাপ স্টোর লিংক: [অ্যাপ ডাউনলোড লিংক দিন]
+🌐 ওয়েবসাইট: [ওয়েবসাইট লিংক দিন]
+
+ধন্যবাদান্তে,
+[আপনার নাম]
+সহ-প্রতিষ্ঠাতা ও সিইও, ঘরখুঁজি (Ghorkhuji)
+ফোন / হোয়াটসঅ্যাপ: +8801XXXXXXXXX
+ইমেইল: [আপনার অফিসিয়াল ইমেইল]`
+                },
+                en: {
+                    subject: `[Press Release] Tackling Urban Loneliness & House Hunting: Bangladeshi Student-Led Startup 'Ghorkhuji' Builds a Digital Living Ecosystem`,
+                    body: `Dear Editor / Tech & Feature In-Charge,
+Greetings.
+
+Finding a rental home in Dhaka and other metropolitan cities has long meant dealing with aggressive middlemen, unfair broker commissions, and exhausting physical visits. Alongside this, modern urban life has fostered severe loneliness—unlike villages where neighbors live like family, city dwellers often do not even know who lives next door.
+
+To solve both of these pressing issues, a team of passionate Bangladeshi university students has built 'Ghorkhuji'—an innovative PropTech and hyper-local neighborhood platform.
+
+Available 100% free on both the Google Play Store and Apple App Store, Ghorkhuji has already crossed 2,500+ active users within just its first month of launch, following coverage across 12 prominent national media portals.
+
+Key Innovations of Ghorkhuji:
+1. Zero-Brokerage Rentals: Landlords post genuine photos directly. Tenants connect with property owners with zero broker bias or hidden commissions.
+2. Verified Roommate Matching: Perfect for bachelors and students looking to share room rent. Users can list their vacant rooms and connect directly with potential flatmates.
+3. Hyper-Local Neighborhood Feed (1-10 KM): A local timeline strictly for residents within 1 to 10 kilometers. Share local road closures, waterlogging updates, utility notices, or local hangout spots—hyper-local news stays within the local community.
+4. Conquering Urban Loneliness: The 'Neighbors People' feature lets residents discover and send connect requests to verified nearby neighbors, fostering authentic neighborhood friendships.
+
+We cordially request your esteemed publication to feature this inspiring student-led technological innovation that is building a modern "Digital Living Ecosystem" for Bangladesh.
+
+📁 Media Kit & High-Res Images: [Google Drive Link]
+📱 Download App (Play Store & App Store): [App Links]
+🌐 Website: [Website Link]
+
+Warm regards,
+[Your Name]
+Co-Founder & CEO, Ghorkhuji
+Phone / WhatsApp: +8801XXXXXXXXX
+Email: [Your Official Email]`
+                }
+            },
+            wa: {
+                title: '💬 WhatsApp শর্ট পিচ স্ক্রিপ্ট',
+                bn: {
+                    subject: '',
+                    body: `আসসালামু আলাইকুম [ভাইয়া/আপু],
+আশা করি ভালো আছেন। আমি বাংলাদেশি শিক্ষার্থীদের তৈরি প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji)-এর পক্ষ থেকে নক দিয়েছি।
+
+আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি স্মার্ট কমিউনিটি গড়ে তুলেছি।
+
+যাত্রা শুরুর মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ ব্যবহারকারী যুক্ত হয়েছেন এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে রয়েছে।
+
+আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই ছাত্র-উদ্যোগ নিয়ে একটি ছোট ফিচার প্রকাশের জন্য একটি প্রেস রিলিজ ও হাই-কোয়ালিটি ছবি প্রস্তুত করেছি। আপনি অনুমতি দিলে কি বিস্তারিত তথ্য ও প্রেস রিলিজটি এখানে শেয়ার করতে পারি?
+
+ধন্যবাদ!
+টিম ঘরখুঁজি | হোয়াটসঅ্যাপ: +8801XXXXXXXXX`
+                },
+                en: {
+                    subject: '',
+                    body: `Hello [Editor/Journalist],
+Hope you are doing well. I am reaching out from 'Ghorkhuji', an innovative Bangladeshi student-led PropTech startup.
+
+We have built a 100% free digital living ecosystem solving zero-brokerage home renting, roommate matching, and tackling urban loneliness through a 1-10km hyper-local neighborhood community feed.
+
+Within just 1 month of launch, we have crossed 2,500+ active users and were previously featured in 12 national media outlets. The app is completely free on both Google Play Store and Apple App Store.
+
+We have prepared a concise press release with high-res photos for your esteemed platform. May I share the details with you here?
+
+Best regards,
+Team Ghorkhuji | Phone/WhatsApp: +8801XXXXXXXXX`
+                }
+            }
+        };
+
+        let activeModalType = 'email';
+        let activeLang = 'bn';
+
+        function openModal(type) {
+            activeModalType = type;
+            activeLang = 'bn';
+            document.getElementById('modalTitle').innerText = PITCH_DATA[type].title;
+            document.getElementById('tabBn').className = 'tab-btn active';
+            document.getElementById('tabEn').className = 'tab-btn';
+            updateModalView();
+            document.getElementById('pitchModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('pitchModal').style.display = 'none';
+        }
+
+        function closeModalOnOverlay(e) {
+            if (e.target.id === 'pitchModal') closeModal();
+        }
+
+        function switchTab(lang) {
+            activeLang = lang;
+            document.getElementById('tabBn').className = 'tab-btn ' + (lang === 'bn' ? 'active' : '');
+            document.getElementById('tabEn').className = 'tab-btn ' + (lang === 'en' ? 'active' : '');
+            updateModalView();
+        }
+
+        function updateModalView() {
+            const data = PITCH_DATA[activeModalType][activeLang];
+            const subjContainer = document.getElementById('modalSubjectContainer');
+            if (data.subject) {
+                subjContainer.style.display = 'block';
+                document.getElementById('modalSubjectText').innerText = data.subject;
+            } else {
+                subjContainer.style.display = 'none';
+            }
+            document.getElementById('modalBodyText').innerText = data.body;
+        }
+
+        function copyModalContent() {
+            const data = PITCH_DATA[activeModalType][activeLang];
+            let fullText = data.body;
+            if (data.subject) {
+                fullText = 'Subject: ' + data.subject + '\n\n' + data.body;
+            }
+            navigator.clipboard.writeText(fullText).then(() => {
+                showToast('✅ সম্পূর্ণ ড্রাফট ক্লিপবোর্ডে কপি করা হয়েছে!');
+                const btn = document.getElementById('modalCopyBtn');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '✓ কপি সম্পন্ন!';
+                setTimeout(() => { btn.innerHTML = orig; }, 2000);
+            });
+        }
+
         async function fetchTeamStatuses() {
             try {
                 const res = await fetch(API_ENDPOINT);
@@ -307,7 +603,6 @@
             }
         }
 
-        // Save status to shared Cloud in Real-Time
         async function saveStatus(sl, status, selectElem) {
             teamStatusMap[sl] = status;
             localStorage.setItem('lead_status_' + sl, status);
@@ -343,9 +638,7 @@
         }
 
         function updateStats() {
-            let sent = 0;
-            let pub = 0;
-            let pend = 0;
+            let sent = 0, pub = 0, pend = 0;
             leads.forEach(l => {
                 let s = teamStatusMap[l.sl] || 'Pending';
                 if (s === 'Sent') sent++;
@@ -383,30 +676,66 @@
                 const tr = document.createElement('tr');
                 const status = teamStatusMap[item.sl] || 'Pending';
                 
-                const mailSubject = encodeURIComponent('[প্রেস রিলিজ] বাসা খোঁজার বিড়ম্বনা দূর করতে এলো প্রোপটেক স্টার্টআপ "ঘরখুঁজি"');
-                const mailBody = encodeURIComponent('শ্রদ্ধেয় সম্পাদক / তথ্যপ্রযুক্তি ও ফিচার ইনচার্জ,\n\nআসসালামু আলাইকুম।\n\nরাজধানী ঢাকাসহ দেশের প্রধান শহরগুলোতে বাসা ভাড়া বা ঘর খোঁজা সাধারণ মানুষের কাছে অন্যতম বড় এক ভোগান্তির নাম। এই বাস্তব সমস্যার আধুনিক ও টেকসই সমাধান নিয়ে যাত্রা শুরু করেছে বাংলাদেশি প্রোপটেক স্টার্টআপ "ঘরখুঁজি" (Ghorkhuji)।\n\nআমাদের প্ল্যাটফর্মের মাধ্যমে কোনো প্রকার দালালের মধ্যস্থতা ছাড়াই সম্পূর্ণ ভেরিফায়েড বাড়িওয়ালা ও ভাড়াটিয়ারা সহজে বাসা খুঁজে পাচ্ছেন।\n\nদেশের তথ্যপ্রযুক্তি খাত ও তরুণ উদ্যোক্তাদের এগিয়ে নিতে আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই উদ্ভাবনী উদ্যোগ নিয়ে একটি প্রেস রিলিজ / ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।\n\nবিস্তারিত প্রেস রিলিজ ও হাই-রেজোলিউশন ছবি সংযুক্ত করা হলো।\n\nধন্যবাদান্তে,\nটিম ঘরখুঁজি');
+                const mailSubject = encodeURIComponent(`[প্রেস রিলিজ] বাসা খোঁজা ও শহুরে একাকীত্ব দূর করতে বাংলাদেশি শিক্ষার্থীদের উদ্ভাবন: প্রোপটেক প্ল্যাটফর্ম 'ঘরখুঁজি'`);
+                const mailBody = encodeURIComponent(`শ্রদ্ধেয় সম্পাদক / তথ্যপ্রযুক্তি ও ফিচার ইনচার্জ,
+আসসালামু আলাইকুম।
+
+রাজধানী ঢাকাসহ দেশের প্রধান শহরগুলোতে বাসা ভাড়া নেওয়া মানেই দালালের দৌরাত্ম্য, অযৌক্তিক কমিশন আর বাড়ি বাড়ি ঘুরে ক্লান্তিকর এক অভিজ্ঞতা। এর পাশাপাশি আধুনিক নাগরিক জীবনের আরেক নির্মম বাস্তবতা হলো "শহুরে একাকীত্ব"। গ্রামের মানুষ পাশের বাড়ির মানুষকে আপন জানলেও, ঢাকা শহরে পাশের ফ্ল্যাটের প্রতিবেশীও থাকে অচেনা ও বিচ্ছিন্ন।
+
+বাসা খোঁজার এই চিরচেনা ভোগান্তি দূর করতে এবং প্রতিবেশীদের মাঝে হারিয়ে যাওয়া সামাজিক বন্ধন ফিরিয়ে আনতে একদল উদ্যমী বাংলাদেশি শিক্ষার্থী গড়ে তুলেছে অভিনব প্রোপটেক ও নেইবারহুড প্ল্যাটফর্ম 'ঘরখুঁজি' (Ghorkhuji)।
+
+সম্পূর্ণ ফ্রিতে গুগল প্লে স্টোর ও অ্যাপল অ্যাপ স্টোরে উন্মুক্ত এই অ্যাপটি যাত্রা শুরুর মাত্র এক মাসের মাথায় ইতিমধ্যে আড়াই হাজারের (২৫০০+) বেশি সক্রিয় ব্যবহারকারীর মাইলস্টোন অর্জন করেছে। পূর্বে দেশের প্রথম সারির ১২টি শীর্ষ গণমাধ্যমেও উদ্যোগটি প্রশংসিত হয়েছে।
+
+'ঘরখুঁজি' অ্যাপের মূল আকর্ষণ ও অনন্য ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: বাড়িওয়ালারা সরাসরি নিজেদের বাসার আসল ছবি ও বিবরণ পোস্ট করেন। কোনো দালালের কমিশন বা মধ্যস্থতা ছাড়াই ভাড়াটিয়ারা সরাসরি বাড়িওয়ালার সাথে কথা বলে বাসা চূড়ান্ত করতে পারেন।
+২. রুমমেট খোঁজার স্মার্ট সমাধান: ব্যাচেলর ও শিক্ষার্থীদের জন্য বাসা ভাড়া ভাগাভাগি করার নির্ভরযোগ্য সমাধান। নিজের রুমের ছবি পোস্ট করে সহজেই পছন্দের রুমমেট খুঁজে নেওয়া যায়।
+৩. হাইপার-লোকাল প্রতিবেশী ফিড (১-১০ কিমি): আপনার আশেপাশের ১ থেকে ১০ কিলোমিটারের বাসিন্দাদের নিয়ে গঠিত নিজস্ব লোকাল ফিড। ড্রেন বা রাস্তার কাজ, যানজট, জলাবদ্ধতা, এলাকার ব্রেকিং খবর কিংবা পাড়ার নতুন চায়ের দোকানের আড্ডা—এলাকার খবর থাকবে শুধুই এলাকার মানুষের কাছে।
+৪. নেইবারহুড কানেক্ট ও একাকীত্ব দূরীকরণ: নতুন এলাকায় আসলেও একাকীত্বে ভুগতে হবে না। 'Neighbors People' ফিচারের মাধ্যমে আশেপাশের মানুষদের কানেক্ট রিকোয়েস্ট পাঠানো এবং স্থানীয় কমিউনিটি আড্ডায় যুক্ত হওয়া যায়।
+
+তরুণ প্রজন্মের মেধা ও প্রযুক্তি কাজে লাগিয়ে একটি আধুনিক "ডিজিটাল লিভিং ইকোসিস্টেম" গড়ে তুলতে শিক্ষার্থীদের এই ইতিবাচক উদ্যোগ নিয়ে আপনার স্বনামধন্য গণমাধ্যমে একটি প্রতিবেদন বা ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।
+
+সংবাদের ব্যবহারের জন্য উচ্চ রেজোলিউশনের প্রতিষ্ঠাতা ও অ্যাপের ছবিসহ প্রেস কিট গুগল ড্রাইভ লিংকে সংযুক্ত করা হলো:
+📁 প্রেস কিট ও ছবি: [গুগল ড্রাইভ লিংক দিন]
+📱 গুগল প্লে স্টোর ও অ্যাপ স্টোর লিংক: [অ্যাপ ডাউনলোড লিংক দিন]
+🌐 ওয়েবসাইট: [ওয়েবসাইট লিংক দিন]
+
+ধন্যবাদান্তে,
+[আপনার নাম]
+সহ-প্রতিষ্ঠাতা ও সিইও, ঘরখুঁজি (Ghorkhuji)
+ফোন / হোয়াটসঅ্যাপ: +8801XXXXXXXXX
+ইমেইল: [আপনার অফিসিয়াল ইমেইল]`);
                 const mailLink = `mailto:${item.email1}?cc=${item.email2}&subject=${mailSubject}&body=${mailBody}`;
 
                 const cleanPhone = item.phone.replace(/[^0-9]/g, '');
-                const waText = encodeURIComponent('আসসালামু আলাইকুম ভাইয়া/আপু, আমি বাংলাদেশি প্রোপটেক স্টার্টআপ "ঘরখুঁজি"-এর পক্ষ থেকে নক দিয়েছি। আপনার নিউজ পোর্টালে আমাদের উদ্যোগ নিয়ে একটি প্রেস রিলিজ শেয়ার করতে চাই।');
+                const waText = encodeURIComponent(`আসসালামু আলাইকুম [ভাইয়া/আপু],
+আশা করি ভালো আছেন। আমি বাংলাদেশি শিক্ষার্থীদের তৈরি প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji)-এর পক্ষ থেকে নক দিয়েছি।
+
+আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি স্মার্ট কমিউনিটি গড়ে তুলেছি।
+
+যাত্রা শুরুর মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ ব্যবহারকারী যুক্ত হয়েছেন এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে রয়েছে।
+
+আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই ছাত্র-উদ্যোগ নিয়ে একটি ছোট ফিচার প্রকাশের জন্য একটি প্রেস রিলিজ ও হাই-কোয়ালিটি ছবি প্রস্তুত করেছি। আপনি অনুমতি দিলে কি বিস্তারিত তথ্য ও প্রেস রিলিজটি এখানে শেয়ার করতে পারি?
+
+ধন্যবাদ!
+টিম ঘরখুঁজি | হোয়াটসঅ্যাপ: +8801XXXXXXXXX`);
                 const waLink = `https://wa.me/${cleanPhone}?text=${waText}`;
 
                 tr.innerHTML = `
                     <td style="text-align: center; font-weight: 600; color: var(--text-muted);">${item.sl}</td>
                     <td>
                         <div class="media-name">${item.name}</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">${item.desk}</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">${item.desk}</div>
                     </td>
                     <td><span class="badge badge-cat">${item.cat}</span></td>
                     <td>
                         <div><strong style="color: #1e3a8a;">${item.email1}</strong> <span class="copy-pill" onclick="copyText('${item.email1}')">📋 কপি</span></div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">${item.email2}</div>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">${item.email2}</div>
                     </td>
                     <td>
                         <div>${item.display_phone}</div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: 500;">✓ কল ও হোয়াটসঅ্যাপ</div>
                     </td>
-                    <td style="max-width: 240px; font-size: 13px; color: #475569;">${item.notes}</td>
+                    <td style="max-width: 240px; font-size: 12px; color: #475569;">${item.notes}</td>
                     <td style="text-align: center;">
                         <div class="action-btns" style="justify-content: center;">
                             <a href="${mailLink}" class="btn btn-email" title="মেইল পাঠান">✉️ মেইল</a>
