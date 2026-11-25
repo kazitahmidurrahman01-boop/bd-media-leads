@@ -342,7 +342,7 @@
         <div class="pr-banner">
             <div class="pr-banner-info">
                 <h3>📢 মিডিয়া পিচ ও প্রেস রিলিজ টুলবার (১-ক্লিকে কপি করুন)</h3>
-                <p>টিমের যে কেউ এখান থেকে বাংলা বা ইংরেজি ড্রাফট কপি করে মেইল বা হোয়াটসঅ্যাপে সাংবাদিকদের পাঠাতে পারবেন</p>
+                <p>টিমের যে কেউ এখান থেকে অফিসিয়াল প্লে স্টোর, অ্যাপ স্টোর, প্রেস কিট ড্রাইভ লিংকসহ ড্রাফট কপি করতে পারবেন</p>
             </div>
             <div class="pr-btn-group">
                 <button class="btn-pr btn-pr-email" onclick="openModal('email')">
@@ -411,7 +411,7 @@
             <div class="copy-box" id="modalBodyText"></div>
             <div class="modal-footer">
                 <div style="font-size: 13px; color: var(--text-muted);">
-                    💡 <em>টিপ: ড্রাইভ লিংক বা আপনার নাম পরিবর্তনের পর সরাসরি সেন্ড করুন।</em>
+                    ✓ প্লে স্টোর, অ্যাপ স্টোর, ওয়েবসাইট ও ড্রাইভ লিংক অন্তর্ভুক্ত আছে।
                 </div>
                 <button class="btn-pr btn-pr-email" id="modalCopyBtn" onclick="copyModalContent()">
                     📋 এক ক্লিকে সম্পূর্ণ কপি করুন
@@ -428,7 +428,6 @@
         let teamStatusMap = {};
         let currentCategory = 'সব';
 
-        // Pre-defined Texts
         const PITCH_DATA = {
             email: {
                 title: '✉️ ইমেইল প্রেস রিলিজ ড্রাফট',
@@ -452,15 +451,15 @@
 তরুণ প্রজন্মের মেধা ও প্রযুক্তি কাজে লাগিয়ে একটি আধুনিক "ডিজিটাল লিভিং ইকোসিস্টেম" গড়ে তুলতে শিক্ষার্থীদের এই ইতিবাচক উদ্যোগ নিয়ে আপনার স্বনামধন্য গণমাধ্যমে একটি প্রতিবেদন বা ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।
 
 সংবাদের ব্যবহারের জন্য উচ্চ রেজোলিউশনের প্রতিষ্ঠাতা ও অ্যাপের ছবিসহ প্রেস কিট গুগল ড্রাইভ লিংকে সংযুক্ত করা হলো:
-📁 প্রেস কিট ও ছবি: [গুগল ড্রাইভ লিংক দিন]
-📱 গুগল প্লে স্টোর ও অ্যাপ স্টোর লিংক: [অ্যাপ ডাউনলোড লিংক দিন]
-🌐 ওয়েবসাইট: [ওয়েবসাইট লিংক দিন]
+📁 প্রেস কিট ও ছবি: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+📱 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📱 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
 
 ধন্যবাদান্তে,
-[আপনার নাম]
-সহ-প্রতিষ্ঠাতা ও সিইও, ঘরখুঁজি (Ghorkhuji)
-ফোন / হোয়াটসঅ্যাপ: +8801XXXXXXXXX
-ইমেইল: [আপনার অফিসিয়াল ইমেইল]`
+Kazi Tahmidur Rahman
+Founder & CEO, Ghorkhuji
+ইমেইল: kazitahmidurrahman01@gmail.com`
                 },
                 en: {
                     subject: `[Press Release] Tackling Urban Loneliness & House Hunting: Bangladeshi Student-Led Startup 'Ghorkhuji' Builds a Digital Living Ecosystem`,
@@ -481,15 +480,15 @@ Key Innovations of Ghorkhuji:
 
 We cordially request your esteemed publication to feature this inspiring student-led technological innovation that is building a modern "Digital Living Ecosystem" for Bangladesh.
 
-📁 Media Kit & High-Res Images: [Google Drive Link]
-📱 Download App (Play Store & App Store): [App Links]
-🌐 Website: [Website Link]
+📁 Media Kit & High-Res Images: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+📱 Google Play Store: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📱 Apple App Store: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 Website: https://www.ghorkhuji.com
 
 Warm regards,
-[Your Name]
-Co-Founder & CEO, Ghorkhuji
-Phone / WhatsApp: +8801XXXXXXXXX
-Email: [Your Official Email]`
+Kazi Tahmidur Rahman
+Founder & CEO, Ghorkhuji
+Email: kazitahmidurrahman01@gmail.com`
                 }
             },
             wa: {
@@ -501,12 +500,15 @@ Email: [Your Official Email]`
 
 আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি স্মার্ট কমিউনিটি গড়ে তুলেছি।
 
-যাত্রা শুরুর মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ ব্যবহারকারী যুক্ত হয়েছেন এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে রয়েছে।
+যাত্রা শুরুর মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ ব্যবহারকারী যুক্ত হয়েছেন এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে লাইভ রয়েছে।
+
+📲 অ্যাপ ডাউনলোড: https://play.google.com/store/apps/details?id=com.ghorkhuji
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
 
 আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই ছাত্র-উদ্যোগ নিয়ে একটি ছোট ফিচার প্রকাশের জন্য একটি প্রেস রিলিজ ও হাই-কোয়ালিটি ছবি প্রস্তুত করেছি। আপনি অনুমতি দিলে কি বিস্তারিত তথ্য ও প্রেস রিলিজটি এখানে শেয়ার করতে পারি?
 
 ধন্যবাদ!
-টিম ঘরখুঁজি | হোয়াটসঅ্যাপ: +8801XXXXXXXXX`
+Kazi Tahmidur Rahman | টিম ঘরখুঁজি`
                 },
                 en: {
                     subject: '',
@@ -517,10 +519,14 @@ We have built a 100% free digital living ecosystem solving zero-brokerage home r
 
 Within just 1 month of launch, we have crossed 2,500+ active users and were previously featured in 12 national media outlets. The app is completely free on both Google Play Store and Apple App Store.
 
+📲 Play Store: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📲 App Store: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 Website: https://www.ghorkhuji.com
+
 We have prepared a concise press release with high-res photos for your esteemed platform. May I share the details with you here?
 
 Best regards,
-Team Ghorkhuji | Phone/WhatsApp: +8801XXXXXXXXX`
+Kazi Tahmidur Rahman | Team Ghorkhuji`
                 }
             }
         };
@@ -695,15 +701,15 @@ Team Ghorkhuji | Phone/WhatsApp: +8801XXXXXXXXX`
 তরুণ প্রজন্মের মেধা ও প্রযুক্তি কাজে লাগিয়ে একটি আধুনিক "ডিজিটাল লিভিং ইকোসিস্টেম" গড়ে তুলতে শিক্ষার্থীদের এই ইতিবাচক উদ্যোগ নিয়ে আপনার স্বনামধন্য গণমাধ্যমে একটি প্রতিবেদন বা ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।
 
 সংবাদের ব্যবহারের জন্য উচ্চ রেজোলিউশনের প্রতিষ্ঠাতা ও অ্যাপের ছবিসহ প্রেস কিট গুগল ড্রাইভ লিংকে সংযুক্ত করা হলো:
-📁 প্রেস কিট ও ছবি: [গুগল ড্রাইভ লিংক দিন]
-📱 গুগল প্লে স্টোর ও অ্যাপ স্টোর লিংক: [অ্যাপ ডাউনলোড লিংক দিন]
-🌐 ওয়েবসাইট: [ওয়েবসাইট লিংক দিন]
+📁 প্রেস কিট ও ছবি: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+📱 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📱 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
 
 ধন্যবাদান্তে,
-[আপনার নাম]
-সহ-প্রতিষ্ঠাতা ও সিইও, ঘরখুঁজি (Ghorkhuji)
-ফোন / হোয়াটসঅ্যাপ: +8801XXXXXXXXX
-ইমেইল: [আপনার অফিসিয়াল ইমেইল]`);
+Kazi Tahmidur Rahman
+Founder & CEO, Ghorkhuji
+ইমেইল: kazitahmidurrahman01@gmail.com`);
                 const mailLink = `mailto:${item.email1}?cc=${item.email2}&subject=${mailSubject}&body=${mailBody}`;
 
                 const cleanPhone = item.phone.replace(/[^0-9]/g, '');
@@ -712,12 +718,15 @@ Team Ghorkhuji | Phone/WhatsApp: +8801XXXXXXXXX`
 
 আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি স্মার্ট কমিউনিটি গড়ে তুলেছি।
 
-যাত্রা শুরুর মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ ব্যবহারকারী যুক্ত হয়েছেন এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে রয়েছে।
+যাত্রা শুরুর মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ ব্যবহারকারী যুক্ত হয়েছেন এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে লাইভ রয়েছে।
+
+📲 অ্যাপ ডাউনলোড: https://play.google.com/store/apps/details?id=com.ghorkhuji
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
 
 আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই ছাত্র-উদ্যোগ নিয়ে একটি ছোট ফিচার প্রকাশের জন্য একটি প্রেস রিলিজ ও হাই-কোয়ালিটি ছবি প্রস্তুত করেছি। আপনি অনুমতি দিলে কি বিস্তারিত তথ্য ও প্রেস রিলিজটি এখানে শেয়ার করতে পারি?
 
 ধন্যবাদ!
-টিম ঘরখুঁজি | হোয়াটসঅ্যাপ: +8801XXXXXXXXX`);
+Kazi Tahmidur Rahman | টিম ঘরখুঁজি`);
                 const waLink = `https://wa.me/${cleanPhone}?text=${waText}`;
 
                 tr.innerHTML = `
