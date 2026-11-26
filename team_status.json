@@ -219,8 +219,9 @@
     "time": "06:25 AM, 26 Nov"
   },
   "34": {
-    "status": "Pending",
-    "notes": "Reset to re-send to verified corporate email address"
+    "status": "Sent",
+    "sender": "Automation (Ghorkhuji)",
+    "time": "07:38 AM, 26 Nov"
   },
   "6": {
     "status": "Sent",
