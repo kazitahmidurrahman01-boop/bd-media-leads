@@ -68,9 +68,8 @@
     "time": "06:29 AM, 26 Nov"
   },
   "12": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:33 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "65": {
     "status": "Pending",
@@ -81,18 +80,16 @@
     "sender": ""
   },
   "14": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:35 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "26": {
     "status": "Pending",
     "sender": ""
   },
   "17": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:38 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "28": {
     "status": "Pending",
@@ -217,18 +214,16 @@
     "sender": ""
   },
   "6": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:26 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "53": {
     "status": "Pending",
     "sender": ""
   },
   "2": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:22 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "44": {
     "status": "Pending",
@@ -332,9 +327,8 @@
     "sender": ""
   },
   "7": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:27 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "52": {
     "status": "Pending",
@@ -397,18 +391,16 @@
     "sender": ""
   },
   "15": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:36 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "25": {
     "status": "Pending",
     "sender": ""
   },
   "18": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:39 AM, 26 Nov"
+    "status": "Pending",
+    "sender": ""
   },
   "42": {
     "status": "Pending",
