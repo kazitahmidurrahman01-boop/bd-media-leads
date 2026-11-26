@@ -24,9 +24,8 @@ def print(*args, **kwargs):
     return _orig_print(*args, **kwargs)
 
 try:
-    from generate_100_fb import leads_100
+    from media_leads_data import leads_100
 except ImportError:
-    sys.path.append(r"C:\Users\Tahmidur Rahman\.gemini\antigravity\brain\b8c69493-c0f4-4a58-aec3-d7ed3a450e03\scratch")
     from generate_100_fb import leads_100
 
 # CONFIGURATION
