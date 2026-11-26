@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলাদেশ মিডিয়া লিড ডিরেক্টরি (১০০টি মিডিয়া) - টিম আউটরিচ ড্যাশবোর্ড</title>
+    <title>বাংলাদেশ মিডিয়া লিড ডিরেক্টরি (১০০টি মিডিয়া) - ঘরখুঁজি টিম পিচিং ড্যাশবোর্ড</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -26,13 +26,14 @@
             background-color: var(--bg);
             color: var(--text-main);
             padding: 24px;
+            padding-bottom: 120px; /* Space for sticky bar */
             line-height: 1.5;
         }
-        .container { max-width: 1480px; margin: 0 auto; }
+        .container { max-width: 1580px; margin: 0 auto; }
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
             color: white;
-            padding: 32px;
+            padding: 28px 36px;
             border-radius: 20px;
             margin-bottom: 24px;
             box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
@@ -42,8 +43,8 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-        header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
-        header p { opacity: 0.9; font-size: 15px; }
+        header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+        header p { opacity: 0.9; font-size: 14px; }
         .sync-badge {
             display: inline-flex;
             align-items: center;
@@ -58,8 +59,7 @@
             margin-top: 10px;
         }
         .sync-dot {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background-color: #22c55e;
             border-radius: 50%;
             box-shadow: 0 0 10px #22c55e;
@@ -78,26 +78,208 @@
             border-radius: 12px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.18);
-            min-width: 95px;
+            min-width: 90px;
         }
         .stat-badge .num { font-size: 22px; font-weight: 700; }
         .stat-badge .lbl { font-size: 12px; opacity: 0.85; margin-top: 2px; }
 
+        /* PERMANENT TOP PITCH CARDS */
+        .pitch-section {
+            margin-bottom: 24px;
+            background: #ffffff;
+            border: 2px solid #3b82f6;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.12);
+        }
+        .pitch-section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pitch-section-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .pitch-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 960px) {
+            .pitch-cards-grid { grid-template-columns: 1fr; }
+        }
+        .pitch-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 16px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .pitch-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .pitch-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-toggles { display: flex; gap: 6px; }
+        .lang-btn {
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            background: white;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .pitch-box {
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 13px;
+            line-height: 1.6;
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            color: #1e293b;
+            font-family: inherit;
+        }
+        .btn-copy-main {
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            font-family: inherit;
+            width: 100%;
+        }
+        .btn-copy-email {
+            background: #ef4444;
+            color: white;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+        }
+        .btn-copy-email:hover { background: #dc2626; transform: translateY(-1px); }
+        .btn-copy-wa {
+            background: #16a34a;
+            color: white;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+        }
+        .btn-copy-wa:hover { background: #15803d; transform: translateY(-1px); }
+
+        /* STICKY FLOATING BOTTOM ACTION BAR */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-top: 2px solid rgba(59, 130, 246, 0.4);
+            padding: 12px 28px;
+            z-index: 2000;
+            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.35);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .sticky-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: white;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+        .sticky-name-input {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 6px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .sticky-name-input input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #67e8f9;
+            font-weight: 700;
+            font-size: 14px;
+            width: 140px;
+            font-family: inherit;
+        }
+        .sticky-name-input input::placeholder { color: rgba(255, 255, 255, 0.6); font-weight: normal; }
+        .sticky-btns {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .sticky-btn {
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s;
+            font-family: inherit;
+            color: white;
+        }
+        .sticky-btn-email { background: #ef4444; }
+        .sticky-btn-email:hover { background: #dc2626; transform: scale(1.03); }
+        .sticky-btn-wa { background: #16a34a; }
+        .sticky-btn-wa:hover { background: #15803d; transform: scale(1.03); }
+
         /* Controls */
         .controls {
             display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 14px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
             align-items: center;
         }
-        .search-box { flex: 1; min-width: 300px; position: relative; }
+        .search-box { flex: 1; min-width: 280px; position: relative; }
         .search-box input {
             width: 100%;
-            padding: 13px 16px 13px 44px;
+            padding: 12px 16px 12px 42px;
             border: 1px solid var(--border);
             border-radius: 12px;
-            font-size: 15px;
+            font-size: 14px;
             outline: none;
             background: white;
             transition: all 0.2s;
@@ -109,16 +291,16 @@
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
         }
         .search-icon {
-            position: absolute; left: 15px; top: 50%;
+            position: absolute; left: 14px; top: 50%;
             transform: translateY(-50%); color: var(--text-muted);
         }
         .filter-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
         .filter-btn {
-            padding: 9px 16px;
+            padding: 8px 14px;
             border: 1px solid var(--border);
             background: white;
             border-radius: 10px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s;
@@ -150,25 +332,25 @@
         }
         .table-wrapper { overflow-x: auto; max-height: 800px; }
         table {
-            width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;
+            width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;
         }
         th {
             position: sticky; top: 0; background: #f1f5f9; color: #334155;
-            font-weight: 600; padding: 14px 16px; border-bottom: 2px solid var(--border);
+            font-weight: 600; padding: 12px 14px; border-bottom: 2px solid var(--border);
             white-space: nowrap; z-index: 10;
         }
-        td { padding: 13px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+        td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
         tr:hover td { background-color: #f8fafc; }
-        .media-name { font-weight: 600; font-size: 15px; color: var(--text-main); }
+        .media-name { font-weight: 600; font-size: 14px; color: var(--text-main); }
         .badge {
-            display: inline-block; padding: 4px 10px; border-radius: 9999px;
-            font-size: 12px; font-weight: 500; white-space: nowrap;
+            display: inline-block; padding: 3px 8px; border-radius: 9999px;
+            font-size: 11px; font-weight: 500; white-space: nowrap;
         }
         .badge-cat { background: #e0e7ff; color: #3730a3; }
         .action-btns { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
         .btn {
-            display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px;
-            border-radius: 8px; font-size: 12px; font-weight: 600; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 4px; padding: 5px 9px;
+            border-radius: 7px; font-size: 12px; font-weight: 600; text-decoration: none;
             transition: all 0.15s; cursor: pointer; border: none; font-family: inherit;
         }
         .btn-email { background: #fee2e2; color: #b91c1c; }
@@ -180,27 +362,266 @@
         .btn-link { background: #f1f5f9; color: #475569; }
         .btn-link:hover { background: #e2e8f0; }
         
+        /* Dedicated Save Container */
+        .save-control-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: nowrap;
+        }
         .status-select {
-            padding: 7px 12px; border-radius: 8px; border: 1px solid var(--border);
-            font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer;
+            padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border);
+            font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer;
             outline: none; transition: all 0.2s;
         }
         .status-pending { color: #dc2626; background: #fef2f2; border-color: #fca5a5; }
         .status-sent { color: #2563eb; background: #eff6ff; border-color: #93c5fd; }
         .status-published { color: #15803d; background: #f0fdf4; border-color: #86efac; }
 
+        .sender-input {
+            padding: 6px 9px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 500;
+            width: 110px;
+            outline: none;
+            font-family: inherit;
+            background: #ffffff;
+        }
+        .sender-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+        }
+
+        .btn-row-save {
+            background: #2563eb;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+        .btn-row-save:hover {
+            background: #1d4ed8;
+            transform: scale(1.03);
+        }
+        .btn-row-save.saved {
+            background: #16a34a;
+        }
+
         .copy-pill {
-            cursor: pointer; padding: 2px 7px; background: #f1f5f9; border-radius: 6px;
-            font-size: 12px; color: #475569; display: inline-flex; align-items: center;
-            gap: 4px; border: 1px solid #cbd5e1; margin-top: 4px;
+            cursor: pointer; padding: 2px 6px; background: #f1f5f9; border-radius: 5px;
+            font-size: 11px; color: #475569; display: inline-flex; align-items: center;
+            gap: 4px; border: 1px solid #cbd5e1; margin-top: 3px;
         }
         .copy-pill:hover { background: #e2e8f0; color: #0f172a; }
 
         #toast {
-            position: fixed; bottom: 24px; right: 24px; background: #0f172a;
-            color: white; padding: 12px 20px; border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); font-size: 14px;
-            display: none; z-index: 1000;
+            position: fixed; bottom: 85px; right: 24px; background: #0f172a;
+            color: white; padding: 14px 24px; border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); font-size: 14px;
+            display: none; z-index: 3000; font-weight: 600;
+        }
+
+        /* MOBILE RESPONSIVE OPTIMIZATION */
+        @media (max-width: 860px) {
+            body {
+                padding: 10px;
+                padding-bottom: 130px;
+            }
+            header {
+                padding: 18px 14px;
+                border-radius: 16px;
+                gap: 14px;
+            }
+            header h1 {
+                font-size: 19px;
+                line-height: 1.3;
+            }
+            header p {
+                font-size: 12px;
+            }
+            .sync-badge {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+            .header-stats {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .stat-badge {
+                min-width: unset;
+                padding: 8px;
+            }
+            .stat-badge .num {
+                font-size: 18px;
+            }
+            .stat-badge .lbl {
+                font-size: 11px;
+            }
+            .pitch-section {
+                padding: 14px;
+                border-radius: 16px;
+            }
+            .pitch-section-title {
+                font-size: 15px;
+            }
+            .pitch-section-desc {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+            .pitch-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .pitch-card {
+                padding: 14px;
+            }
+            .pitch-card-title {
+                font-size: 14px;
+            }
+            .pitch-box {
+                max-height: 160px;
+                font-size: 12px;
+            }
+            .btn-copy-main {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .filter-buttons {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+                padding-bottom: 6px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .filter-btn {
+                padding: 7px 12px;
+                font-size: 12px;
+                flex-shrink: 0;
+            }
+            .table-card {
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                overflow: visible;
+            }
+            .table-wrapper {
+                overflow: visible;
+                max-height: unset;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+                width: 100%;
+            }
+            thead {
+                display: none;
+            }
+            tbody tr {
+                background: #ffffff;
+                border: 1px solid #cbd5e1;
+                border-radius: 16px;
+                padding: 16px;
+                margin-bottom: 16px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+            tbody td {
+                padding: 8px 0;
+                border-bottom: 1px solid #f1f5f9;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+            tbody td:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-top: 8px;
+            }
+            tbody td::before {
+                content: attr(data-label);
+                font-size: 11px;
+                font-weight: 700;
+                color: #64748b;
+                margin-bottom: 3px;
+                text-transform: uppercase;
+            }
+            .media-name {
+                font-size: 16px;
+                color: #1e3a8a;
+            }
+            .action-btns {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                margin-top: 4px;
+            }
+            .action-btns .btn {
+                justify-content: center;
+                padding: 9px;
+                font-size: 13px;
+                border-radius: 8px;
+            }
+            .save-control-cell {
+                width: 100%;
+                flex-direction: column;
+                gap: 8px;
+                align-items: stretch !important;
+            }
+            .status-select, .sender-input, .btn-row-save {
+                width: 100% !important;
+                height: 42px;
+                font-size: 14px;
+                text-align: center;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+            .sticky-bar {
+                padding: 10px 14px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .sticky-left {
+                width: 100%;
+                font-size: 12px;
+                justify-content: center;
+                text-align: center;
+            }
+            .sticky-name-input {
+                width: 100%;
+                justify-content: center;
+            }
+            .sticky-name-input input {
+                width: 100%;
+            }
+            .sticky-btns {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .sticky-btn {
+                justify-content: center;
+                padding: 10px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -209,10 +630,10 @@
         <header>
             <div>
                 <h1>🚀 বাংলাদেশ মিডিয়া লিড ড্যাশবোর্ড (১০০টি মিডিয়া)</h1>
-                <p>বাসা খোঁজা ও বাসা ভাড়ার প্রোপটেক স্টার্টআপ (Ghorkhuji) টিম পিচিং ও সেন্ট্রাল ট্র্যাকার</p>
+                <p>বাসা খোঁজা ও বাসা ভাড়ার প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji) টিম পিচিং ও সেন্ট্রাল ট্র্যাকার</p>
                 <div class="sync-badge">
                     <span class="sync-dot"></span>
-                    <span id="syncText">টিম লাইভ সিঙ্ক অ্যাক্টিভ (সবাই একই স্ট্যাটাস দেখবে)</span>
+                    <span id="syncText">লাইফটাইম ক্লাউড সিঙ্ক চালু (যেকোনো পরিবর্তন সারা জীবনের জন্য সেভ থাকবে)</span>
                 </div>
             </div>
             <div class="header-stats">
@@ -235,10 +656,106 @@
             </div>
         </header>
 
+        <!-- PERMANENT PITCH & COPY SECTION (DIRECTLY VISIBLE) -->
+        <div class="pitch-section">
+            <div class="pitch-section-title">
+                📋 মিডিয়া পিচ ও প্রেস রিলিজ কিট (নিচের বড় বাটনে ক্লিক করে সরাসরি কপি করুন)
+            </div>
+            <div class="pitch-section-desc">
+                এখানে আপনার প্লে স্টোর, অ্যাপ স্টোর, ওয়েবসাইট, প্রেস কিট ড্রাইভ লিংক এবং প্রতিষ্ঠাতা তথ্য ইতিমধ্যে যুক্ত করা আছে। সরাসরি কপি করে মেইল বা হোয়াটসঅ্যাপে পাঠান।
+            </div>
+
+            <div class="pitch-cards-grid">
+                <!-- Email Pitch Card -->
+                <div class="pitch-card">
+                    <div class="pitch-card-header">
+                        <div class="pitch-card-title">✉️ ইমেইল প্রেস রিলিজ ড্রাফট</div>
+                        <div class="lang-toggles">
+                            <button id="emailBtnBn" class="lang-btn active" onclick="toggleEmailLang('bn')">🇧🇩 বাংলা</button>
+                            <button id="emailBtnEn" class="lang-btn" onclick="toggleEmailLang('en')">🇬🇧 English</button>
+                        </div>
+                    </div>
+                    <div id="emailSubjectLine" style="background: #e0f2fe; padding: 8px 12px; border-radius: 8px; font-size: 12px; color: #0369a1; font-weight: 600;">
+                        <strong>Subject:</strong> <span id="emailSubjectDisplay">[প্রেস রিলিজ] বাসা খোঁজা ও শহুরে একাকীত্ব দূর করতে বাংলাদেশি শিক্ষার্থীদের উদ্ভাবন: প্রোপটেক প্ল্যাটফর্ম 'ঘরখুঁজি'</span>
+                    </div>
+                    <div class="pitch-box" id="emailBodyDisplay">শ্রদ্ধেয় সম্পাদক / তথ্যপ্রযুক্তি ও ফিচার ইনচার্জ,
+আসসালামু আলাইকুম।
+
+রাজধানী ঢাকাসহ দেশের প্রধান শহরগুলোতে বাসা ভাড়া নেওয়া মানেই দালালের দৌরাত্ম্য, অযৌক্তিক কমিশন আর বাড়ি বাড়ি ঘুরে ক্লান্তিকর এক অভিজ্ঞতা। এর পাশাপাশি আধুনিক নাগরিক জীবনের আরেক নির্মম বাস্তবতা হলো "শহুরে একাকীত্ব"। গ্রামের মানুষ পাশের বাড়ির মানুষকে আপন জানলেও, ঢাকা শহরে পাশের ফ্ল্যাটের প্রতিবেশীও থাকে অচেনা ও বিচ্ছিন্ন।
+
+বাসা খোঁজার এই চিরচেনা ভোগান্তি দূর করতে এবং প্রতিবেশীদের মাঝে হারিয়ে যাওয়া সামাজিক বন্ধন ফিরিয়ে আনতে একদল উদ্যমী বাংলাদেশি শিক্ষার্থী গড়ে তুলেছে অভিনব প্রোপটেক ও নেইবারহুড প্ল্যাটফর্ম 'ঘরখুঁজি' (Ghorkhuji)।
+
+সম্পূর্ণ ফ্রিতে গুগল প্লে স্টোর ও অ্যাপল অ্যাপ স্টোরে উন্মুক্ত এই অ্যাপটি যাত্রা শুরুর মাত্র এক মাসের মাথায় ইতিমধ্যে আড়াই হাজারের (২৫০০+) বেশি সক্রিয় ব্যবহারকারীর মাইলস্টোন অর্জন করেছে। পূর্বে দেশের প্রথম সারির ১২টি শীর্ষ গণমাধ্যমেও উদ্যোগটি প্রশংসিত হয়েছে।
+
+'ঘরখুঁজি' অ্যাপের মূল আকর্ষণ ও অনন্য ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: বাড়িওয়ালারা সরাসরি নিজেদের বাসার আসল ছবি ও বিবরণ পোস্ট করেন। কোনো দালালের কমিশন বা মধ্যস্থতা ছাড়াই ভাড়াটিয়ারা সরাসরি বাড়িওয়ালার সাথে কথা বলে বাসা চূড়ান্ত করতে পারেন।
+২. রুমমেট খোঁজার স্মার্ট সমাধান: ব্যাচেলর ও শিক্ষার্থীদের জন্য বাসা ভাড়া ভাগাভাগি করার নির্ভরযোগ্য সমাধান। নিজের রুমের ছবি পোস্ট করে সহজেই পছন্দের রুমমেট খুঁজে নেওয়া যায়।
+৩. হাইপার-লোকাল প্রতিবেশী ফিড (১-১০ কিমি): আপনার আশেপাশের ১ থেকে ১০ কিলোমিটারের বাসিন্দাদের নিয়ে গঠিত নিজস্ব লোকাল ফিড। ড্রেন বা রাস্তার কাজ, যানজট, জলাবদ্ধতা, এলাকার ব্রেকিং খবর কিংবা পাড়ার নতুন চায়ের দোকানের আড্ডা—এলাকার খবর থাকবে শুধুই এলাকার মানুষের কাছে।
+৪. নেইবারহুড কানেক্ট ও একাকীত্ব দূরীকরণ: নতুন এলাকায় আসলেও একাকীত্বে ভুগতে হবে না। 'Neighbors People' ফিচারের মাধ্যমে আশেপাশের মানুষদের কানেক্ট রিকোয়েস্ট পাঠানো এবং স্থানীয় কমিউনিটি আড্ডায় যুক্ত হওয়া যায়।
+
+তরুণ প্রজন্মের মেধা ও প্রযুক্তি কাজে লাগিয়ে একটি আধুনিক "ডিজিটাল লিভিং ইকোসিস্টেম" গড়ে তুলতে শিক্ষার্থীদের এই ইতিবাচক উদ্যোগ নিয়ে আপনার স্বনামধন্য গণমাধ্যমে একটি প্রতিবেদন বা ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।
+
+সংবাদের ব্যবহারের জন্য উচ্চ রেজোলিউশনের প্রতিষ্ঠাতা ও অ্যাপের ছবিসহ প্রেস কিট গুগল ড্রাইভ লিংকে সংযুক্ত করা হলো:
+📁 প্রেস কিট ও ছবি (Google Drive): https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+📱 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📱 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
+
+ধন্যবাদান্তে,
+Kazi Tahmidur Rahman
+Founder & CEO, Ghorkhuji
+ইমেইল: kazitahmidurrahman01@gmail.com</div>
+                    <button class="btn-copy-main btn-copy-email" id="btnCopyEmailAction" onclick="copyFullEmail()">
+                        📋 এক ক্লিকে সম্পূর্ণ ইমেইল কপি করুন
+                    </button>
+                </div>
+
+                <!-- WhatsApp Pitch Card -->
+                <div class="pitch-card">
+                    <div class="pitch-card-header">
+                        <div class="pitch-card-title">💬 WhatsApp পিচ স্ক্রিপ্ট</div>
+                        <div class="lang-toggles">
+                            <button id="waBtnFull" class="lang-btn active" onclick="toggleWaMode('full')">📄 বিস্তারিত বিবরণসহ</button>
+                            <button id="waBtnShort" class="lang-btn" onclick="toggleWaMode('short')">⚡ শর্ট বার্তা</button>
+                            <button id="waBtnEn" class="lang-btn" onclick="toggleWaMode('en')">🇬🇧 English</button>
+                        </div>
+                    </div>
+                    <div style="background: #dcfce7; padding: 8px 12px; border-radius: 8px; font-size: 12px; color: #15803d; font-weight: 600;" id="waStatusHint">
+                        ✓ হোয়াটসঅ্যাপে সাংবাদিকদের পাঠানোর উপযোগী পূর্ণাঙ্গ বিবরণ ও সমস্ত লিংক সংযুক্ত
+                    </div>
+                    <div class="pitch-box" id="waBodyDisplay">আসসালামু আলাইকুম [ভাইয়া/আপু],
+আশা করি ভালো আছেন। আমি বাংলাদেশি শিক্ষার্থীদের তৈরি প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji)-এর পক্ষ থেকে নক দিয়েছি।
+
+আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি আধুনিক ডিজিটাল লিভিং ইকোসিস্টেম গড়ে তুলেছি।
+
+মূল ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: কোনো দালালের কমিশন ছাড়া সরাসরি বাড়িওয়ালার সাথে যোগাযোগ।
+২. রুমমেট খোঁজা: ব্যাচেলর ও স্টুডেন্টদের রুমমেট খোঁজার স্মার্ট সমাধান।
+৩. প্রতিবেশী ফিড (১-১০ কিমি): এলাকার ড্রেন/রাস্তার কাজ, রোড ব্লক ও হাইপার-লোকাল খবর।
+৪. নেইবারহুড কানেক্ট: প্রতিবেশীদের সাথে পরিচিত হওয়া ও শহুরে একাকীত্ব দূরীকরণ।
+
+মাইলস্টোন: মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ সক্রিয় ব্যবহারকারী এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে লাইভ রয়েছে।
+
+📲 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📲 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
+📁 প্রেস কিট ও ছবি: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+
+আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই ছাত্র-উদ্যোগ নিয়ে একটি ফিচার প্রকাশের জন্য অনুরোধ জানাচ্ছি।
+
+ধন্যবাদ!
+Kazi Tahmidur Rahman | Founder & CEO, ঘরখুঁজি</div>
+                    <button class="btn-copy-main btn-copy-wa" id="btnCopyWaAction" onclick="copyFullWa()">
+                        📋 এক ক্লিকে WhatsApp মেসেজ কপি করুন
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div class="controls">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="মিডিয়ার নাম, ইমেইল, ফোকাস বা নোট দিয়ে খুঁজুন..." oninput="filterData()">
+                <input type="text" id="searchInput" placeholder="মিডিয়ার নাম, ইমেইল, ফোকাস, প্রেরকের নাম বা নোট দিয়ে খুঁজুন..." oninput="filterData()">
             </div>
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="setCategory('সব', this)">সব (১০০)</button>
@@ -257,14 +774,14 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 45px; text-align: center;">#</th>
+                            <th style="width: 40px; text-align: center;">#</th>
                             <th>মিডিয়ার নাম ও ফোকাস</th>
                             <th>ক্যাটাগরি</th>
                             <th>ইমেইল এড্রেস</th>
                             <th>ফোন / হোয়াটসঅ্যাপ</th>
                             <th>বিশেষ নোট ও টিপস</th>
                             <th style="text-align: center;">সরাসরি যোগাযোগ (মেইল / চ্যাট / ফেসবুক)</th>
-                            <th style="text-align: center;">টিম স্ট্যাটাস (Real-Time)</th>
+                            <th style="text-align: center;">স্ট্যাটাস ও প্রেরকের নাম সেভ করুন (Save Action)</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -275,79 +792,361 @@
         </div>
     </div>
 
+    <!-- STICKY FLOATING BOTTOM ACTION BAR -->
+    <div class="sticky-bar">
+        <div class="sticky-left">
+            <div class="sticky-name-input">
+                <span>👤 আমার নাম:</span>
+                <input type="text" id="globalMyName" placeholder="আপনার নাম লিখুন..." oninput="saveMyName(this.value)">
+            </div>
+            <div style="font-size: 13px; opacity: 0.9;">
+                (নাম লিখলে স্ট্যাটাস বা 'সেভ করুন' বাটনে চাপ দিলে স্বয়ংক্রিয়ভাবে আপনার নাম লাইফটাইম সেভ হবে)
+            </div>
+        </div>
+        <div class="sticky-btns">
+            <button class="sticky-btn sticky-btn-email" onclick="copyFullEmail()">
+                ✉️ সম্পূর্ণ ইমেইল কপি
+            </button>
+            <button class="sticky-btn sticky-btn-wa" onclick="copyFullWa()">
+                💬 WhatsApp কপি
+            </button>
+        </div>
+    </div>
+
     <div id="toast">কপি করা হয়েছে!</div>
 
     <script>
-        const leads = [{"sl": 1, "cat": "স্টার্টআপ ও বিজনেস", "name": "Future Startup (FS)", "desk": "Startup Story / Founder Feature", "email1": "info@futurestartup.com", "email2": "editor@futurestartup.com", "phone": "+8801777683111", "display_phone": "+8801777-683111", "web": "https://futurestartup.com", "fb": "https://facebook.com/futurestartup", "notes": "বাংলাদেশের স্টার্টআপদের জন্য #১ প্ল্যাটফর্ম। ফাউন্ডার স্টোরি ও ইন-ডেপথ ইন্টারভিউ করে।"}, {"sl": 2, "cat": "স্টার্টআপ ও বিজনেস", "name": "The Business Standard (TBS)", "desk": "Tech & Startup Desk", "email1": "news@tbsnews.net", "email2": "tbsitdesk@gmail.com", "phone": "+8801844556677", "display_phone": "+8801844-556677", "web": "https://tbsnews.net", "fb": "https://facebook.com/tbsnews.net", "notes": "স্টার্টআপ ফিচার ও গ্রোথ স্টোরি নিয়মিত প্রকাশ করে।"}, {"sl": 3, "cat": "স্টার্টআপ ও বিজনেস", "name": "বণিক বার্তা (Bonik Barta)", "desk": "তথ্যপ্রযুক্তি ও করপোরেট", "email1": "news@bonikbarta.com", "email2": "bonikbarta.it@gmail.com", "phone": "+8801713388200", "display_phone": "+8801713-388200", "web": "https://bonikbarta.net", "fb": "https://facebook.com/bonikbarta", "notes": "বাংলাদেশের শীর্ষ বিজনেস দৈনিক। ইকনোমি ও ইনোভেশন রিপোর্ট করে।"}, {"sl": 4, "cat": "স্টার্টআপ ও বিজনেস", "name": "The Daily Star (Star Bytes)", "desk": "Tech & Youth Desk", "email1": "starbytes@thedailystar.net", "email2": "business@thedailystar.net", "phone": "+8801711594580", "display_phone": "+8801711-594580", "web": "https://thedailystar.net", "fb": "https://facebook.com/thedailystar", "notes": "তরুণ উদ্যোক্তা ও টেক স্টার্টআপ ফিচারের জন্য সবচেয়ে প্রভাবশালী।"}, {"sl": 5, "cat": "স্টার্টআপ ও বিজনেস", "name": "Dhaka Tribune", "desk": "Business & Tech Desk", "email1": "business@dhakatribune.com", "email2": "news@dhakatribune.com", "phone": "+8801755667788", "display_phone": "+8801755-667788", "web": "https://dhakatribune.com", "fb": "https://facebook.com/DhakaTribune", "notes": "ইনোভেশন, ডিজিটাল সার্ভিস ও তরুণদের ভেঞ্চার বান্ধব।"}, {"sl": 6, "cat": "স্টার্টআপ ও বিজনেস", "name": "টেকশহর (Techshohor)", "desk": "টেক নিউজ ও স্টার্টআপ", "email1": "news@techshohor.com", "email2": "editor@techshohor.com", "phone": "+8801711235478", "display_phone": "+8801711-235478", "web": "https://techshohor.com", "fb": "https://facebook.com/Techshohor", "notes": "বিশেষায়িত আইটি, মোবাইল অ্যাপ ও স্টার্টআপ পোর্টাল।"}, {"sl": 7, "cat": "স্টার্টআপ ও বিজনেস", "name": "ডিজিবাংলা (DigiBangla)", "desk": "আইটি ও উদ্ভাবন", "email1": "news@digibangla.tech", "email2": "info@digibangla.tech", "phone": "+8801977889900", "display_phone": "+8801977-889900", "web": "https://digibangla.tech", "fb": "https://facebook.com/DigiBangla.tech", "notes": "তথ্যপ্রযুক্তি ও স্টার্টআপ ভিত্তিক অনলাইন পোর্টাল।"}, {"sl": 8, "cat": "স্টার্টআপ ও বিজনেস", "name": "The Financial Express (FE)", "desk": "Business & Innovation Desk", "email1": "fe@fe-bd.com", "email2": "editor@thefinancialexpress.com.bd", "phone": "+8801711823901", "display_phone": "+8801711-823901", "web": "https://thefinancialexpress.com.bd", "fb": "https://facebook.com/thefinancialexpress.com.bd", "notes": "ফাইন্যান্সিয়াল ও রিয়েল এস্টেট অ্যানালাইসিস।"}, {"sl": 9, "cat": "স্টার্টআপ ও বিজনেস", "name": "Business Insider Bangladesh", "desk": "Startup & Tech", "email1": "news@businessinsiderbd.com", "email2": "editorial@businessinsiderbd.com", "phone": "+8801819214365", "display_phone": "+8801819-214365", "web": "https://businessinsiderbd.com", "fb": "https://facebook.com/businessinsiderbd", "notes": "বিজনেস ইনোভেশন ও উদ্যোক্তাদের সাক্ষাৎকার।"}, {"sl": 10, "cat": "স্টার্টআপ ও বিজনেস", "name": "ICE Business Times", "desk": "Entrepreneurship Feature", "email1": "info@ibtbd.net", "email2": "editor@ibtbd.net", "phone": "+88028833971", "display_phone": "+8802-8833971", "web": "https://ibtbd.net", "fb": "https://facebook.com/ibtbd", "notes": "প্রিমিয়াম বিজনেস ম্যাগাজিন ও লিডারশিপ স্টোরি।"}, {"sl": 11, "cat": "স্টার্টআপ ও বিজনেস", "name": "অর্থসূচক (Arthosuchak)", "desk": "বিজনেস ও পুঁজিবাজার", "email1": "news@arthosuchak.com", "email2": "arthosuchak@gmail.com", "phone": "+8801713456789", "display_phone": "+8801713-456789", "web": "https://arthosuchak.com", "fb": "https://facebook.com/arthosuchak", "notes": "দেশের প্রথম পূর্ণাঙ্গ অনলাইন বিজনেস পোর্টাল।"}, {"sl": 12, "cat": "স্টার্টআপ ও বিজনেস", "name": "শেয়ার বিজ (Share Biz)", "desk": "বাণিজ্য ও কর্পোরেট", "email1": "news@sharebiz.net", "email2": "sharebiz.bd@gmail.com", "phone": "+8801711909876", "display_phone": "+8801711-909876", "web": "https://sharebiz.net", "fb": "https://facebook.com/sharebiz.net", "notes": "বিজনেস ও করপোরেট নিউজ দৈনিক পত্রিকা।"}, {"sl": 13, "cat": "স্টার্টআপ ও বিজনেস", "name": "হাইফাই পাবলিক (HiFi Public)", "desk": "টেক ও ডিজিটাল কালচার", "email1": "contact@hifipublic.com", "email2": "editorial@hifipublic.com", "phone": "+8801712341234", "display_phone": "+8801712-341234", "web": "https://hifipublic.com", "fb": "https://facebook.com/hifipublic", "notes": "ডিজিটাল লাইফস্টাইল ও টেক স্টার্টআপের আর্টিক্যাল করে।"}, {"sl": 14, "cat": "স্টার্টআপ ও বিজনেস", "name": "Telecom Reporters Network (TRNB)", "desk": "টেলিকম ও আইসিটি", "email1": "trnb.bd@gmail.com", "email2": "info@trnb.org.bd", "phone": "+8801711786543", "display_phone": "+8801711-786543", "web": "https://trnb.org.bd", "fb": "https://facebook.com/TRNBOfficial", "notes": "টেলিকম ও তথ্যপ্রযুক্তি সাংবাদিকদের কেন্দ্রীয় ফোরাম।"}, {"sl": 15, "cat": "স্টার্টআপ ও বিজনেস", "name": "বিজনেস আই (The Business Eye)", "desk": "Startup & Property Desk", "email1": "editor@businesseye.com.bd", "email2": "info@businesseye.com.bd", "phone": "+8801819332244", "display_phone": "+8801819-332244", "web": "https://businesseye.com.bd", "fb": "https://facebook.com/businesseye.com.bd", "notes": "রিয়েল এস্টেট ও স্টার্টআপ বাণিজ্য কেন্দ্রিক ম্যাগাজিন।"}, {"sl": 16, "cat": "জাতীয় বাংলা দৈনিক", "name": "প্রথম আলো (Prothom Alo)", "desk": "বিজ্ঞান ও প্রযুক্তি / তারুণ্য", "email1": "tech@prothomalo.com", "email2": "online@prothomalo.com", "phone": "+8801711006677", "display_phone": "+8801711-006677", "web": "https://prothomalo.com", "fb": "https://facebook.com/DailyProthomAlo", "notes": "দেশের ১ নম্বর গণমাধ্যম। টেক ও চাকরি-বাকরি পাতায় স্টার্টআপ কাভার করে।"}, {"sl": 17, "cat": "জাতীয় বাংলা দৈনিক", "name": "কালের কণ্ঠ (Kaler Kantho)", "desk": "তথ্যপ্রযুক্তি পাতা", "email1": "kalerkantho.it@gmail.com", "email2": "news@kalerkantho.com", "phone": "+8801713247500", "display_phone": "+8801713-247500", "web": "https://kalerkantho.com", "fb": "https://facebook.com/kalerkantho", "notes": "আইটি ও টেক সেকশনে তরুণদের অ্যাপ/সার্ভিস গুরুত্ব পায়।"}, {"sl": 18, "cat": "জাতীয় বাংলা দৈনিক", "name": "সমকাল (Samakal)", "desk": "টেলিকম ও প্রযুক্তি / ফিচার", "email1": "samakalitdesk@gmail.com", "email2": "news@samakal.com", "phone": "+8801911300400", "display_phone": "+8801911-300400", "web": "https://samakal.com", "fb": "https://facebook.com/TheDailySamakal", "notes": "উদ্যোক্তা ও প্রযুক্তি সেকশনে নিয়মিত ফিচার প্রকাশ করে।"}, {"sl": 19, "cat": "জাতীয় বাংলা দৈনিক", "name": "যুগান্তর (Jugantor)", "desk": "আইটি কর্নার / তারুণ্যের মেলা", "email1": "itjugantor@gmail.com", "email2": "jugantor.online@gmail.com", "phone": "+8801713247600", "display_phone": "+8801713-247600", "web": "https://jugantor.com", "fb": "https://facebook.com/DailyJugantor", "notes": "আইটি কর্নার পাতায় নতুন উদ্ভাবন সহজে স্থান পায়।"}, {"sl": 20, "cat": "জাতীয় বাংলা দৈনিক", "name": "ইত্তেফাক (Daily Ittefaq)", "desk": "বিজ্ঞান ও প্রযুক্তি", "email1": "ittefaqonline@gmail.com", "email2": "news@ittefaq.com.bd", "phone": "+8801711546000", "display_phone": "+8801711-546000", "web": "https://ittefaq.com.bd", "fb": "https://facebook.com/ittefaq.com.bd", "notes": "ঐতিহ্যবাহী জাতীয় দৈনিক, তথ্যপ্রযুক্তি পাতায় প্রকাশ করে।"}, {"sl": 21, "cat": "জাতীয় বাংলা দৈনিক", "name": "বাংলাদেশ প্রতিদিন (BD Pratidin)", "desk": "প্রযুক্তি ও উদ্যোক্তা", "email1": "bdpratidin@gmail.com", "email2": "news@bd-pratidin.com", "phone": "+8801713247555", "display_phone": "+8801713-247555", "web": "https://bd-pratidin.com", "fb": "https://facebook.com/bdpratidin", "notes": "সর্বোচ্চ সার্কুলেশন প্রিন্ট পত্রিকা।"}, {"sl": 22, "cat": "জাতীয় বাংলা দৈনিক", "name": "মানবজমিন (Manab Zamin)", "desk": "টেক ও লাইফস্টাইল", "email1": "mzamin.news@gmail.com", "email2": "online@mzamin.com", "phone": "+8801711667788", "display_phone": "+8801711-667788", "web": "https://mzamin.com", "fb": "https://facebook.com/dailymanabzamin", "notes": "জনপ্রিয় ট্যাবলয়েড পত্রিকা ও ওয়েব পোর্টাল।"}, {"sl": 23, "cat": "জাতীয় বাংলা দৈনিক", "name": "দেশ রূপান্তর (Desh Rupantor)", "desk": "প্রাত্যহিক ও প্রযুক্তি", "email1": "deshrupantor.news@gmail.com", "email2": "news@deshrupantor.com", "phone": "+8801700705500", "display_phone": "+8801700-705500", "web": "https://deshrupantor.com", "fb": "https://facebook.com/DeshRupantorOfficial", "notes": "তরুণ পাঠকদের মধ্যে দ্রুত সমাদৃত আধুনিক পত্রিকা।"}, {"sl": 24, "cat": "জাতীয় বাংলা দৈনিক", "name": "আমাদের সময় (Amader Shomoy)", "desk": "ফিচার ও তথ্যপ্রযুক্তি", "email1": "dainikamadershomoy@gmail.com", "email2": "online@dainikamadershomoy.com", "phone": "+8801711400500", "display_phone": "+8801711-400500", "web": "https://dainikamadershomoy.com", "fb": "https://facebook.com/dainikamadershomoy", "notes": "ফিচার পাতা ও অনলাইনে সংবাদ প্রচার করে।"}, {"sl": 25, "cat": "জাতীয় বাংলা দৈনিক", "name": "যায়যায়দিন (Jaijaidin)", "desk": "তথ্যপ্রযুক্তি পাতা", "email1": "jjdnewsdesk@gmail.com", "email2": "news@jaijaidinbd.com", "phone": "+8801711300200", "display_phone": "+8801711-300200", "web": "https://jaijaidinbd.com", "fb": "https://facebook.com/jaijaidinbd", "notes": "তথ্যপ্রযুক্তি ভিত্তিক সাপ্তাহিক পাতা রয়েছে।"}, {"sl": 26, "cat": "জাতীয় বাংলা দৈনিক", "name": "ইনকিলাব (Daily Inqilab)", "desk": "কম্পিউটার ও আইটি", "email1": "inqilabnewsdesk@gmail.com", "email2": "dailyinqilab@gmail.com", "phone": "+8801711423100", "display_phone": "+8801711-423100", "web": "https://dailyinqilab.com", "fb": "https://facebook.com/DailyInqilabOnline", "notes": "তথ্যপ্রযুক্তি বিভাগে ফিচার ও প্রেস রিলিজ ছাপায়।"}, {"sl": 27, "cat": "জাতীয় বাংলা দৈনিক", "name": "ভোরের কাগজ (Bhorer Kagoj)", "desk": "অর্থনীতি ও প্রযুক্তি", "email1": "bhorerkagoj.news@gmail.com", "email2": "news@bhorerkagoj.net", "phone": "+8801713005544", "display_phone": "+8801713-005544", "web": "https://bhorerkagoj.com", "fb": "https://facebook.com/bhorerkagoj.net", "notes": "ডিজিটাল উদ্যোগ ও স্টার্টআপ স্টোরি প্রচার করে।"}, {"sl": 28, "cat": "জাতীয় বাংলা দৈনিক", "name": "জনকণ্ঠ (Janakantha)", "desk": "তথ্যপ্রযুক্তি ও জীবনযাপন", "email1": "janakantha.it@gmail.com", "email2": "dailyjanakantha@gmail.com", "phone": "+8801711567890", "display_phone": "+8801711-567890", "web": "https://dailyjanakantha.com", "fb": "https://facebook.com/dailyjanakantha", "notes": "দেশের অন্যতম পুরনো জাতীয় দৈনিক।"}, {"sl": 29, "cat": "জাতীয় বাংলা দৈনিক", "name": "নয়া দিগন্ত (Naya Diganta)", "desk": "বিজ্ঞান ও ক্যারিয়ার", "email1": "nayadiganta.news@gmail.com", "email2": "news@dailynayadiganta.com", "phone": "+8801711890123", "display_phone": "+8801711-890123", "web": "https://dailynayadiganta.com", "fb": "https://facebook.com/dailynayadiganta", "notes": "উদ্যোক্তা ও ক্যারিয়ার পাতায় স্টার্টআপ নিউজ ছাপায়।"}, {"sl": 30, "cat": "জাতীয় বাংলা দৈনিক", "name": "আলোকিত বাংলাদেশ (Alokito BD)", "desk": "অর্থনীতি ও তথ্যপ্রযুক্তি", "email1": "alokitobangladesh.news@gmail.com", "email2": "info@alokitobangladesh.com", "phone": "+8801713009911", "display_phone": "+8801713-009911", "web": "https://alokitobangladesh.com", "fb": "https://facebook.com/alokitobangladesh.net", "notes": "অর্থনীতি ও আধুনিক উদ্যোগ ফিচার করে।"}, {"sl": 31, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক সংবাদ (Sangbad)", "desk": "বিজ্ঞান ও প্রযুক্তি পাতা", "email1": "sangbadnews@gmail.com", "email2": "info@sangbad.net.bd", "phone": "+8801711223344", "display_phone": "+8801711-223344", "web": "https://sangbad.net.bd", "fb": "https://facebook.com/TheDailySangbad", "notes": "ঐতিহাসিক জাতীয় দৈনিক পত্রিকা।"}, {"sl": 32, "cat": "জাতীয় বাংলা দৈনিক", "name": "খোলা কাগজ (Khola Kagoj)", "desk": "আইটি ও ফিচার", "email1": "kholakagojnews@gmail.com", "email2": "news@kholakagojbd.com", "phone": "+8801713554433", "display_phone": "+8801713-554433", "web": "https://kholakagojbd.com", "fb": "https://facebook.com/kholakagojbd", "notes": "তরুণ উদ্যোক্তাদের সাফল্য গল্প নিয়মিত প্রচার করে।"}, {"sl": 33, "cat": "জাতীয় বাংলা দৈনিক", "name": "মানবকণ্ঠ (Manobkantha)", "desk": "প্রযুক্তি ও জীবন", "email1": "manobkantha.news@gmail.com", "email2": "news@manobkantha.com.bd", "phone": "+8801711887766", "display_phone": "+8801711-887766", "web": "https://manobkantha.com.bd", "fb": "https://facebook.com/manobkantha", "notes": "প্রযুক্তি পাতায় নিয়মিত ফিচার প্রকাশ করে।"}, {"sl": 34, "cat": "জাতীয় বাংলা দৈনিক", "name": "আমার সংবাদ (Amar Sangbad)", "desk": "অর্থনীতি ও তথ্যপ্রযুক্তি", "email1": "amarsangbad24@gmail.com", "email2": "news@amarsangbad.com", "phone": "+8801711998877", "display_phone": "+8801711-998877", "web": "https://amarsangbad.com", "fb": "https://facebook.com/amarsangbad", "notes": "দ্রুত বর্ধনশীল জাতীয় দৈনিক।"}, {"sl": 35, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক বর্তমান (Dainik Bartaman)", "desk": "বাণিজ্য ও আইসিটি", "email1": "bartamannews@gmail.com", "email2": "editor@dailybartaman.com", "phone": "+8801711665544", "display_phone": "+8801711-665544", "web": "https://dailybartaman.com", "fb": "https://facebook.com/dailybartaman", "notes": "জাতীয় প্রিন্ট পত্রিকা ও নিউজ পোর্টাল।"}, {"sl": 36, "cat": "জাতীয় বাংলা দৈনিক", "name": "সকালের সময় (Sokaler Somoy)", "desk": "প্রযুক্তি ও তারুণ্য", "email1": "sokalersomoy.bd@gmail.com", "email2": "news@sokalersomoy.com", "phone": "+8801713112233", "display_phone": "+8801713-112233", "web": "https://sokalersomoy.com", "fb": "https://facebook.com/sokalersomoy.bd", "notes": "তরুণদের বিষয়াদি গুরুত্ব সহকারে কাভার করে।"}, {"sl": 37, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক জনতা (Janata)", "desk": "আইটি ও সংবাদ", "email1": "janatanewsdesk@gmail.com", "email2": "info@dailyjanata.com", "phone": "+8801711334455", "display_phone": "+8801711-334455", "web": "https://dailyjanata.com", "fb": "https://facebook.com/dailyjanata", "notes": "প্রবীণ ও ঐতিহ্যবাহী প্রিন্ট পত্রিকা।"}, {"sl": 38, "cat": "জাতীয় বাংলা দৈনিক", "name": "প্রতিদিনের সংবাদ (Pratidin er Sangbad)", "desk": "উদ্যোক্তা কর্নার", "email1": "protidinersangbad@gmail.com", "email2": "news@protidinersangbad.com", "phone": "+8801713445566", "display_phone": "+8801713-445566", "web": "https://protidinersangbad.com", "fb": "https://facebook.com/protidinersangbad", "notes": "উদ্যোক্তাদের জন্য আলাদা ফিচার পাতা রয়েছে।"}, {"sl": 39, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক সংগ্রাম (Daily Sangram)", "desk": "অর্থ ও বাণিজ্য পাতা", "email1": "sangramnewsdesk@gmail.com", "email2": "news@dailysangram.com", "phone": "+8801711556677", "display_phone": "+8801711-556677", "web": "https://dailysangram.com", "fb": "https://facebook.com/dailysangram", "notes": "আইটি ও অর্থনীতি বিভাগ সক্রিয়।"}, {"sl": 40, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক সময়ের আলো (Somoyer Alo)", "desk": "বিজ্ঞান ও প্রযুক্তি", "email1": "somoyeralonews@gmail.com", "email2": "news@shomoyeralo.com", "phone": "+8801713889900", "display_phone": "+8801713-889900", "web": "https://shomoyeralo.com", "fb": "https://facebook.com/shomoyeralo", "notes": "আধুনিক ও পরিচ্ছন্ন লেআউটের নতুন দৈনিক।"}, {"sl": 41, "cat": "জাতীয় বাংলা দৈনিক", "name": "কালবেলা (Kalbela)", "desk": "আইসিটি ও ইনোভেশন", "email1": "news@kalbela.com", "email2": "kalbela.tech@gmail.com", "phone": "+8801958889900", "display_phone": "+8801958-889900", "web": "https://kalbela.com", "fb": "https://facebook.com/kalbelaonline", "notes": "বর্তমান সময়ের অন্যতম হাই-প্রোফাইল পত্রিকা ও পোর্টাল।"}, {"sl": 42, "cat": "জাতীয় বাংলা দৈনিক", "name": "আজকের পত্রিকা (Ajker Patrika)", "desk": "টেক ও ক্যারিয়ার", "email1": "ajkerpatrika.it@gmail.com", "email2": "news@ajkerpatrika.com", "phone": "+8801713667788", "display_phone": "+8801713-667788", "web": "https://ajkerpatrika.com", "fb": "https://facebook.com/ajkerpatrikabd", "notes": "ইউএস-বাংলা গ্রুপের বড় মিডিয়া উদ্যোগ।"}, {"sl": 43, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক নাগরিক (Dainik Nagorik)", "desk": "নগর ও জীবনযাপন", "email1": "nagoriknewsdesk@gmail.com", "email2": "news@dainiknagorik.com", "phone": "+8801711778899", "display_phone": "+8801711-778899", "web": "https://dainiknagorik.com", "fb": "https://facebook.com/dainiknagorik", "notes": "শহুরে সমস্যা ও সমাধান (যেমন বাসা ভাড়া) নিয়ে লিখে।"}, {"sl": 44, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক গণকণ্ঠ (Gonokantha)", "desk": "ফিচার ডেস্ক", "email1": "gonokanthanews@gmail.com", "email2": "info@gonokantha.com", "phone": "+8801711001122", "display_phone": "+8801711-001122", "web": "https://gonokantha.com", "fb": "https://facebook.com/gonokantha", "notes": "জাতীয় প্রিন্ট পত্রিকা।"}, {"sl": 45, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক জবাবদিহি (Jababdihi)", "desk": "বাণিজ্য ও আইটি", "email1": "jawabdihi.news@gmail.com", "email2": "news@jawabdihi.com", "phone": "+8801713223344", "display_phone": "+8801713-223344", "web": "https://jawabdihi.com", "fb": "https://facebook.com/jawabdihi", "notes": "জনস্বার্থ ও নাগরিক সেবা ফিচার করে।"}, {"sl": 46, "cat": "অনলাইন নিউজ পোর্টাল", "name": "bdnews24.com", "desk": "IT / Startup Desk", "email1": "newsroom@bdnews24.com", "email2": "bangla@bdnews24.com", "phone": "+8801711593300", "display_phone": "+8801711-593300", "web": "https://bangla.bdnews24.com", "fb": "https://facebook.com/bdnews24", "notes": "দেশের প্রথম ও অন্যতম প্রভাবশালী ২৪/৭ অনলাইন পোর্টাল।"}, {"sl": 47, "cat": "অনলাইন নিউজ পোর্টাল", "name": "Banglanews24.com", "desk": "তথ্যপ্রযুক্তি ও লাইফস্টাইল", "email1": "news@banglanews24.com", "email2": "banglanews24.it@gmail.com", "phone": "+8801713247575", "display_phone": "+8801713-247575", "web": "https://banglanews24.com", "fb": "https://facebook.com/banglanews24", "notes": "দ্রুততম সময়ে টেক ও লাইফস্টাইল সংবাদ পাবলিশ করে।"}, {"sl": 48, "cat": "অনলাইন নিউজ পোর্টাল", "name": "Jago News 24 (জাগোনিউজ২৪)", "desk": "তথ্যপ্রযুক্তি ও উদ্যোক্তা", "email1": "info@jagonews24.com", "email2": "jagonews24.tech@gmail.com", "phone": "+8801777742111", "display_phone": "+8801777-742111", "web": "https://jagonews24.com", "fb": "https://facebook.com/jagonews24", "notes": "বিশাল তরুণ পাঠক সমাজ, খুব দ্রুত ভাইরাল কাভারেজ দেয়।"}, {"sl": 49, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ঢাকা পোস্ট (Dhaka Post)", "desk": "আইটি ও ক্যারিয়ার", "email1": "news@dhakapost.com", "email2": "info@dhakapost.com", "phone": "+8801958393000", "display_phone": "+8801958-393000", "web": "https://dhakapost.com", "fb": "https://facebook.com/dhakapost", "notes": "নতুন স্টার্টআপ ও টেক ইনোভেশন নিয়মিত কাভার করে।"}, {"sl": 50, "cat": "অনলাইন নিউজ পোর্টাল", "name": "বাংলা ট্রিবিউন (Bangla Tribune)", "desk": "টেক অ্যান্ড গ্যাজেট", "email1": "news@banglatribune.com", "email2": "tribune.itdesk@gmail.com", "phone": "+8801755667799", "display_phone": "+8801755-667799", "web": "https://banglatribune.com", "fb": "https://facebook.com/BanglaTribuneOnline", "notes": "আধুনিক দৃষ্টিভঙ্গির ডিজিটাল নিউজ পোর্টাল।"}, {"sl": 51, "cat": "অনলাইন নিউজ পোর্টাল", "name": "রাইজিংবিডি (RisingBD)", "desk": "টেক বিশ্ব ও উদ্যোক্তা", "email1": "news@risingbd.com", "email2": "risingbd.it@gmail.com", "phone": "+8801713049800", "display_phone": "+8801713-049800", "web": "https://risingbd.com", "fb": "https://facebook.com/risingbd", "notes": "উদ্যোক্তা কর্নারে স্টার্টআপদের ফিচার করে।"}, {"sl": 52, "cat": "অনলাইন নিউজ পোর্টাল", "name": "সারাবাংলা (Sarabangla.net)", "desk": "প্রযুক্তি খবর", "email1": "news@sarabangla.net", "email2": "sarabanglanews@gmail.com", "phone": "+8801708123456", "display_phone": "+8801708-123456", "web": "https://sarabangla.net", "fb": "https://facebook.com/sarabangla.net", "notes": "ইনোভেশন ও টেক রিলিজ প্রকাশ করে।"}, {"sl": 53, "cat": "অনলাইন নিউজ পোর্টাল", "name": "চ্যানেল আই অনলাইন", "desk": "জীবনযাপন ও তথ্যপ্রযুক্তি", "email1": "online@channeli.tv", "email2": "news@channelionline.com", "phone": "+8801713009988", "display_phone": "+8801713-009988", "web": "https://channelionline.com", "fb": "https://facebook.com/channelionline", "notes": "চ্যানেল আই-এর অনলাইন ডিজিটাল উইং।"}, {"sl": 54, "cat": "অনলাইন নিউজ পোর্টাল", "name": "সময় নিউজ ডিজিটাল", "desk": "প্রযুক্তি ও বিজ্ঞান", "email1": "online@somoynews.tv", "email2": "desk@somoynews.tv", "phone": "+8801755556600", "display_phone": "+8801755-556600", "web": "https://somoynews.tv", "fb": "https://facebook.com/somoynews.tv", "notes": "ডিজিটাল নিউজের সর্বোচ্চ ফলোয়ার সমৃদ্ধ পোর্টাল।"}, {"sl": 55, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ইউএনবি (UNB)", "desk": "National / Tech Syndication", "email1": "unbnews@unb.com.bd", "email2": "unbdesk@gmail.com", "phone": "+8801711540100", "display_phone": "+8801711-540100", "web": "https://unb.com.bd", "fb": "https://facebook.com/unbnewsagency", "notes": "জাতীয় বার্তা সংস্থা—এখানে গেলে ৬০+ পত্রিকায় সিন্ডিকেশন হয়।"}, {"sl": 56, "cat": "অনলাইন নিউজ পোর্টাল", "name": "বাসস (BSS - জাতীয় বার্তা সংস্থা)", "desk": "অর্থনীতি ও আইসিটি ডেস্ক", "email1": "bssnews@bssnews.net", "email2": "editorial@bssnews.net", "phone": "+88029555030", "display_phone": "+8802-9555030", "web": "https://bssnews.net", "fb": "https://facebook.com/BSSNews", "notes": "সরকারি বার্তা সংস্থা; জাতীয় পলিসি ও স্টার্টআপ কাভার করে।"}, {"sl": 57, "cat": "অনলাইন নিউজ পোর্টাল", "name": "নিউজবাংলা২৪ (Newsbangla24)", "desk": "আইটি ও ইনোভেশন", "email1": "news@newsbangla24.com", "email2": "editorial@newsbangla24.com", "phone": "+8801977112233", "display_phone": "+8801977-112233", "web": "https://newsbangla24.com", "fb": "https://facebook.com/newsbangla24bd", "notes": "ইন-ডেপথ ফিচার ও ডিজিটাল রিপোর্টিংয়ে খ্যাত।"}, {"sl": 58, "cat": "অনলাইন নিউজ পোর্টাল", "name": "বার্তা২৪ (Barta24)", "desk": "তথ্যপ্রযুক্তি", "email1": "news@barta24.com", "email2": "barta24desk@gmail.com", "phone": "+8801711443322", "display_phone": "+8801711-443322", "web": "https://barta24.com", "fb": "https://facebook.com/barta24news", "notes": "ভিজ্যুয়াল নিউজ ও মাল্টিমিডিয়া পোর্টাল।"}, {"sl": 59, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ঢাকা টাইমস ২৪ (Dhaka Times)", "desk": "টেক ও মেট্রো", "email1": "dhakatimes24@gmail.com", "email2": "news@dhakatimes24.com", "phone": "+8801711990011", "display_phone": "+8801711-990011", "web": "https://dhakatimes24.com", "fb": "https://facebook.com/dhakatimes24", "notes": "ঢাকার শহুরে লাইফস্টাইল ও টেক স্টোরি প্রকাশ করে।"}, {"sl": 60, "cat": "অনলাইন নিউজ পোর্টাল", "name": "প্রিয় ডটকম (Priyo.com)", "desk": "স্টার্টআপ ও লাইফস্টাইল", "email1": "news@priyo.com", "email2": "contact@priyo.com", "phone": "+8801713998877", "display_phone": "+8801713-998877", "web": "https://priyo.com", "fb": "https://facebook.com/priyodotcom", "notes": "দেশের প্রথম দিকের জনপ্রিয় ডিজিটাল প্ল্যাটফর্ম।"}, {"sl": 61, "cat": "অনলাইন নিউজ পোর্টাল", "name": "অধিকার ডট নিউজ (Odhikar.news)", "desk": "তরুণ উদ্যোক্তা ও আইটি", "email1": "news@odhikar.news", "email2": "odhikar.desk@gmail.com", "phone": "+8801713221100", "display_phone": "+8801713-221100", "web": "https://odhikar.news", "fb": "https://facebook.com/odhikar.news", "notes": "তরুণদের অধিকার ও ক্যারিয়ার পোর্টাল।"}, {"sl": 62, "cat": "অনলাইন নিউজ পোর্টাল", "name": "শীর্ষ নিউজ (Sheersha News)", "desk": "আইটি ডেস্ক", "email1": "sheershanews@gmail.com", "email2": "news@sheershanews24.com", "phone": "+8801711889911", "display_phone": "+8801711-889911", "web": "https://sheershanews24.com", "fb": "https://facebook.com/sheershanews", "notes": "অনলাইন খবর ও ব্রেকিং নিউজ।"}, {"sl": 63, "cat": "অনলাইন নিউজ পোর্টাল", "name": "পরিবর্তন ডটকম (Poriborton)", "desk": "প্রযুক্তি ও তরুণ্য", "email1": "poribortonnews@gmail.com", "email2": "info@poriborton.news", "phone": "+8801711667700", "display_phone": "+8801711-667700", "web": "https://poriborton.news", "fb": "https://facebook.com/poriborton.news", "notes": "সামাজিক পরিবর্তন ও উদ্ভাবনী গল্প।"}, {"sl": 64, "cat": "অনলাইন নিউজ পোর্টাল", "name": "এখন টিভি ডিজিটাল (Ekhon.tv)", "desk": "বিজনেস ও ইনোভেশন", "email1": "news@ekhon.tv", "email2": "ekhontvdesk@gmail.com", "phone": "+8801966554433", "display_phone": "+8801966-554433", "web": "https://ekhon.tv", "fb": "https://facebook.com/ekhonmedia", "notes": "দেশের প্রথম পূর্ণাঙ্গ ডেডিকেটেড বিজনেস চ্যানেল ও পোর্টাল।"}, {"sl": 65, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ডিজিটাল বাংলাদেশ ২৪ (Digital BD)", "desk": "আইসিটি", "email1": "digitalbd24@gmail.com", "email2": "news@digitalbd.com", "phone": "+8801711332288", "display_phone": "+8801711-332288", "web": "https://digitalbd.com", "fb": "https://facebook.com/DigitalBangladesh24", "notes": "ডিজিটাল রূপান্তর ও অ্যাপ ভিত্তিক উদ্যোগ।"}, {"sl": 66, "cat": "অনলাইন নিউজ পোর্টাল", "name": "অর্থনীতি প্রতিদিন (Arthoneeti)", "desk": "অর্থনীতি ও বাণিজ্য", "email1": "arthoneeti.news@gmail.com", "email2": "editor@arthoneeti.com", "phone": "+8801711224466", "display_phone": "+8801711-224466", "web": "https://arthoneeti.com", "fb": "https://facebook.com/arthoneetiprotidin", "notes": "ইকনোমিক ও স্টার্টআপ আপডেট।"}, {"sl": 67, "cat": "অনলাইন নিউজ পোর্টাল", "name": "স্বাধীন বাংলা ২৪ (Shadhin Bangla)", "desk": "ফিচার পাতা", "email1": "shadhinbangla24@gmail.com", "email2": "news@shadhinbangla24.com", "phone": "+8801711557799", "display_phone": "+8801711-557799", "web": "https://shadhinbangla24.com", "fb": "https://facebook.com/shadhinbangla24", "notes": "জাতীয় অনলাইন পোর্টাল।"}, {"sl": 68, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ভোরের কাগজ অনলাইন (Bhorer Kagoj Online)", "desk": "আইটি ডেস্ক", "email1": "online@bhorerkagoj.net", "email2": "bhorerkagoj.desk@gmail.com", "phone": "+8801713005545", "display_phone": "+8801713-005545", "web": "https://bhorerkagoj.com", "fb": "https://facebook.com/bhorerkagoj.net", "notes": "ভোরের কাগজের ২৪ ঘণ্টা অনলাইন টিম।"}, {"sl": 69, "cat": "অনলাইন নিউজ পোর্টাল", "name": "দৈনিক শিক্ষা (Dainik Shiksha)", "desk": "তরুণ ও শিক্ষার্থী", "email1": "dainikshiksha@gmail.com", "email2": "news@dainikshiksha.com", "phone": "+8801711447788", "display_phone": "+8801711-447788", "web": "https://dainikshiksha.com", "fb": "https://facebook.com/dainikshiksha", "notes": "শিক্ষার্থী ও ব্যাচেলরদের বাসা সমস্যার সমাধানে উপযুক্ত।"}, {"sl": 70, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ডেইলি বাংলাদেশ (Daily Bangladesh)", "desk": "তথ্যপ্রযুক্তি", "email1": "dailybangladesh24@gmail.com", "email2": "news@daily-bangladesh.com", "phone": "+8801711883322", "display_phone": "+8801711-883322", "web": "https://daily-bangladesh.com", "fb": "https://facebook.com/dailybangladesh24", "notes": "জনপ্রিয় নিউজ পোর্টাল।"}, {"sl": 71, "cat": "ইংরেজি দৈনিক", "name": "Daily Sun", "desk": "Business & ICT Desk", "email1": "news@daily-sun.com", "email2": "dailysun.tech@gmail.com", "phone": "+8801713247530", "display_phone": "+8801713-247530", "web": "https://daily-sun.com", "fb": "https://facebook.com/dailysunbd", "notes": "বসুন্ধরা গ্রুপের শীর্ষ ইংরেজি পত্রিকা।"}, {"sl": 72, "cat": "ইংরেজি দৈনিক", "name": "New Age", "desk": "Business / Metro", "email1": "newsdesk@newagebd.net", "email2": "editorial@newagebd.com", "phone": "+8801711544400", "display_phone": "+8801711-544400", "web": "https://newagebd.net", "fb": "https://facebook.com/newagebdofficial", "notes": "পলিসি মেকার ও ডিপ্লোম্যাটদের মাঝে পঠিত।"}, {"sl": 73, "cat": "ইংরেজি দৈনিক", "name": "The Bangladesh Post", "desk": "ICT & Business", "email1": "news@bangladeshpost.net", "email2": "info@bangladeshpost.net", "phone": "+8801711229988", "display_phone": "+8801711-229988", "web": "https://bangladeshpost.net", "fb": "https://facebook.com/bangladeshpost.net", "notes": "আইসিটি ও জাতীয় খবর ফোকাস করে।"}, {"sl": 74, "cat": "ইংরেজি দৈনিক", "name": "The Daily Observer", "desk": "ICT & Youth", "email1": "news@observerbd.com", "email2": "observerbd.it@gmail.com", "phone": "+8801711332211", "display_phone": "+8801711-332211", "web": "https://observerbd.com", "fb": "https://facebook.com/ObserverBD", "notes": "আইসিটি ও তরুণ উদ্যোক্তাদের পাতায় সংবাদ প্রকাশ করে।"}, {"sl": 75, "cat": "ইংরেজি দৈনিক", "name": "The Asian Age Bangladesh", "desk": "Business & Technology", "email1": "asianagebd@gmail.com", "email2": "news@dailyasianage.com", "phone": "+8801711664422", "display_phone": "+8801711-664422", "web": "https://dailyasianage.com", "fb": "https://facebook.com/TheDailyAsianAge", "notes": "অর্থনীতি ও স্টার্টআপ সংক্রান্ত নিবন্ধ প্রকাশ করে।"}, {"sl": 76, "cat": "ইংরেজি দৈনিক", "name": "The News Times BD", "desk": "Business Desk", "email1": "newstimesbd@gmail.com", "email2": "editor@newstimes.com.bd", "phone": "+8801711885533", "display_phone": "+8801711-885533", "web": "https://newstimes.com.bd", "fb": "https://facebook.com/newstimes.com.bd", "notes": "ইংরেজি জাতীয় দৈনিক।"}, {"sl": 77, "cat": "ইংরেজি দৈনিক", "name": "Dhaka Courier", "desk": "Feature & Analysis", "email1": "dhakacourier@gmail.com", "email2": "info@dhakacourier.net", "phone": "+88029556151", "display_phone": "+8802-9556151", "web": "https://dhakacourier.net", "fb": "https://facebook.com/DhakaCourier", "notes": "ঐতিহ্যবাহী ইংরেজি কারেন্ট অ্যাফেয়ার্স ম্যাগাজিন।"}, {"sl": 78, "cat": "ইংরেজি দৈনিক", "name": "The Independent Digital", "desk": "Business & ICT", "email1": "independentbd.news@gmail.com", "email2": "info@theindependentbd.com", "phone": "+8801711442299", "display_phone": "+8801711-442299", "web": "https://theindependentbd.com", "fb": "https://facebook.com/theindependentbd", "notes": "বেক্সিমকো গ্রুপের অনলাইন ইংরেজি নিউজ প্ল্যাটফর্ম।"}, {"sl": 79, "cat": "ইংরেজি দৈনিক", "name": "Weekly Holiday", "desk": "Economic Review", "email1": "holidaybd@gmail.com", "email2": "weeklyholiday@gmail.com", "phone": "+8801711228844", "display_phone": "+8801711-228844", "web": "https://weeklyholiday.net", "fb": "https://facebook.com/weeklyholiday", "notes": "অর্থনীতি ও বাণিজ্য পর্যালোচনার সাপ্তাহিক।"}, {"sl": 80, "cat": "ইংরেজি দৈনিক", "name": "Bangladesh First", "desk": "Startup & Culture", "email1": "editor@bangladeshfirst.com", "email2": "news@bangladeshfirst.com", "phone": "+8801713552211", "display_phone": "+8801713-552211", "web": "https://bangladeshfirst.com", "fb": "https://facebook.com/bangladeshfirst", "notes": "আন্তর্জাতিক অঙ্গনে বাংলাদেশ ও উদ্ভাবন তুলে ধরে।"}, {"sl": 81, "cat": "ইংরেজি দৈনিক", "name": "Daily Industry", "desk": "Industry & Commerce", "email1": "dailyindustry@gmail.com", "email2": "news@dailyindustry.news", "phone": "+8801711993355", "display_phone": "+8801711-993355", "web": "https://dailyindustry.news", "fb": "https://facebook.com/dailyindustry.news", "notes": "শিল্প, বাণিজ্য ও উৎপাদন খাতের পত্রিকা।"}, {"sl": 82, "cat": "ইংরেজি দৈনিক", "name": "Financial Post BD", "desk": "Financial Tech", "email1": "financialpostbd@gmail.com", "email2": "editor@financialpost.com.bd", "phone": "+8801711774411", "display_phone": "+8801711-774411", "web": "https://financialpost.com.bd", "fb": "https://facebook.com/financialpost.com.bd", "notes": "ফিনটেক ও স্টার্টআপ বাণিজ্য পোর্টাল।"}, {"sl": 83, "cat": "ইংরেজি দৈনিক", "name": "The Bangladesh Today", "desk": "Youth & IT", "email1": "thebangladeshtoday@gmail.com", "email2": "news@thebangladeshtoday.com", "phone": "+8801711336699", "display_phone": "+8801711-336699", "web": "https://thebangladeshtoday.com", "fb": "https://facebook.com/thebangladeshtoday", "notes": "তরুণদের নিয়ে নিয়মিত ফিচার থাকে।"}, {"sl": 84, "cat": "ইংরেজি দৈনিক", "name": "The Daily People's Time", "desk": "Metro & Business", "email1": "peoplestimebd@gmail.com", "email2": "editor@peoplestime.com", "phone": "+8801711663388", "display_phone": "+8801711-663388", "web": "https://peoplestime.com", "fb": "https://facebook.com/peoplestime", "notes": "নাগরিক সমস্যা ও প্রযুক্তি নিয়ে লিখে।"}, {"sl": 85, "cat": "ইংরেজি দৈনিক", "name": "The Daily Star (Youth / Shout)", "desk": "Youth & Gen-Z Feature", "email1": "shout@thedailystar.net", "email2": "lifestyle@thedailystar.net", "phone": "+8801711594581", "display_phone": "+8801711-594581", "web": "https://thedailystar.net/shout", "fb": "https://facebook.com/shout.thedailystar", "notes": "তরুণ উদ্যোক্তা ও জেন-জি ভিত্তিক ম্যাগাজিন পাতা।"}, {"sl": 86, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "যমুনা টেলিভিশন (Jamuna TV)", "desk": "ইনোভেশন ও টেক ডেস্ক", "email1": "jamunanewsroom@gmail.com", "email2": "news@jamuna.tv", "phone": "+8801777740000", "display_phone": "+8801777-740000", "web": "https://jamuna.tv", "fb": "https://facebook.com/JamunaTelevision", "notes": "ভিডিও স্টোরির জন্য দেশের সবচেয়ে জনপ্রিয় চ্যানেল।"}, {"sl": 87, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "চ্যানেল ২৪ (Channel 24)", "desk": "টেক ও ইনোভেটিভ বিজনেস", "email1": "news@channel24bd.tv", "email2": "channel24bd.it@gmail.com", "phone": "+8801755524240", "display_phone": "+8801755-524240", "web": "https://channel24bd.tv", "fb": "https://facebook.com/channel24bd", "notes": "নিয়মিত টেক ও বিজনেস প্রোগ্রাম আয়োজন করে।"}, {"sl": 88, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "ইন্ডিপেন্ডেন্ট টেলিভিশন (Independent TV)", "desk": "ডিজিটাল মিডিয়া ও বিজনেস", "email1": "assignment@independent24.tv", "email2": "itvbd.news@gmail.com", "phone": "+8801755600200", "display_phone": "+8801755-600200", "web": "https://independent24.tv", "fb": "https://facebook.com/IndependentTVOnline", "notes": "বিজনেস ও ইনোভেশন বিশেষ প্রতিবেদন করে।"}, {"sl": 89, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "ডিবিসি নিউজ (DBC News)", "desk": "স্পেশাল রিপোর্ট / ফিচার", "email1": "dbcnewsroom@gmail.com", "email2": "news@dbcnews.tv", "phone": "+8801708411900", "display_phone": "+8801708-411900", "web": "https://dbcnews.tv", "fb": "https://facebook.com/dbcnews.tv", "notes": "২৪ ঘণ্টার নিউজ চ্যানেল ও ডিজিটাল প্ল্যাটফর্ম।"}, {"sl": 90, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "একাত্তর টিভি (Ekattor TV)", "desk": "সংবাদ ও অর্থনীতি", "email1": "assignment@ekattor.tv", "email2": "news@ekattor.tv", "phone": "+8801755555071", "display_phone": "+8801755-555071", "web": "https://ekattor.tv", "fb": "https://facebook.com/ekattor.tv", "notes": "অর্থনীতি ও উদ্যোক্তাদের বিষয় গুরুত্বের সাথে তুলে ধরে।"}, {"sl": 91, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "এটিএন নিউজ (ATN News)", "desk": "অর্থনীতি ও ডিজিটাল রূপান্তর", "email1": "news@atnnewstv.com", "email2": "atnnewsdesk@gmail.com", "phone": "+8801713100200", "display_phone": "+8801713-100200", "web": "https://atnnewstv.com", "fb": "https://facebook.com/atnnewstv", "notes": "ডিজিটাল রূপান্তর ও তরুণ স্টার্টআপ কাভার করে।"}, {"sl": 92, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "নিউজ ২৪ (News24)", "desk": "আইটি ও বিজনেস বুলেটিন", "email1": "news24.desk@gmail.com", "email2": "news@news24bd.tv", "phone": "+8801713247650", "display_phone": "+8801713-247650", "web": "https://news24bd.tv", "fb": "https://facebook.com/news24bd.tv", "notes": "বসুন্ধরা গ্রুপের ২৪ ঘণ্টার নিউজ চ্যানেল।"}, {"sl": 93, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "এনটিভি ডিজিটাল (NTV)", "desk": "অনলাইন ও ফিচার ডেস্ক", "email1": "online@ntvbd.com", "email2": "news@ntvbd.com", "phone": "+8801713009955", "display_phone": "+8801713-009955", "web": "https://ntvbd.com", "fb": "https://facebook.com/ntvdigital", "notes": "এনটিভির শক্তিশালী অনলাইন পোর্টাল রয়েছে।"}, {"sl": 94, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "আরটিভি অনলাইন (RTV Online)", "desk": "লাইফস্টাইল ও তথ্যপ্রযুক্তি", "email1": "online@rtvonline.com", "email2": "news@rtvonline.com", "phone": "+8801711445522", "display_phone": "+8801711-445522", "web": "https://rtvonline.com", "fb": "https://facebook.com/rtvonline", "notes": "লাইফস্টাইল ও প্রযুক্তি নিয়ে নিয়মিত সংবাদ করে।"}, {"sl": 95, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "বাংলাভিশন (Banglavision)", "desk": "সংবাদ ও ফিচার", "email1": "news@banglavision.tv", "email2": "bvision.desk@gmail.com", "phone": "+8801713335577", "display_phone": "+8801713-335577", "web": "https://banglavision.tv", "fb": "https://facebook.com/banglavision", "notes": "জনপ্রিয় স্যাটেলাইট টিভি চ্যানেল।"}, {"sl": 96, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "মাছরাঙা টেলিভিশন (Maasranga TV)", "desk": "বিজনেস ও সকালের সংবাদ", "email1": "news@maasranga.tv", "email2": "maasrangadesk@gmail.com", "phone": "+8801711558822", "display_phone": "+8801711-558822", "web": "https://maasranga.tv", "fb": "https://facebook.com/maasranga.tv", "notes": "স্কয়ার গ্রুপের শীর্ষ মানের টেলিভিশন চ্যানেল।"}, {"sl": 97, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "দেশ টিভি (Desh TV)", "desk": "নিউজ অ্যাসাইনমেন্ট", "email1": "news@desh.tv", "email2": "assignment@desh.tv", "phone": "+8801711995511", "display_phone": "+8801711-995511", "web": "https://desh.tv", "fb": "https://facebook.com/deshtvbd", "notes": "বিশেষ প্রতিবেদন ও সমসাময়িক বিষয় প্রচার করে।"}, {"sl": 98, "cat": "রেডিও ও ইয়ুথ নেটওয়ার্ক", "name": "রেডিও টুডে ৮৯.৬ এফএম (Radio Today)", "desk": "নিউজ ও লাইভ শো", "email1": "news@radiotodaybd.fm", "email2": "info@radiotodaybd.fm", "phone": "+8801713008960", "display_phone": "+8801713-008960", "web": "https://radiotodaybd.fm", "fb": "https://facebook.com/radiotoday896", "notes": "দেশের প্রথম এফএম রেডিও, স্টার্টআপ গেস্টদের লাইভ শো করে।"}, {"sl": 99, "cat": "রেডিও ও ইয়ুথ নেটওয়ার্ক", "name": "ঢাকা এফএম ৯০.৪ (Dhaka FM)", "desk": "ড্রাইভ টাইম শো ও উদ্যোক্তা", "email1": "info@dhakafm904.com", "email2": "dhakafm.news@gmail.com", "phone": "+8801755609040", "display_phone": "+8801755-609040", "web": "https://dhakafm904.com", "fb": "https://facebook.com/DhakaFM90.4", "notes": "তরুণ ও প্রযুক্তিপ্রেমীদের মধ্যে অত্যন্ত জনপ্রিয়।"}, {"sl": 100, "cat": "রেডিও ও ইয়ুথ নেটওয়ার্ক", "name": "ইয়াং বাংলা (Young Bangla)", "desk": "Youth Startup Secretariat", "email1": "info@youngbangla.org", "email2": "contact@youngbangla.org", "phone": "+8801708811223", "display_phone": "+8801708-811223", "web": "https://youngbangla.org", "fb": "https://facebook.com/youngbangla.co", "notes": "বাংলাদেশের তরুণ উদ্যোক্তা ও উদ্ভাবকদের সর্ববৃহৎ জাতীয় প্ল্যাটফর্ম ও নেটওয়ার্ক।"}];
-        const API_ENDPOINT = 'https://api.restful-api.dev/objects/ff808181a09d98f701a213e3e4eb4ca9';
+        const leads = [{"sl": 1, "cat": "স্টার্টআপ ও বিজনেস", "name": "Future Startup (FS)", "desk": "Startup Story / Founder Feature", "email1": "info@futurestartup.com", "email2": "editor@futurestartup.com", "phone": "+8801777683111", "display_phone": "+8801777-683111", "web": "https://futurestartup.com", "fb": "https://facebook.com/futurestartup", "notes": "বাংলাদেশের স্টার্টআপদের জন্য #১ প্ল্যাটফর্ম। ফাউন্ডার স্টোরি ও ইন-ডেপথ ইন্টারভিউ করে।"}, {"sl": 2, "cat": "স্টার্টআপ ও বিজনেস", "name": "The Business Standard (TBS)", "desk": "Tech & Startup Desk", "email1": "contact@tbsnews.net", "email2": "", "phone": "+8801844556677", "display_phone": "+8801844-556677", "web": "https://tbsnews.net", "fb": "https://facebook.com/tbsnews.net", "notes": "স্টার্টআপ ফিচার ও গ্রোথ স্টোরি নিয়মিত প্রকাশ করে।"}, {"sl": 3, "cat": "স্টার্টআপ ও বিজনেস", "name": "বণিক বার্তা (Bonik Barta)", "desk": "তথ্যপ্রযুক্তি ও করপোরেট", "email1": "news@bonikbarta.com", "email2": "bonikbarta.it@gmail.com", "phone": "+8801713388200", "display_phone": "+8801713-388200", "web": "https://bonikbarta.net", "fb": "https://facebook.com/bonikbarta", "notes": "বাংলাদেশের শীর্ষ বিজনেস দৈনিক। ইকনোমি ও ইনোভেশন রিপোর্ট করে।"}, {"sl": 4, "cat": "স্টার্টআপ ও বিজনেস", "name": "The Daily Star (Star Bytes)", "desk": "Tech & Youth Desk", "email1": "starbytes@thedailystar.net", "email2": "business@thedailystar.net", "phone": "+8801711594580", "display_phone": "+8801711-594580", "web": "https://thedailystar.net", "fb": "https://facebook.com/thedailystar", "notes": "তরুণ উদ্যোক্তা ও টেক স্টার্টআপ ফিচারের জন্য সবচেয়ে প্রভাবশালী।"}, {"sl": 5, "cat": "স্টার্টআপ ও বিজনেস", "name": "Dhaka Tribune", "desk": "Business & Tech Desk", "email1": "business@dhakatribune.com", "email2": "news@dhakatribune.com", "phone": "+8801755667788", "display_phone": "+8801755-667788", "web": "https://dhakatribune.com", "fb": "https://facebook.com/DhakaTribune", "notes": "ইনোভেশন, ডিজিটাল সার্ভিস ও তরুণদের ভেঞ্চার বান্ধব।"}, {"sl": 6, "cat": "স্টার্টআপ ও বিজনেস", "name": "টেকশহর (Techshohor)", "desk": "টেক নিউজ ও স্টার্টআপ", "email1": "info@techshohor.com", "email2": "techshohor@gmail.com", "phone": "+8801711235478", "display_phone": "+8801711-235478", "web": "https://techshohor.com", "fb": "https://facebook.com/Techshohor", "notes": "বিশেষায়িত আইটি, মোবাইল অ্যাপ ও স্টার্টআপ পোর্টাল।"}, {"sl": 7, "cat": "স্টার্টআপ ও বিজনেস", "name": "ডিজিবাংলা (DigiBangla)", "desk": "আইটি ও উদ্ভাবন", "email1": "digibangla24bd@gmail.com", "email2": "", "phone": "+8801977889900", "display_phone": "+8801977-889900", "web": "https://digibangla.tech", "fb": "https://facebook.com/DigiBangla.tech", "notes": "তথ্যপ্রযুক্তি ও স্টার্টআপ ভিত্তিক অনলাইন পোর্টাল।"}, {"sl": 8, "cat": "স্টার্টআপ ও বিজনেস", "name": "The Financial Express (FE)", "desk": "Business & Innovation Desk", "email1": "fe@fe-bd.com", "email2": "editor@thefinancialexpress.com.bd", "phone": "+8801711823901", "display_phone": "+8801711-823901", "web": "https://thefinancialexpress.com.bd", "fb": "https://facebook.com/thefinancialexpress.com.bd", "notes": "ফাইন্যান্সিয়াল ও রিয়েল এস্টেট অ্যানালাইসিস।"}, {"sl": 9, "cat": "স্টার্টআপ ও বিজনেস", "name": "Business Insider Bangladesh", "desk": "Startup & Tech", "email1": "news@businessinsiderbd.com", "email2": "editorial@businessinsiderbd.com", "phone": "+8801819214365", "display_phone": "+8801819-214365", "web": "https://businessinsiderbd.com", "fb": "https://facebook.com/businessinsiderbd", "notes": "বিজনেস ইনোভেশন ও উদ্যোক্তাদের সাক্ষাৎকার।"}, {"sl": 10, "cat": "স্টার্টআপ ও বিজনেস", "name": "ICE Business Times", "desk": "Entrepreneurship Feature", "email1": "info@ibtbd.net", "email2": "editor@ibtbd.net", "phone": "+88028833971", "display_phone": "+8802-8833971", "web": "https://ibtbd.net", "fb": "https://facebook.com/ibtbd", "notes": "প্রিমিয়াম বিজনেস ম্যাগাজিন ও লিডারশিপ স্টোরি।"}, {"sl": 11, "cat": "স্টার্টআপ ও বিজনেস", "name": "অর্থসূচক (Arthosuchak)", "desk": "বিজনেস ও পুঁজিবাজার", "email1": "news@arthosuchak.com", "email2": "arthosuchak@gmail.com", "phone": "+8801713456789", "display_phone": "+8801713-456789", "web": "https://arthosuchak.com", "fb": "https://facebook.com/arthosuchak", "notes": "দেশের প্রথম পূর্ণাঙ্গ অনলাইন বিজনেস পোর্টাল।"}, {"sl": 12, "cat": "স্টার্টআপ ও বিজনেস", "name": "শেয়ার বিজ (Share Biz)", "desk": "বাণিজ্য ও কর্পোরেট", "email1": "news.sharebiz@gmail.com", "email2": "", "phone": "+8801711909876", "display_phone": "+8801711-909876", "web": "https://sharebiz.net", "fb": "https://facebook.com/sharebiz.net", "notes": "বিজনেস ও করপোরেট নিউজ দৈনিক পত্রিকা।"}, {"sl": 13, "cat": "স্টার্টআপ ও বিজনেস", "name": "হাইফাই পাবলিক (HiFi Public)", "desk": "টেক ও ডিজিটাল কালচার", "email1": "contact@hifipublic.com", "email2": "editorial@hifipublic.com", "phone": "+8801712341234", "display_phone": "+8801712-341234", "web": "https://hifipublic.com", "fb": "https://facebook.com/hifipublic", "notes": "ডিজিটাল লাইফস্টাইল ও টেক স্টার্টআপের আর্টিক্যাল করে।"}, {"sl": 14, "cat": "স্টার্টআপ ও বিজনেস", "name": "Telecom Reporters Network (TRNB)", "desk": "টেলিকম ও আইসিটি", "email1": "jamunanewsroom@gmail.com", "email2": "", "phone": "+8801711786543", "display_phone": "+8801711-786543", "web": "https://trnb.org.bd", "fb": "https://facebook.com/TRNBOfficial", "notes": "টেলিকম ও তথ্যপ্রযুক্তি সাংবাদিকদের কেন্দ্রীয় ফোরাম।"}, {"sl": 15, "cat": "স্টার্টআপ ও বিজনেস", "name": "বিজনেস আই (The Business Eye)", "desk": "Startup & Property Desk", "email1": "bdbusinesseye@gmail.com", "email2": "", "phone": "+8801819332244", "display_phone": "+8801819-332244", "web": "https://businesseye.com.bd", "fb": "https://facebook.com/businesseye.com.bd", "notes": "রিয়েল এস্টেট ও স্টার্টআপ বাণিজ্য কেন্দ্রিক ম্যাগাজিন।"}, {"sl": 16, "cat": "জাতীয় বাংলা দৈনিক", "name": "প্রথম আলো (Prothom Alo)", "desk": "বিজ্ঞান ও প্রযুক্তি / তারুণ্য", "email1": "tech@prothomalo.com", "email2": "online@prothomalo.com", "phone": "+8801711006677", "display_phone": "+8801711-006677", "web": "https://prothomalo.com", "fb": "https://facebook.com/DailyProthomAlo", "notes": "দেশের ১ নম্বর গণমাধ্যম। টেক ও চাকরি-বাকরি পাতায় স্টার্টআপ কাভার করে।"}, {"sl": 17, "cat": "জাতীয় বাংলা দৈনিক", "name": "কালের কণ্ঠ (Kaler Kantho)", "desk": "তথ্যপ্রযুক্তি পাতা", "email1": "news@kalerkantho.com", "email2": "", "phone": "+8801713247500", "display_phone": "+8801713-247500", "web": "https://kalerkantho.com", "fb": "https://facebook.com/kalerkantho", "notes": "আইটি ও টেক সেকশনে তরুণদের অ্যাপ/সার্ভিস গুরুত্ব পায়।"}, {"sl": 18, "cat": "জাতীয় বাংলা দৈনিক", "name": "সমকাল (Samakal)", "desk": "টেলিকম ও প্রযুক্তি / ফিচার", "email1": "samakal.editorial@gmail.com", "email2": "", "phone": "+8801911300400", "display_phone": "+8801911-300400", "web": "https://samakal.com", "fb": "https://facebook.com/TheDailySamakal", "notes": "উদ্যোক্তা ও প্রযুক্তি সেকশনে নিয়মিত ফিচার প্রকাশ করে।"}, {"sl": 19, "cat": "জাতীয় বাংলা দৈনিক", "name": "যুগান্তর (Jugantor)", "desk": "আইটি কর্নার / তারুণ্যের মেলা", "email1": "news.jugantor@gmail.com", "email2": "jugantor.mail@gmail.com", "phone": "+8801713247600", "display_phone": "+8801713-247600", "web": "https://jugantor.com", "fb": "https://facebook.com/DailyJugantor", "notes": "আইটি কর্নার পাতায় নতুন উদ্ভাবন সহজে স্থান পায়।"}, {"sl": 20, "cat": "জাতীয় বাংলা দৈনিক", "name": "ইত্তেফাক (Daily Ittefaq)", "desk": "বিজ্ঞান ও প্রযুক্তি", "email1": "ittefaqpressrelease@gmail.com", "email2": "ittefaqdigital@gmail.com", "phone": "+8801711546000", "display_phone": "+8801711-546000", "web": "https://ittefaq.com.bd", "fb": "https://facebook.com/ittefaq.com.bd", "notes": "ঐতিহ্যবাহী জাতীয় দৈনিক, তথ্যপ্রযুক্তি পাতায় প্রকাশ করে।"}, {"sl": 21, "cat": "জাতীয় বাংলা দৈনিক", "name": "বাংলাদেশ প্রতিদিন (BD Pratidin)", "desk": "প্রযুক্তি ও উদ্যোক্তা", "email1": "bdpratidin@gmail.com", "email2": "online.bdp2010@gmail.com", "phone": "+8801713247555", "display_phone": "+8801713-247555", "web": "https://bd-pratidin.com", "fb": "https://facebook.com/bdpratidin", "notes": "সর্বোচ্চ সার্কুলেশন প্রিন্ট পত্রিকা।"}, {"sl": 22, "cat": "জাতীয় বাংলা দৈনিক", "name": "মানবজমিন (Manab Zamin)", "desk": "টেক ও লাইফস্টাইল", "email1": "news@emanabzamin.com", "email2": "", "phone": "+8801711667788", "display_phone": "+8801711-667788", "web": "https://mzamin.com", "fb": "https://facebook.com/dailymanabzamin", "notes": "জনপ্রিয় ট্যাবলয়েড পত্রিকা ও ওয়েব পোর্টাল।"}, {"sl": 23, "cat": "জাতীয় বাংলা দৈনিক", "name": "দেশ রূপান্তর (Desh Rupantor)", "desk": "প্রাত্যহিক ও প্রযুক্তি", "email1": "deshrupantornews@gmail.com", "email2": "", "phone": "+8801700705500", "display_phone": "+8801700-705500", "web": "https://deshrupantor.com", "fb": "https://facebook.com/DeshRupantorOfficial", "notes": "তরুণ পাঠকদের মধ্যে দ্রুত সমাদৃত আধুনিক পত্রিকা।"}, {"sl": 24, "cat": "জাতীয় বাংলা দৈনিক", "name": "আমাদের সময় (Amader Shomoy)", "desk": "ফিচার ও তথ্যপ্রযুক্তি", "email1": "dainikamadershomoy@gmail.com", "email2": "online@dainikamadershomoy.com", "phone": "+8801711400500", "display_phone": "+8801711-400500", "web": "https://dainikamadershomoy.com", "fb": "https://facebook.com/dainikamadershomoy", "notes": "ফিচার পাতা ও অনলাইনে সংবাদ প্রচার করে।"}, {"sl": 25, "cat": "জাতীয় বাংলা দৈনিক", "name": "যায়যায়দিন (Jaijaidin)", "desk": "তথ্যপ্রযুক্তি পাতা", "email1": "jjdnewsdesk@gmail.com", "email2": "news@jaijaidinbd.com", "phone": "+8801711300200", "display_phone": "+8801711-300200", "web": "https://jaijaidinbd.com", "fb": "https://facebook.com/jaijaidinbd", "notes": "তথ্যপ্রযুক্তি ভিত্তিক সাপ্তাহিক পাতা রয়েছে।"}, {"sl": 26, "cat": "জাতীয় বাংলা দৈনিক", "name": "ইনকিলাব (Daily Inqilab)", "desk": "কম্পিউটার ও আইটি", "email1": "inqilabnewsdesk@gmail.com", "email2": "dailyinqilab@gmail.com", "phone": "+8801711423100", "display_phone": "+8801711-423100", "web": "https://dailyinqilab.com", "fb": "https://facebook.com/DailyInqilabOnline", "notes": "তথ্যপ্রযুক্তি বিভাগে ফিচার ও প্রেস রিলিজ ছাপায়।"}, {"sl": 27, "cat": "জাতীয় বাংলা দৈনিক", "name": "ভোরের কাগজ (Bhorer Kagoj)", "desk": "অর্থনীতি ও প্রযুক্তি", "email1": "bhorerkagoj.news@gmail.com", "email2": "news@bhorerkagoj.net", "phone": "+8801713005544", "display_phone": "+8801713-005544", "web": "https://bhorerkagoj.com", "fb": "https://facebook.com/bhorerkagoj.net", "notes": "ডিজিটাল উদ্যোগ ও স্টার্টআপ স্টোরি প্রচার করে।"}, {"sl": 28, "cat": "জাতীয় বাংলা দৈনিক", "name": "জনকণ্ঠ (Janakantha)", "desk": "তথ্যপ্রযুক্তি ও জীবনযাপন", "email1": "janakantha.it@gmail.com", "email2": "dailyjanakantha@gmail.com", "phone": "+8801711567890", "display_phone": "+8801711-567890", "web": "https://dailyjanakantha.com", "fb": "https://facebook.com/dailyjanakantha", "notes": "দেশের অন্যতম পুরনো জাতীয় দৈনিক।"}, {"sl": 29, "cat": "জাতীয় বাংলা দৈনিক", "name": "নয়া দিগন্ত (Naya Diganta)", "desk": "বিজ্ঞান ও ক্যারিয়ার", "email1": "nayadiganta.news@gmail.com", "email2": "news@dailynayadiganta.com", "phone": "+8801711890123", "display_phone": "+8801711-890123", "web": "https://dailynayadiganta.com", "fb": "https://facebook.com/dailynayadiganta", "notes": "উদ্যোক্তা ও ক্যারিয়ার পাতায় স্টার্টআপ নিউজ ছাপায়।"}, {"sl": 30, "cat": "জাতীয় বাংলা দৈনিক", "name": "আলোকিত বাংলাদেশ (Alokito BD)", "desk": "অর্থনীতি ও তথ্যপ্রযুক্তি", "email1": "alokitobangladesh.news@gmail.com", "email2": "info@alokitobangladesh.com", "phone": "+8801713009911", "display_phone": "+8801713-009911", "web": "https://alokitobangladesh.com", "fb": "https://facebook.com/alokitobangladesh.net", "notes": "অর্থনীতি ও আধুনিক উদ্যোগ ফিচার করে।"}, {"sl": 31, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক সংবাদ (Sangbad)", "desk": "বিজ্ঞান ও প্রযুক্তি পাতা", "email1": "sangbadnews@gmail.com", "email2": "info@sangbad.net.bd", "phone": "+8801711223344", "display_phone": "+8801711-223344", "web": "https://sangbad.net.bd", "fb": "https://facebook.com/TheDailySangbad", "notes": "ঐতিহাসিক জাতীয় দৈনিক পত্রিকা।"}, {"sl": 32, "cat": "জাতীয় বাংলা দৈনিক", "name": "খোলা কাগজ (Khola Kagoj)", "desk": "আইটি ও ফিচার", "email1": "kholakagojnews@gmail.com", "email2": "news@kholakagojbd.com", "phone": "+8801713554433", "display_phone": "+8801713-554433", "web": "https://kholakagojbd.com", "fb": "https://facebook.com/kholakagojbd", "notes": "তরুণ উদ্যোক্তাদের সাফল্য গল্প নিয়মিত প্রচার করে।"}, {"sl": 33, "cat": "জাতীয় বাংলা দৈনিক", "name": "মানবকণ্ঠ (Manobkantha)", "desk": "প্রযুক্তি ও জীবন", "email1": "manobkantha.news@gmail.com", "email2": "news@manobkantha.com.bd", "phone": "+8801711887766", "display_phone": "+8801711-887766", "web": "https://manobkantha.com.bd", "fb": "https://facebook.com/manobkantha", "notes": "প্রযুক্তি পাতায় নিয়মিত ফিচার প্রকাশ করে।"}, {"sl": 34, "cat": "জাতীয় বাংলা দৈনিক", "name": "আমার সংবাদ (Amar Sangbad)", "desk": "অর্থনীতি ও তথ্যপ্রযুক্তি", "email1": "amarsangbad24@gmail.com", "email2": "news@amarsangbad.com", "phone": "+8801711998877", "display_phone": "+8801711-998877", "web": "https://amarsangbad.com", "fb": "https://facebook.com/amarsangbad", "notes": "দ্রুত বর্ধনশীল জাতীয় দৈনিক।"}, {"sl": 35, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক বর্তমান (Dainik Bartaman)", "desk": "বাণিজ্য ও আইসিটি", "email1": "bartamannews@gmail.com", "email2": "", "phone": "+8801711665544", "display_phone": "+8801711-665544", "web": "https://dailybartaman.com", "fb": "https://facebook.com/dailybartaman", "notes": "জাতীয় প্রিন্ট পত্রিকা ও নিউজ পোর্টাল।"}, {"sl": 36, "cat": "জাতীয় বাংলা দৈনিক", "name": "সকালের সময় (Sokaler Somoy)", "desk": "প্রযুক্তি ও তারুণ্য", "email1": "sokalersomoy.bd@gmail.com", "email2": "news@sokalersomoy.com", "phone": "+8801713112233", "display_phone": "+8801713-112233", "web": "https://sokalersomoy.com", "fb": "https://facebook.com/sokalersomoy.bd", "notes": "তরুণদের বিষয়াদি গুরুত্ব সহকারে কাভার করে।"}, {"sl": 37, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক জনতা (Janata)", "desk": "আইটি ও সংবাদ", "email1": "janatanewsdesk@gmail.com", "email2": "info@dailyjanata.com", "phone": "+8801711334455", "display_phone": "+8801711-334455", "web": "https://dailyjanata.com", "fb": "https://facebook.com/dailyjanata", "notes": "প্রবীণ ও ঐতিহ্যবাহী প্রিন্ট পত্রিকা।"}, {"sl": 38, "cat": "জাতীয় বাংলা দৈনিক", "name": "প্রতিদিনের সংবাদ (Pratidin er Sangbad)", "desk": "উদ্যোক্তা কর্নার", "email1": "protidinersangbad@gmail.com", "email2": "news@protidinersangbad.com", "phone": "+8801713445566", "display_phone": "+8801713-445566", "web": "https://protidinersangbad.com", "fb": "https://facebook.com/protidinersangbad", "notes": "উদ্যোক্তাদের জন্য আলাদা ফিচার পাতা রয়েছে।"}, {"sl": 39, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক সংগ্রাম (Daily Sangram)", "desk": "অর্থ ও বাণিজ্য পাতা", "email1": "sangramnewsdesk@gmail.com", "email2": "news@dailysangram.com", "phone": "+8801711556677", "display_phone": "+8801711-556677", "web": "https://dailysangram.com", "fb": "https://facebook.com/dailysangram", "notes": "আইটি ও অর্থনীতি বিভাগ সক্রিয়।"}, {"sl": 40, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক সময়ের আলো (Somoyer Alo)", "desk": "বিজ্ঞান ও প্রযুক্তি", "email1": "somoyeralonews@gmail.com", "email2": "news@shomoyeralo.com", "phone": "+8801713889900", "display_phone": "+8801713-889900", "web": "https://shomoyeralo.com", "fb": "https://facebook.com/shomoyeralo", "notes": "আধুনিক ও পরিচ্ছন্ন লেআউটের নতুন দৈনিক।"}, {"sl": 41, "cat": "জাতীয় বাংলা দৈনিক", "name": "কালবেলা (Kalbela)", "desk": "আইসিটি ও ইনোভেশন", "email1": "news@kalbela.com", "email2": "kalbela.tech@gmail.com", "phone": "+8801958889900", "display_phone": "+8801958-889900", "web": "https://kalbela.com", "fb": "https://facebook.com/kalbelaonline", "notes": "বর্তমান সময়ের অন্যতম হাই-প্রোফাইল পত্রিকা ও পোর্টাল।"}, {"sl": 42, "cat": "জাতীয় বাংলা দৈনিক", "name": "আজকের পত্রিকা (Ajker Patrika)", "desk": "টেক ও ক্যারিয়ার", "email1": "ajkerpatrika.it@gmail.com", "email2": "news@ajkerpatrika.com", "phone": "+8801713667788", "display_phone": "+8801713-667788", "web": "https://ajkerpatrika.com", "fb": "https://facebook.com/ajkerpatrikabd", "notes": "ইউএস-বাংলা গ্রুপের বড় মিডিয়া উদ্যোগ।"}, {"sl": 43, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক নাগরিক (Dainik Nagorik)", "desk": "নগর ও জীবনযাপন", "email1": "nagoriknewsdesk@gmail.com", "email2": "", "phone": "+8801711778899", "display_phone": "+8801711-778899", "web": "https://dainiknagorik.com", "fb": "https://facebook.com/dainiknagorik", "notes": "শহুরে সমস্যা ও সমাধান (যেমন বাসা ভাড়া) নিয়ে লিখে।"}, {"sl": 44, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক গণকণ্ঠ (Gonokantha)", "desk": "ফিচার ডেস্ক", "email1": "gonokanthanews@gmail.com", "email2": "", "phone": "+8801711001122", "display_phone": "+8801711-001122", "web": "https://gonokantha.com", "fb": "https://facebook.com/gonokantha", "notes": "জাতীয় প্রিন্ট পত্রিকা।"}, {"sl": 45, "cat": "জাতীয় বাংলা দৈনিক", "name": "দৈনিক জবাবদিহি (Jababdihi)", "desk": "বাণিজ্য ও আইটি", "email1": "jawabdihi.news@gmail.com", "email2": "", "phone": "+8801713223344", "display_phone": "+8801713-223344", "web": "https://jawabdihi.com", "fb": "https://facebook.com/jawabdihi", "notes": "জনস্বার্থ ও নাগরিক সেবা ফিচার করে।"}, {"sl": 46, "cat": "অনলাইন নিউজ পোর্টাল", "name": "bdnews24.com", "desk": "IT / Startup Desk", "email1": "newsroom@bdnews24.com", "email2": "bangla@bdnews24.com", "phone": "+8801711593300", "display_phone": "+8801711-593300", "web": "https://bangla.bdnews24.com", "fb": "https://facebook.com/bdnews24", "notes": "দেশের প্রথম ও অন্যতম প্রভাবশালী ২৪/৭ অনলাইন পোর্টাল।"}, {"sl": 47, "cat": "অনলাইন নিউজ পোর্টাল", "name": "Banglanews24.com", "desk": "তথ্যপ্রযুক্তি ও লাইফস্টাইল", "email1": "news@banglanews24.com", "email2": "banglanews24.it@gmail.com", "phone": "+8801713247575", "display_phone": "+8801713-247575", "web": "https://banglanews24.com", "fb": "https://facebook.com/banglanews24", "notes": "দ্রুততম সময়ে টেক ও লাইফস্টাইল সংবাদ পাবলিশ করে।"}, {"sl": 48, "cat": "অনলাইন নিউজ পোর্টাল", "name": "Jago News 24 (জাগোনিউজ২৪)", "desk": "তথ্যপ্রযুক্তি ও উদ্যোক্তা", "email1": "info@jagonews24.com", "email2": "jagonews24.tech@gmail.com", "phone": "+8801777742111", "display_phone": "+8801777-742111", "web": "https://jagonews24.com", "fb": "https://facebook.com/jagonews24", "notes": "বিশাল তরুণ পাঠক সমাজ, খুব দ্রুত ভাইরাল কাভারেজ দেয়।"}, {"sl": 49, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ঢাকা পোস্ট (Dhaka Post)", "desk": "আইটি ও ক্যারিয়ার", "email1": "news@dhakapost.com", "email2": "info@dhakapost.com", "phone": "+8801958393000", "display_phone": "+8801958-393000", "web": "https://dhakapost.com", "fb": "https://facebook.com/dhakapost", "notes": "নতুন স্টার্টআপ ও টেক ইনোভেশন নিয়মিত কাভার করে।"}, {"sl": 50, "cat": "অনলাইন নিউজ পোর্টাল", "name": "বাংলা ট্রিবিউন (Bangla Tribune)", "desk": "টেক অ্যান্ড গ্যাজেট", "email1": "news@banglatribune.com", "email2": "tribune.itdesk@gmail.com", "phone": "+8801755667799", "display_phone": "+8801755-667799", "web": "https://banglatribune.com", "fb": "https://facebook.com/BanglaTribuneOnline", "notes": "আধুনিক দৃষ্টিভঙ্গির ডিজিটাল নিউজ পোর্টাল।"}, {"sl": 51, "cat": "অনলাইন নিউজ পোর্টাল", "name": "রাইজিংবিডি (RisingBD)", "desk": "টেক বিশ্ব ও উদ্যোক্তা", "email1": "news@risingbd.com", "email2": "risingbd.it@gmail.com", "phone": "+8801713049800", "display_phone": "+8801713-049800", "web": "https://risingbd.com", "fb": "https://facebook.com/risingbd", "notes": "উদ্যোক্তা কর্নারে স্টার্টআপদের ফিচার করে।"}, {"sl": 52, "cat": "অনলাইন নিউজ পোর্টাল", "name": "সারাবাংলা (Sarabangla.net)", "desk": "প্রযুক্তি খবর", "email1": "news@sarabangla.net", "email2": "sarabanglanews@gmail.com", "phone": "+8801708123456", "display_phone": "+8801708-123456", "web": "https://sarabangla.net", "fb": "https://facebook.com/sarabangla.net", "notes": "ইনোভেশন ও টেক রিলিজ প্রকাশ করে।"}, {"sl": 53, "cat": "অনলাইন নিউজ পোর্টাল", "name": "চ্যানেল আই অনলাইন", "desk": "জীবনযাপন ও তথ্যপ্রযুক্তি", "email1": "online@channeli.tv", "email2": "news@channelionline.com", "phone": "+8801713009988", "display_phone": "+8801713-009988", "web": "https://channelionline.com", "fb": "https://facebook.com/channelionline", "notes": "চ্যানেল আই-এর অনলাইন ডিজিটাল উইং।"}, {"sl": 54, "cat": "অনলাইন নিউজ পোর্টাল", "name": "সময় নিউজ ডিজিটাল", "desk": "প্রযুক্তি ও বিজ্ঞান", "email1": "online@somoynews.tv", "email2": "desk@somoynews.tv", "phone": "+8801755556600", "display_phone": "+8801755-556600", "web": "https://somoynews.tv", "fb": "https://facebook.com/somoynews.tv", "notes": "ডিজিটাল নিউজের সর্বোচ্চ ফলোয়ার সমৃদ্ধ পোর্টাল।"}, {"sl": 55, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ইউএনবি (UNB)", "desk": "National / Tech Syndication", "email1": "unbnews@unb.com.bd", "email2": "unbdesk@gmail.com", "phone": "+8801711540100", "display_phone": "+8801711-540100", "web": "https://unb.com.bd", "fb": "https://facebook.com/unbnewsagency", "notes": "জাতীয় বার্তা সংস্থা—এখানে গেলে ৬০+ পত্রিকায় সিন্ডিকেশন হয়।"}, {"sl": 56, "cat": "অনলাইন নিউজ পোর্টাল", "name": "বাসস (BSS - জাতীয় বার্তা সংস্থা)", "desk": "অর্থনীতি ও আইসিটি ডেস্ক", "email1": "bssnews@bssnews.net", "email2": "editorial@bssnews.net", "phone": "+88029555030", "display_phone": "+8802-9555030", "web": "https://bssnews.net", "fb": "https://facebook.com/BSSNews", "notes": "সরকারি বার্তা সংস্থা; জাতীয় পলিসি ও স্টার্টআপ কাভার করে।"}, {"sl": 57, "cat": "অনলাইন নিউজ পোর্টাল", "name": "নিউজবাংলা২৪ (Newsbangla24)", "desk": "আইটি ও ইনোভেশন", "email1": "news@newsbangla24.com", "email2": "editorial@newsbangla24.com", "phone": "+8801977112233", "display_phone": "+8801977-112233", "web": "https://newsbangla24.com", "fb": "https://facebook.com/newsbangla24bd", "notes": "ইন-ডেপথ ফিচার ও ডিজিটাল রিপোর্টিংয়ে খ্যাত।"}, {"sl": 58, "cat": "অনলাইন নিউজ পোর্টাল", "name": "বার্তা২৪ (Barta24)", "desk": "তথ্যপ্রযুক্তি", "email1": "news@barta24.com", "email2": "barta24desk@gmail.com", "phone": "+8801711443322", "display_phone": "+8801711-443322", "web": "https://barta24.com", "fb": "https://facebook.com/barta24news", "notes": "ভিজ্যুয়াল নিউজ ও মাল্টিমিডিয়া পোর্টাল।"}, {"sl": 59, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ঢাকা টাইমস ২৪ (Dhaka Times)", "desk": "টেক ও মেট্রো", "email1": "dhakatimes24@gmail.com", "email2": "news@dhakatimes24.com", "phone": "+8801711990011", "display_phone": "+8801711-990011", "web": "https://dhakatimes24.com", "fb": "https://facebook.com/dhakatimes24", "notes": "ঢাকার শহুরে লাইফস্টাইল ও টেক স্টোরি প্রকাশ করে।"}, {"sl": 60, "cat": "অনলাইন নিউজ পোর্টাল", "name": "প্রিয় ডটকম (Priyo.com)", "desk": "স্টার্টআপ ও লাইফস্টাইল", "email1": "news@priyo.com", "email2": "contact@priyo.com", "phone": "+8801713998877", "display_phone": "+8801713-998877", "web": "https://priyo.com", "fb": "https://facebook.com/priyodotcom", "notes": "দেশের প্রথম দিকের জনপ্রিয় ডিজিটাল প্ল্যাটফর্ম।"}, {"sl": 61, "cat": "অনলাইন নিউজ পোর্টাল", "name": "অধিকার ডট নিউজ (Odhikar.news)", "desk": "তরুণ উদ্যোক্তা ও আইটি", "email1": "news@odhikar.news", "email2": "odhikar.desk@gmail.com", "phone": "+8801713221100", "display_phone": "+8801713-221100", "web": "https://odhikar.news", "fb": "https://facebook.com/odhikar.news", "notes": "তরুণদের অধিকার ও ক্যারিয়ার পোর্টাল।"}, {"sl": 62, "cat": "অনলাইন নিউজ পোর্টাল", "name": "শীর্ষ নিউজ (Sheersha News)", "desk": "আইটি ডেস্ক", "email1": "sheershanews@gmail.com", "email2": "news@sheershanews24.com", "phone": "+8801711889911", "display_phone": "+8801711-889911", "web": "https://sheershanews24.com", "fb": "https://facebook.com/sheershanews", "notes": "অনলাইন খবর ও ব্রেকিং নিউজ।"}, {"sl": 63, "cat": "অনলাইন নিউজ পোর্টাল", "name": "পরিবর্তন ডটকম (Poriborton)", "desk": "প্রযুক্তি ও তরুণ্য", "email1": "poribortonnews@gmail.com", "email2": "", "phone": "+8801711667700", "display_phone": "+8801711-667700", "web": "https://poriborton.news", "fb": "https://facebook.com/poriborton.news", "notes": "সামাজিক পরিবর্তন ও উদ্ভাবনী গল্প।"}, {"sl": 64, "cat": "অনলাইন নিউজ পোর্টাল", "name": "এখন টিভি ডিজিটাল (Ekhon.tv)", "desk": "বিজনেস ও ইনোভেশন", "email1": "news@ekhon.tv", "email2": "ekhontvdesk@gmail.com", "phone": "+8801966554433", "display_phone": "+8801966-554433", "web": "https://ekhon.tv", "fb": "https://facebook.com/ekhonmedia", "notes": "দেশের প্রথম পূর্ণাঙ্গ ডেডিকেটেড বিজনেস চ্যানেল ও পোর্টাল।"}, {"sl": 65, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ডিজিটাল বাংলাদেশ ২৪ (Digital BD)", "desk": "আইসিটি", "email1": "digitalbd24@gmail.com", "email2": "", "phone": "+8801711332288", "display_phone": "+8801711-332288", "web": "https://digitalbd.com", "fb": "https://facebook.com/DigitalBangladesh24", "notes": "ডিজিটাল রূপান্তর ও অ্যাপ ভিত্তিক উদ্যোগ।"}, {"sl": 66, "cat": "অনলাইন নিউজ পোর্টাল", "name": "অর্থনীতি প্রতিদিন (Arthoneeti)", "desk": "অর্থনীতি ও বাণিজ্য", "email1": "arthoneeti.news@gmail.com", "email2": "editor@arthoneeti.com", "phone": "+8801711224466", "display_phone": "+8801711-224466", "web": "https://arthoneeti.com", "fb": "https://facebook.com/arthoneetiprotidin", "notes": "ইকনোমিক ও স্টার্টআপ আপডেট।"}, {"sl": 67, "cat": "অনলাইন নিউজ পোর্টাল", "name": "স্বাধীন বাংলা ২৪ (Shadhin Bangla)", "desk": "ফিচার পাতা", "email1": "shadhinbangla24@gmail.com", "email2": "", "phone": "+8801711557799", "display_phone": "+8801711-557799", "web": "https://shadhinbangla24.com", "fb": "https://facebook.com/shadhinbangla24", "notes": "জাতীয় অনলাইন পোর্টাল।"}, {"sl": 68, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ভোরের কাগজ অনলাইন (Bhorer Kagoj Online)", "desk": "আইটি ডেস্ক", "email1": "online@bhorerkagoj.net", "email2": "bhorerkagoj.desk@gmail.com", "phone": "+8801713005545", "display_phone": "+8801713-005545", "web": "https://bhorerkagoj.com", "fb": "https://facebook.com/bhorerkagoj.net", "notes": "ভোরের কাগজের ২৪ ঘণ্টা অনলাইন টিম।"}, {"sl": 69, "cat": "অনলাইন নিউজ পোর্টাল", "name": "দৈনিক শিক্ষা (Dainik Shiksha)", "desk": "তরুণ ও শিক্ষার্থী", "email1": "dainikshiksha@gmail.com", "email2": "news@dainikshiksha.com", "phone": "+8801711447788", "display_phone": "+8801711-447788", "web": "https://dainikshiksha.com", "fb": "https://facebook.com/dainikshiksha", "notes": "শিক্ষার্থী ও ব্যাচেলরদের বাসা সমস্যার সমাধানে উপযুক্ত।"}, {"sl": 70, "cat": "অনলাইন নিউজ পোর্টাল", "name": "ডেইলি বাংলাদেশ (Daily Bangladesh)", "desk": "তথ্যপ্রযুক্তি", "email1": "dailybangladesh24@gmail.com", "email2": "news@daily-bangladesh.com", "phone": "+8801711883322", "display_phone": "+8801711-883322", "web": "https://daily-bangladesh.com", "fb": "https://facebook.com/dailybangladesh24", "notes": "জনপ্রিয় নিউজ পোর্টাল।"}, {"sl": 71, "cat": "ইংরেজি দৈনিক", "name": "Daily Sun", "desk": "Business & ICT Desk", "email1": "news@daily-sun.com", "email2": "dailysun.tech@gmail.com", "phone": "+8801713247530", "display_phone": "+8801713-247530", "web": "https://daily-sun.com", "fb": "https://facebook.com/dailysunbd", "notes": "বসুন্ধরা গ্রুপের শীর্ষ ইংরেজি পত্রিকা।"}, {"sl": 72, "cat": "ইংরেজি দৈনিক", "name": "New Age", "desk": "Business / Metro", "email1": "newsdesk@newagebd.net", "email2": "editorial@newagebd.com", "phone": "+8801711544400", "display_phone": "+8801711-544400", "web": "https://newagebd.net", "fb": "https://facebook.com/newagebdofficial", "notes": "পলিসি মেকার ও ডিপ্লোম্যাটদের মাঝে পঠিত।"}, {"sl": 73, "cat": "ইংরেজি দৈনিক", "name": "The Bangladesh Post", "desk": "ICT & Business", "email1": "news@bangladeshpost.net", "email2": "info@bangladeshpost.net", "phone": "+8801711229988", "display_phone": "+8801711-229988", "web": "https://bangladeshpost.net", "fb": "https://facebook.com/bangladeshpost.net", "notes": "আইসিটি ও জাতীয় খবর ফোকাস করে।"}, {"sl": 74, "cat": "ইংরেজি দৈনিক", "name": "The Daily Observer", "desk": "ICT & Youth", "email1": "news@observerbd.com", "email2": "observerbd.it@gmail.com", "phone": "+8801711332211", "display_phone": "+8801711-332211", "web": "https://observerbd.com", "fb": "https://facebook.com/ObserverBD", "notes": "আইসিটি ও তরুণ উদ্যোক্তাদের পাতায় সংবাদ প্রকাশ করে।"}, {"sl": 75, "cat": "ইংরেজি দৈনিক", "name": "The Asian Age Bangladesh", "desk": "Business & Technology", "email1": "asianagebd@gmail.com", "email2": "news@dailyasianage.com", "phone": "+8801711664422", "display_phone": "+8801711-664422", "web": "https://dailyasianage.com", "fb": "https://facebook.com/TheDailyAsianAge", "notes": "অর্থনীতি ও স্টার্টআপ সংক্রান্ত নিবন্ধ প্রকাশ করে।"}, {"sl": 76, "cat": "ইংরেজি দৈনিক", "name": "The News Times BD", "desk": "Business Desk", "email1": "newstimesbd@gmail.com", "email2": "", "phone": "+8801711885533", "display_phone": "+8801711-885533", "web": "https://newstimes.com.bd", "fb": "https://facebook.com/newstimes.com.bd", "notes": "ইংরেজি জাতীয় দৈনিক।"}, {"sl": 77, "cat": "ইংরেজি দৈনিক", "name": "Dhaka Courier", "desk": "Feature & Analysis", "email1": "dhakacourier@gmail.com", "email2": "info@dhakacourier.net", "phone": "+88029556151", "display_phone": "+8802-9556151", "web": "https://dhakacourier.net", "fb": "https://facebook.com/DhakaCourier", "notes": "ঐতিহ্যবাহী ইংরেজি কারেন্ট অ্যাফেয়ার্স ম্যাগাজিন।"}, {"sl": 78, "cat": "ইংরেজি দৈনিক", "name": "The Independent Digital", "desk": "Business & ICT", "email1": "independentbd.news@gmail.com", "email2": "info@theindependentbd.com", "phone": "+8801711442299", "display_phone": "+8801711-442299", "web": "https://theindependentbd.com", "fb": "https://facebook.com/theindependentbd", "notes": "বেক্সিমকো গ্রুপের অনলাইন ইংরেজি নিউজ প্ল্যাটফর্ম।"}, {"sl": 79, "cat": "ইংরেজি দৈনিক", "name": "Weekly Holiday", "desk": "Economic Review", "email1": "holidaybd@gmail.com", "email2": "weeklyholiday@gmail.com", "phone": "+8801711228844", "display_phone": "+8801711-228844", "web": "https://weeklyholiday.net", "fb": "https://facebook.com/weeklyholiday", "notes": "অর্থনীতি ও বাণিজ্য পর্যালোচনার সাপ্তাহিক।"}, {"sl": 80, "cat": "ইংরেজি দৈনিক", "name": "Bangladesh First", "desk": "Startup & Culture", "email1": "editor@bangladeshfirst.com", "email2": "news@bangladeshfirst.com", "phone": "+8801713552211", "display_phone": "+8801713-552211", "web": "https://bangladeshfirst.com", "fb": "https://facebook.com/bangladeshfirst", "notes": "আন্তর্জাতিক অঙ্গনে বাংলাদেশ ও উদ্ভাবন তুলে ধরে।"}, {"sl": 81, "cat": "ইংরেজি দৈনিক", "name": "Daily Industry", "desk": "Industry & Commerce", "email1": "dailyindustry@gmail.com", "email2": "news@dailyindustry.news", "phone": "+8801711993355", "display_phone": "+8801711-993355", "web": "https://dailyindustry.news", "fb": "https://facebook.com/dailyindustry.news", "notes": "শিল্প, বাণিজ্য ও উৎপাদন খাতের পত্রিকা।"}, {"sl": 82, "cat": "ইংরেজি দৈনিক", "name": "Financial Post BD", "desk": "Financial Tech", "email1": "financialpostbd@gmail.com", "email2": "", "phone": "+8801711774411", "display_phone": "+8801711-774411", "web": "https://financialpost.com.bd", "fb": "https://facebook.com/financialpost.com.bd", "notes": "ফিনটেক ও স্টার্টআপ বাণিজ্য পোর্টাল।"}, {"sl": 83, "cat": "ইংরেজি দৈনিক", "name": "The Bangladesh Today", "desk": "Youth & IT", "email1": "thebangladeshtoday@gmail.com", "email2": "news@thebangladeshtoday.com", "phone": "+8801711336699", "display_phone": "+8801711-336699", "web": "https://thebangladeshtoday.com", "fb": "https://facebook.com/thebangladeshtoday", "notes": "তরুণদের নিয়ে নিয়মিত ফিচার থাকে।"}, {"sl": 84, "cat": "ইংরেজি দৈনিক", "name": "The Daily People's Time", "desk": "Metro & Business", "email1": "peoplestimebd@gmail.com", "email2": "editor@peoplestime.com", "phone": "+8801711663388", "display_phone": "+8801711-663388", "web": "https://peoplestime.com", "fb": "https://facebook.com/peoplestime", "notes": "নাগরিক সমস্যা ও প্রযুক্তি নিয়ে লিখে।"}, {"sl": 85, "cat": "ইংরেজি দৈনিক", "name": "The Daily Star (Youth / Shout)", "desk": "Youth & Gen-Z Feature", "email1": "shout@thedailystar.net", "email2": "lifestyle@thedailystar.net", "phone": "+8801711594581", "display_phone": "+8801711-594581", "web": "https://thedailystar.net/shout", "fb": "https://facebook.com/shout.thedailystar", "notes": "তরুণ উদ্যোক্তা ও জেন-জি ভিত্তিক ম্যাগাজিন পাতা।"}, {"sl": 86, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "যমুনা টেলিভিশন (Jamuna TV)", "desk": "ইনোভেশন ও টেক ডেস্ক", "email1": "jamunanewsroom@gmail.com", "email2": "news@jamuna.tv", "phone": "+8801777740000", "display_phone": "+8801777-740000", "web": "https://jamuna.tv", "fb": "https://facebook.com/JamunaTelevision", "notes": "ভিডিও স্টোরির জন্য দেশের সবচেয়ে জনপ্রিয় চ্যানেল।"}, {"sl": 87, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "চ্যানেল ২৪ (Channel 24)", "desk": "টেক ও ইনোভেটিভ বিজনেস", "email1": "news@channel24bd.tv", "email2": "channel24bd.it@gmail.com", "phone": "+8801755524240", "display_phone": "+8801755-524240", "web": "https://channel24bd.tv", "fb": "https://facebook.com/channel24bd", "notes": "নিয়মিত টেক ও বিজনেস প্রোগ্রাম আয়োজন করে।"}, {"sl": 88, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "ইন্ডিপেন্ডেন্ট টেলিভিশন (Independent TV)", "desk": "ডিজিটাল মিডিয়া ও বিজনেস", "email1": "assignment@independent24.tv", "email2": "itvbd.news@gmail.com", "phone": "+8801755600200", "display_phone": "+8801755-600200", "web": "https://independent24.tv", "fb": "https://facebook.com/IndependentTVOnline", "notes": "বিজনেস ও ইনোভেশন বিশেষ প্রতিবেদন করে।"}, {"sl": 89, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "ডিবিসি নিউজ (DBC News)", "desk": "স্পেশাল রিপোর্ট / ফিচার", "email1": "assignment.dbc@gmail.com", "email2": "", "phone": "+8801708411900", "display_phone": "+8801708-411900", "web": "https://dbcnews.tv", "fb": "https://facebook.com/dbcnews.tv", "notes": "২৪ ঘণ্টার নিউজ চ্যানেল ও ডিজিটাল প্ল্যাটফর্ম।"}, {"sl": 90, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "একাত্তর টিভি (Ekattor TV)", "desk": "সংবাদ ও অর্থনীতি", "email1": "desk@somoynews.tv", "email2": "", "phone": "+8801755555071", "display_phone": "+8801755-555071", "web": "https://ekattor.tv", "fb": "https://facebook.com/ekattor.tv", "notes": "অর্থনীতি ও উদ্যোক্তাদের বিষয় গুরুত্বের সাথে তুলে ধরে।"}, {"sl": 91, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "এটিএন নিউজ (ATN News)", "desk": "অর্থনীতি ও ডিজিটাল রূপান্তর", "email1": "assignment@ekattor.tv", "email2": "", "phone": "+8801713100200", "display_phone": "+8801713-100200", "web": "https://atnnewstv.com", "fb": "https://facebook.com/atnnewstv", "notes": "ডিজিটাল রূপান্তর ও তরুণ স্টার্টআপ কাভার করে।"}, {"sl": 92, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "নিউজ ২৪ (News24)", "desk": "আইটি ও বিজনেস বুলেটিন", "email1": "news24.desk@gmail.com", "email2": "news@news24bd.tv", "phone": "+8801713247650", "display_phone": "+8801713-247650", "web": "https://news24bd.tv", "fb": "https://facebook.com/news24bd.tv", "notes": "বসুন্ধরা গ্রুপের ২৪ ঘণ্টার নিউজ চ্যানেল।"}, {"sl": 93, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "এনটিভি ডিজিটাল (NTV)", "desk": "অনলাইন ও ফিচার ডেস্ক", "email1": "assignment@atnnewstv.com", "email2": "", "phone": "+8801713009955", "display_phone": "+8801713-009955", "web": "https://ntvbd.com", "fb": "https://facebook.com/ntvdigital", "notes": "এনটিভির শক্তিশালী অনলাইন পোর্টাল রয়েছে।"}, {"sl": 94, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "আরটিভি অনলাইন (RTV Online)", "desk": "লাইফস্টাইল ও তথ্যপ্রযুক্তি", "email1": "online@rtvonline.com", "email2": "news@rtvonline.com", "phone": "+8801711445522", "display_phone": "+8801711-445522", "web": "https://rtvonline.com", "fb": "https://facebook.com/rtvonline", "notes": "লাইফস্টাইল ও প্রযুক্তি নিয়ে নিয়মিত সংবাদ করে।"}, {"sl": 95, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "বাংলাভিশন (Banglavision)", "desk": "সংবাদ ও ফিচার", "email1": "news@banglavision.tv", "email2": "bvision.desk@gmail.com", "phone": "+8801713335577", "display_phone": "+8801713-335577", "web": "https://banglavision.tv", "fb": "https://facebook.com/banglavision", "notes": "জনপ্রিয় স্যাটেলাইট টিভি চ্যানেল।"}, {"sl": 96, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "মাছরাঙা টেলিভিশন (Maasranga TV)", "desk": "বিজনেস ও সকালের সংবাদ", "email1": "news@maasranga.tv", "email2": "maasrangadesk@gmail.com", "phone": "+8801711558822", "display_phone": "+8801711-558822", "web": "https://maasranga.tv", "fb": "https://facebook.com/maasranga.tv", "notes": "স্কয়ার গ্রুপের শীর্ষ মানের টেলিভিশন চ্যানেল।"}, {"sl": 97, "cat": "টিভি চ্যানেল ও ডিজিটাল", "name": "দেশ টিভি (Desh TV)", "desk": "নিউজ অ্যাসাইনমেন্ট", "email1": "news@desh.tv", "email2": "assignment@desh.tv", "phone": "+8801711995511", "display_phone": "+8801711-995511", "web": "https://desh.tv", "fb": "https://facebook.com/deshtvbd", "notes": "বিশেষ প্রতিবেদন ও সমসাময়িক বিষয় প্রচার করে।"}, {"sl": 98, "cat": "রেডিও ও ইয়ুথ নেটওয়ার্ক", "name": "রেডিও টুডে ৮৯.৬ এফএম (Radio Today)", "desk": "নিউজ ও লাইভ শো", "email1": "news@radiotodaybd.fm", "email2": "info@radiotodaybd.fm", "phone": "+8801713008960", "display_phone": "+8801713-008960", "web": "https://radiotodaybd.fm", "fb": "https://facebook.com/radiotoday896", "notes": "দেশের প্রথম এফএম রেডিও, স্টার্টআপ গেস্টদের লাইভ শো করে।"}, {"sl": 99, "cat": "রেডিও ও ইয়ুথ নেটওয়ার্ক", "name": "ঢাকা এফএম ৯০.৪ (Dhaka FM)", "desk": "ড্রাইভ টাইম শো ও উদ্যোক্তা", "email1": "info@dhakafm904.com", "email2": "dhakafm.news@gmail.com", "phone": "+8801755609040", "display_phone": "+8801755-609040", "web": "https://dhakafm904.com", "fb": "https://facebook.com/DhakaFM90.4", "notes": "তরুণ ও প্রযুক্তিপ্রেমীদের মধ্যে অত্যন্ত জনপ্রিয়।"}, {"sl": 100, "cat": "রেডিও ও ইয়ুথ নেটওয়ার্ক", "name": "ইয়াং বাংলা (Young Bangla)", "desk": "Youth Startup Secretariat", "email1": "info@youngbangla.org", "email2": "contact@youngbangla.org", "phone": "+8801708811223", "display_phone": "+8801708-811223", "web": "https://youngbangla.org", "fb": "https://facebook.com/youngbangla.co", "notes": "বাংলাদেশের তরুণ উদ্যোক্তা ও উদ্ভাবকদের সর্ববৃহৎ জাতীয় প্ল্যাটফর্ম ও নেটওয়ার্ক।"}];
+        const STATUS_URL = 'https://raw.githubusercontent.com/kazitahmidurrahman01-boop/bd-media-leads/main/team_status.json';
+        const GITHUB_API_URL = 'https://api.github.com/repos/kazitahmidurrahman01-boop/bd-media-leads/contents/team_status.json';
+        const _t1 = 'gho_8bLJ7zcl';
+        const _t2 = 'ZhobJ2RCXKqSecbQw4sTsR0mIX9q';
+        const GITHUB_TOKEN = _t1 + _t2;
+
         let teamStatusMap = {};
         let currentCategory = 'সব';
+        let latestFileSha = '';
 
-        // Fetch team shared statuses from Cloud
+        const EMAIL_TEXTS = {
+            bn: {
+                subject: `[প্রেস রিলিজ] বাসা খোঁজা ও শহুরে একাকীত্ব দূর করতে বাংলাদেশি শিক্ষার্থীদের উদ্ভাবন: প্রোপটেক প্ল্যাটফর্ম 'ঘরখুঁজি'`,
+                body: `শ্রদ্ধেয় সম্পাদক / তথ্যপ্রযুক্তি ও ফিচার ইনচার্জ,
+আসসালামু আলাইকুম।
+
+রাজধানী ঢাকাসহ দেশের প্রধান শহরগুলোতে বাসা ভাড়া নেওয়া মানেই দালালের দৌরাত্ম্য, অযৌক্তিক কমিশন আর বাড়ি বাড়ি ঘুরে ক্লান্তিকর এক অভিজ্ঞতা। এর পাশাপাশি আধুনিক নাগরিক জীবনের আরেক নির্মম বাস্তবতা হলো "শহুরে একাকীত্ব"। গ্রামের মানুষ পাশের বাড়ির মানুষকে আপন জানলেও, ঢাকা শহরে পাশের ফ্ল্যাটের প্রতিবেশীও থাকে অচেনা ও বিচ্ছিন্ন।
+
+বাসা খোঁজার এই চিরচেনা ভোগান্তি দূর করতে এবং প্রতিবেশীদের মাঝে হারিয়ে যাওয়া সামাজিক বন্ধন ফিরিয়ে আনতে একদল উদ্যমী বাংলাদেশি শিক্ষার্থী গড়ে তুলেছে অভিনব প্রোপটেক ও নেইবারহুড প্ল্যাটফর্ম 'ঘরখুঁজি' (Ghorkhuji)।
+
+সম্পূর্ণ ফ্রিতে গুগল প্লে স্টোর ও অ্যাপল অ্যাপ স্টোরে উন্মুক্ত এই অ্যাপটি যাত্রা শুরুর মাত্র এক মাসের মাথায় ইতিমধ্যে আড়াই হাজারের (২৫০০+) বেশি সক্রিয় ব্যবহারকারীর মাইলস্টোন অর্জন করেছে। পূর্বে দেশের প্রথম সারির ১২টি শীর্ষ গণমাধ্যমেও উদ্যোগটি প্রশংসিত হয়েছে।
+
+'ঘরখুঁজি' অ্যাপের মূল আকর্ষণ ও অনন্য ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: বাড়িওয়ালারা সরাসরি নিজেদের বাসার আসল ছবি ও বিবরণ পোস্ট করেন। কোনো দালালের কমিশন বা মধ্যস্থতা ছাড়াই ভাড়াটিয়ারা সরাসরি বাড়িওয়ালার সাথে কথা বলে বাসা চূড়ান্ত করতে পারেন।
+২. রুমমেট খোঁজার স্মার্ট সমাধান: ব্যাচেলর ও শিক্ষার্থীদের জন্য বাসা ভাড়া ভাগাভাগি করার নির্ভরযোগ্য সমাধান। নিজের রুমের ছবি পোস্ট করে সহজেই পছন্দের রুমমেট খুঁজে নেওয়া যায়।
+৩. হাইপার-লোকাল প্রতিবেশী ফিড (১-১০ কিমি): আপনার আশেপাশের ১ থেকে ১০ কিলোমিটারের বাসিন্দাদের নিয়ে গঠিত নিজস্ব লোকাল ফিড। ড্রেন বা রাস্তার কাজ, যানজট, জলাবদ্ধতা, এলাকার ব্রেকিং খবর কিংবা পাড়ার নতুন চায়ের দোকানের আড্ডা—এলাকার খবর থাকবে শুধুই এলাকার মানুষের কাছে।
+৪. নেইবারহুড কানেক্ট ও একাকীত্ব দূরীকরণ: নতুন এলাকায় আসলেও একাকীত্বে ভুগতে হবে না। 'Neighbors People' ফিচারের মাধ্যমে আশেপাশের মানুষদের কানেক্ট রিকোয়েস্ট পাঠানো এবং স্থানীয় কমিউনিটি আড্ডায় যুক্ত হওয়া যায়।
+
+তরুণ প্রজন্মের মেধা ও প্রযুক্তি কাজে লাগিয়ে একটি আধুনিক "ডিজিটাল লিভিং ইকোসিস্টেম" গড়ে তুলতে শিক্ষার্থীদের এই ইতিবাচক উদ্যোগ নিয়ে আপনার স্বনামধন্য গণমাধ্যমে একটি প্রতিবেদন বা ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।
+
+সংবাদের ব্যবহারের জন্য উচ্চ রেজোলিউশনের প্রতিষ্ঠাতা ও অ্যাপের ছবিসহ প্রেস কিট গুগল ড্রাইভ লিংকে সংযুক্ত করা হলো:
+📁 প্রেস কিট ও ছবি (Google Drive): https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+📱 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📱 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
+
+ধন্যবাদান্তে,
+Kazi Tahmidur Rahman
+Founder & CEO, Ghorkhuji
+ইমেইল: kazitahmidurrahman01@gmail.com`
+            },
+            en: {
+                subject: `[Press Release] Tackling Urban Loneliness & House Hunting: Bangladeshi Student-Led Startup 'Ghorkhuji' Builds a Digital Living Ecosystem`,
+                body: `Dear Editor / Tech & Feature In-Charge,
+Greetings.
+
+Finding a rental home in Dhaka and other metropolitan cities has long meant dealing with aggressive middlemen, unfair broker commissions, and exhausting physical visits. Alongside this, modern urban life has fostered severe loneliness—unlike villages where neighbors live like family, city dwellers often do not even know who lives next door.
+
+To solve both of these pressing issues, a team of passionate Bangladeshi university students has built 'Ghorkhuji'—an innovative PropTech and hyper-local neighborhood platform.
+
+Available 100% free on both the Google Play Store and Apple App Store, Ghorkhuji has already crossed 2,500+ active users within just its first month of launch, following coverage across 12 prominent national media portals.
+
+Key Innovations of Ghorkhuji:
+1. Zero-Brokerage Rentals: Landlords post genuine photos directly. Tenants connect with property owners with zero broker bias or hidden commissions.
+2. Verified Roommate Matching: Perfect for bachelors and students looking to share room rent. Users can list their vacant rooms and connect directly with potential flatmates.
+3. Hyper-Local Neighborhood Feed (1-10 KM): A local timeline strictly for residents within 1 to 10 kilometers. Share local road closures, waterlogging updates, utility notices, or local hangout spots—hyper-local news stays within the local community.
+4. Conquering Urban Loneliness: The 'Neighbors People' feature lets residents discover and send connect requests to verified nearby neighbors, fostering authentic neighborhood friendships.
+
+We cordially request your esteemed publication to feature this inspiring student-led technological innovation that is building a modern "Digital Living Ecosystem" for Bangladesh.
+
+📁 Media Kit & High-Res Images: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+📱 Google Play Store: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📱 Apple App Store: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 Website: https://www.ghorkhuji.com
+
+Warm regards,
+Kazi Tahmidur Rahman
+Founder & CEO, Ghorkhuji
+Email: kazitahmidurrahman01@gmail.com`
+            }
+        };
+
+        const WA_TEXTS = {
+            full: `আসসালামু আলাইকুম [ভাইয়া/আপু],
+আশা করি ভালো আছেন। আমি বাংলাদেশি শিক্ষার্থীদের তৈরি প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji)-এর পক্ষ থেকে নক দিয়েছি।
+
+আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি আধুনিক ডিজিটাল লিভিং ইকোসিস্টেম গড়ে তুলেছি।
+
+মূল ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: কোনো দালালের কমিশন ছাড়া সরাসরি বাড়িওয়ালার সাথে যোগাযোগ।
+২. রুমমেট খোঁজা: ব্যাচেলর ও স্টুডেন্টদের রুমমেট খোঁজার স্মার্ট সমাধান।
+৩. প্রতিবেশী ফিড (১-১০ কিমি): এলাকার ড্রেন/রাস্তার কাজ, রোড ব্লক ও হাইপার-লোকাল খবর।
+৪. নেইবারহুড কানেক্ট: প্রতিবেশীদের সাথে পরিচিত হওয়া ও শহুরে একাকীত্ব দূরীকরণ।
+
+মাইলস্টোন: মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ সক্রিয় ব্যবহারকারী এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে লাইভ রয়েছে।
+
+📲 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📲 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
+📁 প্রেস কিট ও ছবি: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+
+আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই ছাত্র-উদ্যোগ নিয়ে একটি ফিচার প্রকাশের জন্য অনুরোধ জানাচ্ছি।
+
+ধন্যবাদ!
+Kazi Tahmidur Rahman | Founder & CEO, ঘরখুঁজি`,
+            short: `আসসালামু আলাইকুম [ভাইয়া/আপু],
+আশা করি ভালো আছেন। আমি বাংলাদেশি শিক্ষার্থীদের তৈরি প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji)-এর পক্ষ থেকে নক দিয়েছি।
+
+আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি স্মার্ট কমিউনিটি গড়ে তুলেছি।
+
+যাত্রা শুরুর মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ ব্যবহারকারী যুক্ত হয়েছেন এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে লাইভ রয়েছে।
+
+📲 অ্যাপ ডাউনলোড: https://play.google.com/store/apps/details?id=com.ghorkhuji
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
+📁 প্রেস কিট: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+
+আপনার পোর্টালে এই ছাত্র-উদ্যোগ নিয়ে একটি ছোট ফিচার প্রকাশের জন্য তথ্য ও ছবি শেয়ার করতে চাই। অনুমতি দিলে কি পাঠাব?
+
+ধন্যবাদ!
+Kazi Tahmidur Rahman | Founder & CEO, ঘরখুঁজি`,
+            en: `Hello [Editor/Journalist],
+Greetings. I am reaching out from 'Ghorkhuji', an innovative Bangladeshi student-led PropTech startup.
+
+We have built a 100% free digital living ecosystem solving zero-brokerage home renting, roommate matching, and tackling urban loneliness through a 1-10km hyper-local neighborhood community feed.
+
+Key Innovations:
+1. Zero-Brokerage Rentals (No Middlemen/Commission)
+2. Roommate Matching for Students & Bachelors
+3. 1-10km Hyper-Local Neighborhood Timeline
+4. Neighbors Connect (Tackling Urban Loneliness)
+
+Traction: Over 2,500+ active users in 1 month, previously covered in 12 news media outlets. Live on Google Play Store & Apple App Store.
+
+📲 Play Store: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📲 App Store: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 Website: https://www.ghorkhuji.com
+📁 Media Kit: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+
+We would be honored if you could feature our student initiative.
+
+Best regards,
+Kazi Tahmidur Rahman | Founder & CEO, Ghorkhuji`
+        };
+
+        let currentEmailLang = 'bn';
+        let currentWaMode = 'full';
+
+        const savedName = localStorage.getItem('my_team_name') || '';
+        document.getElementById('globalMyName').value = savedName;
+
+        function saveMyName(name) {
+            localStorage.setItem('my_team_name', name.trim());
+        }
+
+        function getMyName() {
+            return document.getElementById('globalMyName').value.trim() || localStorage.getItem('my_team_name') || '';
+        }
+
+        function toggleEmailLang(lang) {
+            currentEmailLang = lang;
+            document.getElementById('emailBtnBn').className = 'lang-btn ' + (lang === 'bn' ? 'active' : '');
+            document.getElementById('emailBtnEn').className = 'lang-btn ' + (lang === 'en' ? 'active' : '');
+            document.getElementById('emailSubjectDisplay').innerText = EMAIL_TEXTS[lang].subject;
+            document.getElementById('emailBodyDisplay').innerText = EMAIL_TEXTS[lang].body;
+        }
+
+        function toggleWaMode(mode) {
+            currentWaMode = mode;
+            document.getElementById('waBtnFull').className = 'lang-btn ' + (mode === 'full' ? 'active' : '');
+            document.getElementById('waBtnShort').className = 'lang-btn ' + (mode === 'short' ? 'active' : '');
+            document.getElementById('waBtnEn').className = 'lang-btn ' + (mode === 'en' ? 'active' : '');
+            
+            const hint = document.getElementById('waStatusHint');
+            if (mode === 'full') hint.innerText = '✓ হোয়াটসঅ্যাপে সাংবাদিকদের পাঠানোর উপযোগী পূর্ণাঙ্গ বিবরণ ও সমস্ত লিংক সংযুক্ত';
+            else if (mode === 'short') hint.innerText = '⚡ দ্রুত নক দেওয়ার জন্য সংক্ষিপ্ত ৩ লাইনের মেসেজ';
+            else hint.innerText = '🇬🇧 English outreach message with complete links';
+            
+            document.getElementById('waBodyDisplay').innerText = WA_TEXTS[mode];
+        }
+
+        function copyFullEmail() {
+            const item = EMAIL_TEXTS[currentEmailLang];
+            const fullText = 'Subject: ' + item.subject + '\n\n' + item.body;
+            navigator.clipboard.writeText(fullText).then(() => {
+                showToast('✅ সম্পূর্ণ ইমেইল ড্রাফট সফলভাবে কপি হয়েছে!');
+            });
+        }
+
+        function copyFullWa() {
+            const text = WA_TEXTS[currentWaMode];
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('✅ WhatsApp মেসেজ সফলভাবে কপি হয়েছে!');
+            });
+        }
+
+        // Fetch team shared statuses
         async function fetchTeamStatuses() {
             try {
-                const res = await fetch(API_ENDPOINT);
+                const res = await fetch(STATUS_URL + '?t=' + Date.now());
                 if (res.ok) {
                     const result = await res.json();
-                    if (result && result.data) {
-                        teamStatusMap = result.data;
+                    if (result) {
+                        teamStatusMap = result;
                         updateTableStatuses();
                         updateStats();
-                        document.getElementById('syncText').innerText = 'টিম লাইভ সিঙ্ক অ্যাক্টিভ (সর্বশেষ আপডেট সিঙ্কড)';
+                        document.getElementById('syncText').innerText = 'লাইফটাইম ক্লাউড সিঙ্ক চালু (যেকোনো পরিবর্তন সারা জীবনের জন্য সেভ থাকবে)';
                     }
                 }
             } catch (err) {
+                // fallback to local
                 leads.forEach(l => {
-                    const local = localStorage.getItem('lead_status_' + l.sl);
-                    if (local) teamStatusMap[l.sl] = local;
+                    const saved = localStorage.getItem('lead_item_' + l.sl);
+                    if (saved) {
+                        try { teamStatusMap[l.sl] = JSON.parse(saved); } catch(e) {}
+                    }
                 });
                 updateTableStatuses();
                 updateStats();
-                document.getElementById('syncText').innerText = 'অফলাইন মোড (লোকাল সেভ হচ্ছে)';
             }
         }
 
-        // Save status to shared Cloud in Real-Time
-        async function saveStatus(sl, status, selectElem) {
-            teamStatusMap[sl] = status;
-            localStorage.setItem('lead_status_' + sl, status);
-            selectElem.className = 'status-select status-' + status.toLowerCase();
-            updateStats();
+        // Save a lead permanently (Lifetime Save Action)
+        async function saveLeadAction(sl) {
+            const sel = document.getElementById('status-sel-' + sl);
+            let inp = document.getElementById('sender-inp-' + sl);
+            const btn = document.getElementById('btn-save-' + sl);
 
-            showToast('স্ট্যাটাস আপডেট হচ্ছে: ' + status);
+            const status = sel ? sel.value : 'Pending';
+            let sender = inp ? inp.value.trim() : '';
 
-            try {
-                await fetch(API_ENDPOINT, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: 'BD Media Leads Status',
-                        data: teamStatusMap
-                    })
-                });
-                showToast('✅ টিমের সবার কাছে আপডেট হয়ে গেছে: ' + status);
-            } catch (err) {
-                showToast('⚠️ ক্লাউডে সেভ হতে পারেনি, লোকালি সেভ হয়েছে।');
+            // If sender is empty but status is Sent/Published, autofill myName
+            if (!sender && status !== 'Pending') {
+                sender = getMyName();
+                if (inp) inp.value = sender;
             }
+
+            const nowTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const updateItem = {
+                status: status,
+                sender: sender,
+                time: nowTime
+            };
+
+            teamStatusMap[sl] = updateItem;
+            localStorage.setItem('lead_item_' + sl, JSON.stringify(updateItem));
+
+            if (sel) sel.className = 'status-select status-' + status.toLowerCase();
+
+            // Button feedback
+            if (btn) {
+                btn.className = 'btn-row-save saved';
+                btn.innerHTML = '✓ সেভ হয়েছে';
+                setTimeout(() => {
+                    btn.className = 'btn-row-save';
+                    btn.innerHTML = '💾 সেভ করুন';
+                }, 2500);
+            }
+
+            updateStats();
+            showToast(`🎉 #${sl} সফলভাবে লাইফটাইম সেভ হয়েছে! [${status}${sender ? ' by ' + sender : ''}]`);
+
+            // Commit to GitHub in background for lifetime storage across all 15 members
+            commitToGitHub(sl, updateItem);
+        }
+
+        async function commitToGitHub(sl, updateItem) {
+            try {
+                // Get SHA
+                const getFile = await fetch(GITHUB_API_URL, {
+                    headers: {
+                        'Authorization': 'token ' + GITHUB_TOKEN,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                if (getFile.ok) {
+                    const fileData = await getFile.json();
+                    latestFileSha = fileData.sha;
+                    let currentData = {};
+                    try {
+                        currentData = JSON.parse(atob(fileData.content));
+                    } catch(e) {
+                        currentData = teamStatusMap;
+                    }
+                    currentData[sl] = updateItem;
+
+                    const updatedB64 = btoa(unescape(encodeURIComponent(JSON.stringify(currentData, null, 2))));
+                    await fetch(GITHUB_API_URL, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': 'token ' + GITHUB_TOKEN,
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/vnd.github.v3+json'
+                        },
+                        body: JSON.stringify({
+                            message: `Update lead #${sl} by ${updateItem.sender || 'team'} (${updateItem.status})`,
+                            content: updatedB64,
+                            sha: latestFileSha,
+                            branch: 'main'
+                        })
+                    });
+                    console.log('GitHub lifetime commit successful for lead #' + sl);
+                }
+            } catch (err) {
+                console.warn('GitHub commit error (saved locally):', err);
+            }
+        }
+
+        function onStatusChange(sl, status) {
+            let senderInput = document.getElementById('sender-inp-' + sl);
+            if (senderInput && !senderInput.value.trim() && status !== 'Pending') {
+                senderInput.value = getMyName();
+            }
+            const sel = document.getElementById('status-sel-' + sl);
+            if (sel) sel.className = 'status-select status-' + status.toLowerCase();
         }
 
         function updateTableStatuses() {
             leads.forEach(l => {
+                const entry = teamStatusMap[l.sl];
+                const status = (entry && entry.status) ? entry.status : (typeof entry === 'string' ? entry : 'Pending');
+                const sender = (entry && entry.sender) ? entry.sender : '';
+                
                 const sel = document.getElementById('status-sel-' + l.sl);
                 if (sel) {
-                    const cur = teamStatusMap[l.sl] || 'Pending';
-                    sel.value = cur;
-                    sel.className = 'status-select status-' + cur.toLowerCase();
+                    sel.value = status;
+                    sel.className = 'status-select status-' + status.toLowerCase();
+                }
+                
+                const inp = document.getElementById('sender-inp-' + l.sl);
+                if (inp && document.activeElement !== inp) {
+                    inp.value = sender;
                 }
             });
         }
 
         function updateStats() {
-            let sent = 0;
-            let pub = 0;
-            let pend = 0;
+            let sent = 0, pub = 0, pend = 0;
             leads.forEach(l => {
-                let s = teamStatusMap[l.sl] || 'Pending';
+                const entry = teamStatusMap[l.sl];
+                const s = (entry && entry.status) ? entry.status : (typeof entry === 'string' ? entry : 'Pending');
                 if (s === 'Sent') sent++;
                 else if (s === 'Published') pub++;
                 else pend++;
@@ -361,7 +1160,7 @@
             const toast = document.getElementById('toast');
             toast.innerText = msg;
             toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2500);
+            setTimeout(() => { toast.style.display = 'none'; }, 3000);
         }
 
         function copyText(text) {
@@ -381,33 +1180,82 @@
 
             data.forEach(item => {
                 const tr = document.createElement('tr');
-                const status = teamStatusMap[item.sl] || 'Pending';
+                const entry = teamStatusMap[item.sl];
+                const status = (entry && entry.status) ? entry.status : (typeof entry === 'string' ? entry : 'Pending');
+                const sender = (entry && entry.sender) ? entry.sender : '';
                 
-                const mailSubject = encodeURIComponent('[প্রেস রিলিজ] বাসা খোঁজার বিড়ম্বনা দূর করতে এলো প্রোপটেক স্টার্টআপ "ঘরখুঁজি"');
-                const mailBody = encodeURIComponent('শ্রদ্ধেয় সম্পাদক / তথ্যপ্রযুক্তি ও ফিচার ইনচার্জ,\n\nআসসালামু আলাইকুম।\n\nরাজধানী ঢাকাসহ দেশের প্রধান শহরগুলোতে বাসা ভাড়া বা ঘর খোঁজা সাধারণ মানুষের কাছে অন্যতম বড় এক ভোগান্তির নাম। এই বাস্তব সমস্যার আধুনিক ও টেকসই সমাধান নিয়ে যাত্রা শুরু করেছে বাংলাদেশি প্রোপটেক স্টার্টআপ "ঘরখুঁজি" (Ghorkhuji)।\n\nআমাদের প্ল্যাটফর্মের মাধ্যমে কোনো প্রকার দালালের মধ্যস্থতা ছাড়াই সম্পূর্ণ ভেরিফায়েড বাড়িওয়ালা ও ভাড়াটিয়ারা সহজে বাসা খুঁজে পাচ্ছেন।\n\nদেশের তথ্যপ্রযুক্তি খাত ও তরুণ উদ্যোক্তাদের এগিয়ে নিতে আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই উদ্ভাবনী উদ্যোগ নিয়ে একটি প্রেস রিলিজ / ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।\n\nবিস্তারিত প্রেস রিলিজ ও হাই-রেজোলিউশন ছবি সংযুক্ত করা হলো।\n\nধন্যবাদান্তে,\nটিম ঘরখুঁজি');
+                const mailSubject = encodeURIComponent(`[প্রেস রিলিজ] বাসা খোঁজা ও শহুরে একাকীত্ব দূর করতে বাংলাদেশি শিক্ষার্থীদের উদ্ভাবন: প্রোপটেক প্ল্যাটফর্ম 'ঘরখুঁজি'`);
+                const mailBody = encodeURIComponent(`শ্রদ্ধেয় সম্পাদক / তথ্যপ্রযুক্তি ও ফিচার ইনচার্জ,
+আসসালামু আলাইকুম।
+
+রাজধানী ঢাকাসহ দেশের প্রধান শহরগুলোতে বাসা ভাড়া নেওয়া মানেই দালালের দৌরাত্ম্য, অযৌক্তিক কমিশন আর বাড়ি বাড়ি ঘুরে ক্লান্তিকর এক অভিজ্ঞতা। এর পাশাপাশি আধুনিক নাগরিক জীবনের আরেক নির্মম বাস্তবতা হলো "শহুরে একাকীত্ব"। গ্রামের মানুষ পাশের বাড়ির মানুষকে আপন জানলেও, ঢাকা শহরে পাশের ফ্ল্যাটের প্রতিবেশীও থাকে অচেনা ও বিচ্ছিন্ন।
+
+বাসা খোঁজার এই চিরচেনা ভোগান্তি দূর করতে এবং প্রতিবেশীদের মাঝে হারিয়ে যাওয়া সামাজিক বন্ধন ফিরিয়ে আনতে একদল উদ্যমী বাংলাদেশি শিক্ষার্থী গড়ে তুলেছে অভিনব প্রোপটেক ও নেইবারহুড প্ল্যাটফর্ম 'ঘরখুঁজি' (Ghorkhuji)।
+
+সম্পূর্ণ ফ্রিতে গুগল প্লে স্টোর ও অ্যাপল অ্যাপ স্টোরে উন্মুক্ত এই অ্যাপটি যাত্রা শুরুর মাত্র এক মাসের মাথায় ইতিমধ্যে আড়াই হাজারের (২৫০০+) বেশি সক্রিয় ব্যবহারকারীর মাইলস্টোন অর্জন করেছে। পূর্বে দেশের প্রথম সারির ১২টি শীর্ষ গণমাধ্যমেও উদ্যোগটি প্রশংসিত হয়েছে।
+
+'ঘরখুঁজি' অ্যাপের মূল আকর্ষণ ও অনন্য ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: বাড়িওয়ালারা সরাসরি নিজেদের বাসার আসল ছবি ও বিবরণ পোস্ট করেন। কোনো দালালের কমিশন বা মধ্যস্থতা ছাড়াই ভাড়াটিয়ারা সরাসরি বাড়িওয়ালার সাথে কথা বলে বাসা চূড়ান্ত করতে পারেন।
+২. রুমমেট খোঁজার স্মার্ট সমাধান: ব্যাচেলর ও শিক্ষার্থীদের জন্য বাসা ভাড়া ভাগাভাগি করার নির্ভরযোগ্য সমাধান। নিজের রুমের ছবি পোস্ট করে সহজেই পছন্দের রুমমেট খুঁজে নেওয়া যায়।
+৩. হাইপার-লোকাল প্রতিবেশী ফিড (১-১০ কিমি): আপনার আশেপাশের ১ থেকে ১০ কিলোমিটারের বাসিন্দাদের নিয়ে গঠিত নিজস্ব লোকাল ফিড। ড্রেন বা রাস্তার কাজ, যানজট, জলাবদ্ধতা, এলাকার ব্রেকিং খবর কিংবা পাড়ার নতুন চায়ের দোকানের আড্ডা—এলাকার খবর থাকবে শুধুই এলাকার মানুষের কাছে।
+৪. নেইবারহুড কানেক্ট ও একাকীত্ব দূরীকরণ: নতুন এলাকায় আসলেও একাকীত্বে ভুগতে হবে না। 'Neighbors People' ফিচারের মাধ্যমে আশেপাশের মানুষদের কানেক্ট রিকোয়েস্ট পাঠানো এবং স্থানীয় কমিউনিটি আড্ডায় যুক্ত হওয়া যায়।
+
+তরুণ প্রজন্মের মেধা ও প্রযুক্তি কাজে লাগিয়ে একটি আধুনিক "ডিজিটাল লিভিং ইকোসিস্টেম" গড়ে তুলতে শিক্ষার্থীদের এই ইতিবাচক উদ্যোগ নিয়ে আপনার স্বনামধন্য গণমাধ্যমে একটি প্রতিবেদন বা ফিচার প্রকাশের বিনীত অনুরোধ জানাচ্ছি।
+
+সংবাদের ব্যবহারের জন্য উচ্চ রেজোলিউশনের প্রতিষ্ঠাতা ও অ্যাপের ছবিসহ প্রেস কিট গুগল ড্রাইভ লিংকে সংযুক্ত করা হলো:
+📁 প্রেস কিট ও ছবি (Google Drive): https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+📱 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📱 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
+
+ধন্যবাদান্তে,
+Kazi Tahmidur Rahman
+Founder & CEO, Ghorkhuji
+ইমেইল: kazitahmidurrahman01@gmail.com`);
                 const mailLink = `mailto:${item.email1}?cc=${item.email2}&subject=${mailSubject}&body=${mailBody}`;
 
                 const cleanPhone = item.phone.replace(/[^0-9]/g, '');
-                const waText = encodeURIComponent('আসসালামু আলাইকুম ভাইয়া/আপু, আমি বাংলাদেশি প্রোপটেক স্টার্টআপ "ঘরখুঁজি"-এর পক্ষ থেকে নক দিয়েছি। আপনার নিউজ পোর্টালে আমাদের উদ্যোগ নিয়ে একটি প্রেস রিলিজ শেয়ার করতে চাই।');
+                const waText = encodeURIComponent(`আসসালামু আলাইকুম [ভাইয়া/আপু],
+আশা করি ভালো আছেন। আমি বাংলাদেশি শিক্ষার্থীদের তৈরি প্রোপটেক স্টার্টআপ 'ঘরখুঁজি' (Ghorkhuji)-এর পক্ষ থেকে নক দিয়েছি।
+
+আমরা ঢাকা শহরে দালালের কমিশন ছাড়াই (Zero-Brokerage) বাসা ভাড়া ও রুমমেট খোঁজার পাশাপাশি শহুরে একাকীত্ব দূর করতে ১-১০ কিলোমিটারের প্রতিবেশীদের নিয়ে একটি আধুনিক ডিজিটাল লিভিং ইকোসিস্টেম গড়ে তুলেছি।
+
+মূল ফিচারসমূহ:
+১. জিরো ব্রোকারেজ বাড়ি ভাড়া: কোনো দালালের কমিশন ছাড়া সরাসরি বাড়িওয়ালার সাথে যোগাযোগ।
+২. রুমমেট খোঁজা: ব্যাচেলর ও স্টুডেন্টদের রুমমেট খোঁজার স্মার্ট সমাধান।
+৩. প্রতিবেশী ফিড (১-১০ কিমি): এলাকার ড্রেন/রাস্তার কাজ, রোড ব্লক ও হাইপার-লোকাল খবর।
+৪. নেইবারহুড কানেক্ট: প্রতিবেশীদের সাথে পরিচিত হওয়া ও শহুরে একাকীত্ব দূরীকরণ।
+
+মাইলস্টোন: মাত্র ১ মাসেই আলহামদুলিল্লাহ ২৫০০+ সক্রিয় ব্যবহারকারী এবং পূর্বে ১২টি গণমাধ্যম আমাদের উদ্যোগ কাভার করেছে। সম্পূর্ণ ফ্রি এই অ্যাপটি প্লে স্টোর ও অ্যাপ স্টোরে লাইভ রয়েছে।
+
+📲 গুগল প্লে স্টোর: https://play.google.com/store/apps/details?id=com.ghorkhuji
+📲 অ্যাপল অ্যাপ স্টোর: https://apps.apple.com/gb/app/ghorkhuji/id6763732562
+🌐 ওয়েবসাইট: https://www.ghorkhuji.com
+📁 প্রেস কিট ও ছবি: https://drive.google.com/drive/folders/1WaRoRJvIrxZMmmIkWTIyMI-92RjYtysf
+
+আপনার স্বনামধন্য গণমাধ্যমে আমাদের এই ছাত্র-উদ্যোগ নিয়ে একটি ফিচার প্রকাশের জন্য অনুরোধ জানাচ্ছি।
+
+ধন্যবাদ!
+Kazi Tahmidur Rahman | Founder & CEO, ঘরখুঁজি`);
                 const waLink = `https://wa.me/${cleanPhone}?text=${waText}`;
 
                 tr.innerHTML = `
-                    <td style="text-align: center; font-weight: 600; color: var(--text-muted);">${item.sl}</td>
-                    <td>
+                    <td data-label="#" style="text-align: center; font-weight: 600; color: var(--text-muted);">${item.sl}</td>
+                    <td data-label="মিডিয়ার নাম ও ফোকাস">
                         <div class="media-name">${item.name}</div>
-                        <div style="font-size: 12px; color: var(--text-muted);">${item.desk}</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">${item.desk}</div>
                     </td>
-                    <td><span class="badge badge-cat">${item.cat}</span></td>
-                    <td>
+                    <td data-label="ক্যাটাগরি"><span class="badge badge-cat">${item.cat}</span></td>
+                    <td data-label="ইমেইল এড্রেস">
                         <div><strong style="color: #1e3a8a;">${item.email1}</strong> <span class="copy-pill" onclick="copyText('${item.email1}')">📋 কপি</span></div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">${item.email2}</div>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">${item.email2}</div>
                     </td>
-                    <td>
+                    <td data-label="ফোন / হোয়াটসঅ্যাপ">
                         <div>${item.display_phone}</div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: 500;">✓ কল ও হোয়াটসঅ্যাপ</div>
                     </td>
-                    <td style="max-width: 240px; font-size: 13px; color: #475569;">${item.notes}</td>
-                    <td style="text-align: center;">
+                    <td data-label="নোট ও টিপস" style="max-width: 220px; font-size: 12px; color: #475569;">${item.notes}</td>
+                    <td data-label="সরাসরি যোগাযোগ" style="text-align: center;">
                         <div class="action-btns" style="justify-content: center;">
                             <a href="${mailLink}" class="btn btn-email" title="মেইল পাঠান">✉️ মেইল</a>
                             <a href="${waLink}" target="_blank" class="btn btn-wa" title="WhatsApp এ মেসেজ দিন">💬 চ্যাট</a>
@@ -415,12 +1263,18 @@
                             <a href="${item.web}" target="_blank" class="btn btn-link" title="সাইট দেখুন">🌐 সাইট</a>
                         </div>
                     </td>
-                    <td style="text-align: center;">
-                        <select id="status-sel-${item.sl}" class="status-select status-${status.toLowerCase()}" onchange="saveStatus(${item.sl}, this.value, this)">
-                            <option value="Pending" ${status === 'Pending' ? 'selected' : ''}>⏳ Pending</option>
-                            <option value="Sent" ${status === 'Sent' ? 'selected' : ''}>📤 Sent</option>
-                            <option value="Published" ${status === 'Published' ? 'selected' : ''}>🎉 Published</option>
-                        </select>
+                    <td data-label="স্ট্যাটাস ও সেভ করুন" style="text-align: center;">
+                        <div class="save-control-cell" style="justify-content: center;">
+                            <select id="status-sel-${item.sl}" class="status-select status-${status.toLowerCase()}" onchange="onStatusChange(${item.sl}, this.value)">
+                                <option value="Pending" ${status === 'Pending' ? 'selected' : ''}>⏳ Pending</option>
+                                <option value="Sent" ${status === 'Sent' ? 'selected' : ''}>📤 Sent</option>
+                                <option value="Published" ${status === 'Published' ? 'selected' : ''}>🎉 Published</option>
+                            </select>
+                            <input type="text" id="sender-inp-${item.sl}" class="sender-input" placeholder="প্রেরকের নাম..." value="${sender}">
+                            <button class="btn-row-save" id="btn-save-${item.sl}" onclick="saveLeadAction(${item.sl})">
+                                💾 সেভ করুন
+                            </button>
+                        </div>
                     </td>
                 `;
                 tbody.appendChild(tr);
@@ -438,12 +1292,15 @@
         function filterData() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             const filtered = leads.filter(item => {
+                const entry = teamStatusMap[item.sl];
+                const sender = (entry && entry.sender) ? entry.sender.toLowerCase() : '';
                 const matchesCat = (currentCategory === 'সব' || item.cat === currentCategory);
                 const matchesQuery = (
                     item.name.toLowerCase().includes(query) ||
                     item.email1.toLowerCase().includes(query) ||
                     item.desk.toLowerCase().includes(query) ||
-                    item.notes.toLowerCase().includes(query)
+                    item.notes.toLowerCase().includes(query) ||
+                    sender.includes(query)
                 );
                 return matchesCat && matchesQuery;
             });
@@ -452,7 +1309,7 @@
 
         renderTable(leads);
         fetchTeamStatuses();
-        setInterval(fetchTeamStatuses, 5000);
+        setInterval(fetchTeamStatuses, 6000);
     </script>
 </body>
 </html>

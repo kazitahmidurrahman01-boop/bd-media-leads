@@ -200,13 +200,11 @@ def update_team_status_github(sl, status="Sent", sender="Automation (Ghorkhuji)"
         print(f"GitHub status update error for #{sl}: {e}")
         return False
 
-def create_email_message(to_email, cc_email=None):
+def create_email_message(to_email):
     msg = MIMEMultipart("alternative")
     msg["Subject"] = EMAIL_SUBJECT
     msg["From"] = formataddr((SENDER_NAME, SENDER_EMAIL))
     msg["To"] = to_email
-    if cc_email and cc_email != to_email:
-        msg["Cc"] = cc_email
     msg["Reply-To"] = REPLY_TO
     msg["Date"] = formatdate(localtime=True)
     msg["Message-ID"] = make_msgid(domain="ghorkhuji.com")
@@ -322,11 +320,7 @@ def run_campaign(test_mode=False, force_now=False):
             continue
 
         recipients = [email1]
-        cc = email2 if (email2 and email2 != email1) else None
-        if cc:
-            recipients.append(cc)
-
-        msg = create_email_message(email1, cc)
+        msg = create_email_message(email1)
 
         try:
             server.sendmail(SENDER_EMAIL, recipients, msg.as_string())
