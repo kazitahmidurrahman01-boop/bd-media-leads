@@ -1,0 +1,23 @@
+name: Scheduled Ghorkhuji PR Campaign
+
+on:
+  schedule:
+    # 03:30 UTC = 09:30 AM Bangladesh Standard Time (BST)
+    - cron: '30 3 * * 0,1,2,3,4'
+  workflow_dispatch: # Allows 1-click manual start from GitHub web or mobile browser anytime
+
+jobs:
+  dispatch-pr-emails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run PR Dispatcher
+        run: |
+          python -u automated_pr_sender.py
