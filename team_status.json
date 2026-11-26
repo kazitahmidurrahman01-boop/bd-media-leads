@@ -191,8 +191,9 @@
     "sender": ""
   },
   "69": {
-    "status": "Pending",
-    "sender": ""
+    "status": "Sent",
+    "sender": "Automation (Ghorkhuji)",
+    "time": "08:14 AM, 26 Nov"
   },
   "54": {
     "status": "Sent",
