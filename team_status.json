@@ -13,9 +13,8 @@
     "sender": ""
   },
   "30": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "07:02 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "87": {
     "status": "Pending",
@@ -70,9 +69,8 @@
     "time": "06:29 AM, 26 Nov"
   },
   "12": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:46 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "65": {
     "status": "Pending",
@@ -83,9 +81,8 @@
     "sender": ""
   },
   "14": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:47 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "26": {
     "status": "Sent",
@@ -93,9 +90,8 @@
     "time": "06:57 AM, 26 Nov"
   },
   "17": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:49 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "28": {
     "status": "Sent",
@@ -165,9 +161,8 @@
     "sender": ""
   },
   "20": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:51 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "59": {
     "status": "Pending",
@@ -206,9 +201,8 @@
     "sender": ""
   },
   "35": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "07:07 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "41": {
     "status": "Pending",
@@ -220,23 +214,20 @@
     "time": "06:25 AM, 26 Nov"
   },
   "34": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "07:06 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "6": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:44 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "53": {
     "status": "Pending",
     "sender": ""
   },
   "2": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:43 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "44": {
     "status": "Pending",
@@ -290,23 +281,20 @@
     "sender": ""
   },
   "27": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:58 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "16": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:37 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "64": {
     "status": "Pending",
     "sender": ""
   },
   "24": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:55 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "19": {
     "status": "Sent",
@@ -314,9 +302,8 @@
     "time": "06:40 AM, 26 Nov"
   },
   "29": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "07:01 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "61": {
     "status": "Pending",
@@ -344,9 +331,8 @@
     "sender": ""
   },
   "7": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:45 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "52": {
     "status": "Pending",
@@ -412,19 +398,16 @@
     "time": "07:03 AM, 26 Nov"
   },
   "15": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:48 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "25": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:56 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "18": {
-    "status": "Sent",
-    "sender": "Automation (Ghorkhuji)",
-    "time": "06:50 AM, 26 Nov"
+    "status": "Pending",
+    "notes": "Reset to re-send to verified corporate email address"
   },
   "42": {
     "status": "Pending",
