@@ -4,7 +4,7 @@ on:
   schedule:
     # 03:30 UTC = 09:30 AM Bangladesh Standard Time (BST)
     - cron: '30 3 * * 0,1,2,3,4'
-  workflow_dispatch: # Allows 1-click manual start from GitHub web or mobile browser anytime
+  workflow_dispatch:
 
 jobs:
   dispatch-pr-emails:
@@ -18,6 +18,11 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: |
+          pip install openpyxl
+
       - name: Run PR Dispatcher
         run: |
-          python -u automated_pr_sender.py
+          python -u automated_pr_sender.py --now
+

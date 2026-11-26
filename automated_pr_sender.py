@@ -272,17 +272,19 @@ def wait_until_office_hours():
         sleep_chunk = min(max(sleep_seconds, 1), 600) # sleep up to 10 mins
         time.sleep(sleep_chunk)
 
-def run_campaign(test_mode=False):
+def run_campaign(test_mode=False, force_now=False):
     print("=" * 60)
     print("🚀 GHORKHUJI PR AUTOMATION DISPATCHER INITIALIZED")
     print(f"Sender: {SENDER_EMAIL} (App Password Verified)")
     print(f"Reply-To: {REPLY_TO}")
+    print(f"Force Now: {force_now}")
     print("=" * 60)
 
     if not test_mode:
-        send_telegram("🔔 [ঘরখুঁজি পিআর অটোমেশন চালু হয়েছে]\nস্ক্রিপ্টটি অফিস সময়ের (সকাল ৯:৩০ - দুপুর ১২:০০) অপেক্ষায় রয়েছে। নির্দিষ্ট সময়ে ১ মিনিট ব্যবধানে মেইল পাঠানো শুরু হবে।")
-        wait_until_office_hours()
-        send_telegram("🚀 [পিআর আউটরিচ শুরু হচ্ছে!]\nসকাল ৯:৩০ হয়েছে। ১০০টি মিডিয়াতে ১ মিনিট গ্যাপ দিয়ে স্বয়ংক্রিয়ভাবে ইনবক্স-সেফ মেইল পাঠানো শুরু হলো!")
+        if not force_now:
+            send_telegram("🔔 [ঘরখুঁজি পিআর অটোমেশন চালু হয়েছে]\nস্ক্রিপ্টটি অফিস সময়ের (সকাল ৯:৩০ - দুপুর ১২:০০) অপেক্ষায় রয়েছে। নির্দিষ্ট সময়ে ১ মিনিট ব্যবধানে মেইল পাঠানো শুরু হবে।")
+            wait_until_office_hours()
+        send_telegram("🚀 [পিআর আউটরিচ শুরু হচ্ছে!]\n১০০টি মিডিয়াতে ১ মিনিট গ্যাপ দিয়ে স্বয়ংক্রিয়ভাবে ইনবক্স-সেফ মেইল পাঠানো শুরু হলো!")
 
     # Connect to SMTP
     try:
@@ -379,5 +381,7 @@ if __name__ == "__main__":
         s.sendmail(SENDER_EMAIL, ["kazitahmidurrahman01@gmail.com"], test_msg.as_string())
         s.quit()
         print("TEST EMAIL SENT TO kazitahmidurrahman01@gmail.com")
+    elif len(sys.argv) > 1 and sys.argv[1] == "--now":
+        run_campaign(force_now=True)
     else:
         run_campaign()

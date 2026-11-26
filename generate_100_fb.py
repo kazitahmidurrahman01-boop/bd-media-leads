@@ -1,9 +1,12 @@
 import os
 import json
 import csv
-import openpyxl
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
+try:
+    import openpyxl
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+except ImportError:
+    openpyxl = None
 
 # 100 Bangladesh Media Outlets with Facebook Links
 leads_100 = [
